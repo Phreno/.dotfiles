@@ -33,6 +33,9 @@ function c.va.td(){
 }
 alias c.va.DEL='c.va.td | xargs -n1 vim-awesome uninstall'
 
+# configuration du clavier
+alias k='chrysalis'
+
 # node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

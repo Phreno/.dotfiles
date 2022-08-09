@@ -144,6 +144,11 @@ installe_tspreed(){
     cd -
 }
 
+installe_fzf(){
+    wget -q https://script.install.devinsideyou.com/fzf
+    chmod +x fzf && ./fzf
+}
+
 main(){
     cartouche
     actualise_dependances
@@ -159,6 +164,8 @@ main(){
 
     installe_ohmyzsh
     installe_sdkman
+
+    installe_fzf
 }
 
 main

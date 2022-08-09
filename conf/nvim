@@ -208,7 +208,3 @@ endif
 
   hi CocSearch ctermfg=12 guifg=#18A3FF
   hi CocMenuSel ctermbg=109 guibg=#13354A
-  
-  let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'asciidoc', 'ext': '.adoc'}]
-  

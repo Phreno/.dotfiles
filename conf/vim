@@ -9,7 +9,7 @@ let g:ale_sign_column_always = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
 set list
-set listchars=nbsp:␣,trail:•,precedes:«,extends:»
+set listchars=nbsp:␣,trail:•,precedes:«,extends:»,tab:▸
 
 autocmd   BufNewFile      *.sh                       0r   ~/.dotfiles/skeletons/bash-template.sh
 autocmd   BufNewFile      LICENSE.md                 0r   ~/.dotfiles/skeletons/LICENSE.md

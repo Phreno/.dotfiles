@@ -8,6 +8,7 @@
 # Dépendances ....: zsh
 alias vim='nvim'
 alias v='nvim'
+alias v.v='v .vimrc'
 
 # edition des dotfiles
 alias rc='~/.dotfiles/install'

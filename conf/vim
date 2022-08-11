@@ -19,7 +19,7 @@ autocmd   BufNewFile      *.p5js.js                  0r   ~/.dotfiles/skeletons/
 au BufReadPost vim set syntax=vim
 au BufReadPost nvim set syntax=vim
 
-colorscheme dracula
+colorscheme default
 
 augroup fmt
   autocmd!

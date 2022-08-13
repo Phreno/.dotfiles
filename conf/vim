@@ -1,25 +1,3 @@
-set number
-set relativenumber
-
-nmap <F7> :cp<CR>
-nmap <F8> :cn<CR>
-
-let g:ale_sign_column_always = 1
-
-let g:indent_guides_enable_on_vim_startup = 1
-
-set list
-set listchars=nbsp:␣,trail:•,precedes:«,extends:»,tab:▸
-
-autocmd   BufNewFile      *.sh                       0r   ~/.dotfiles/skeletons/bash-template.sh
-autocmd   BufNewFile      LICENSE.md                 0r   ~/.dotfiles/skeletons/LICENSE.md
-autocmd   BufNewFile      *.p5js.html                0r   ~/.dotfiles/skeletons/p5js-standalone.html
-autocmd   BufNewFile      *.p5js.js                  0r   ~/.dotfiles/skeletons/p5js-sample.js
-
-au BufReadPost vim set syntax=vim
-au BufReadPost nvim set syntax=vim
-
-colorscheme default
 
 augroup fmt
   autocmd!

@@ -7,6 +7,7 @@
         create: true
         path: conf/nvim
     ~/.config/nvim/coc-settings.json: conf/coc
+    ~/.config/nvim/init.lua: conf/nvim.lua
 
 - shell:
   - vim-awesome clear # Supprime le cache non utilisé vim-awesome

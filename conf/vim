@@ -1,12 +1,9 @@
 
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+""augroup fmt
+""  autocmd!
+""  autocmd BufWritePre * undojoin | Neoformat
+""augroup END
 
-nnoremap <Home> :SidewaysLeft<cr>
-nnoremap <End> :SidewaysRight<cr>
-let g:hardtime_default_on = 1
 
 " Dim inactive windows using 'colorcolumn' setting
 " This tends to slow down redrawing, but is very useful.

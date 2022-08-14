@@ -1,7 +1,7 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
-source ~/.vimrc
 try
+source ~/.vimrc
 source .vimrc
 catch
 endtry
@@ -233,3 +233,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
     au BufReadPost nvim set syntax=vim
 
     colorscheme default
+
+
+
+nnoremap <Home> :SidewaysLeft<cr>
+nnoremap <End> :SidewaysRight<cr>
+	

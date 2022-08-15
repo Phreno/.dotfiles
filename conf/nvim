@@ -239,3 +239,4 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <Home> :SidewaysLeft<cr>
 nnoremap <End> :SidewaysRight<cr>
 	
+luafile ~/.config/nvim/my_configs

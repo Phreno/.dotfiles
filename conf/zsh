@@ -19,6 +19,7 @@ alias vv='v ~/.dotfiles/conf/vim'
 alias vvrc='cd ~/.vim_runtime/vimrcs; v; cd -'
 alias cvrc='cd ~/.vim_runtime/vimrcs'
 alias vn='v ~/.dotfiles/conf/nvim'
+alias vl='v ~/.dotfiles/conf/my_configs'
 alias vz='v ~/.dotfiles/conf/zsh; sz'
 alias vc='v ~/.dotfiles/install.conf.yaml'
 alias c.='cd ~/.dotfiles'
@@ -50,7 +51,7 @@ alias docker.supprime_toutes_les_images='docker image rm $(docker image ls -q)'
 alias docker.NETTOIE_TOUT='docker.arrete_tous_les_containers; docker.supprime_tous_les_containers; docker.supprime_toutes_les_images'
 
 # atuin
-install_atuin(){
+installe_atuin(){
     # do not run this as root, root will be asked for if required
     bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
     echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
@@ -66,6 +67,7 @@ docker.status(){ # TODO: faire un script avec bash simple curses
     echo "containers"
     docker container ls
 }
+# chrysalis
 installe_chrysalis(){
     wget  https://github.com/keyboardio/Chrysalis/releases/download/v0.11.0/Chrysalis-0.11.0.AppImage -O ~/bin/chrysalis
     chmod +x ~/bin/chrysalis

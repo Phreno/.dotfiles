@@ -9,15 +9,17 @@
     ~/.oh-my-zsh/custom/my_configs.zsh: conf/zsh
     ~/.vim_runtime/my_configs.vim: conf/vim
     ~/.config/nvim/coc-settings.json: conf/coc
-    ~/.config/nvim/init.lua: conf/nvim
+    ~/.config/nvim/init.lua: conf/nvim.lua
 
 - shell:
   - vim-awesome clear # Supprime le cache non utilisé vim-awesome
-  - vim-awesome install neoformat
-  - vim-awesome install the-nerd-commenter
+  - vim-awesome install fzf
+  - vim-awesome install fugitive-vim
+  - vim-awesome install goyo-vim
+  - vim-awesome install ale
+  - vim-awesome install tabular
   - vim-awesome install coc-nvim
   - vim-awesome install vim-airline
-  - vim-awesome install vim-hardtime
   - vim-awesome install vim-argwrap
   - vim-awesome install sideways-vim
   - vim-awesome install vimgym

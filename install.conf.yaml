@@ -1,10 +1,11 @@
-- clean: [ '~/.oh-my-zsh/custom/my_configs.zsh', '~/.vim_runtime/my_configs.vim', '~/.config/nvim/init.lua', '~/.config/nvim/coc-settings.json' ]
+- clean: [ '~/.oh-my-zsh/custom/my_configs.zsh', '~/.vim_runtime/my_configs.vim', '~/.config/nvim/init.lua', '~/.config/nvim/au.lua', '~/.config/nvim/coc-settings.json' ]
 
 - link:
     ~/.oh-my-zsh/custom/my_configs.zsh: conf/zsh
     ~/.vim_runtime/my_configs.vim: conf/vim
     ~/.config/nvim/coc-settings.json: conf/coc
     ~/.config/nvim/nvim.lua: conf/nvim
+    ~/.config/nvim/au.lua: conf/au.lua
 
 - shell:
   - vim-awesome clear # Supprime le cache non utilisé vim-awesome

@@ -162,7 +162,22 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ]]
 -----------------------------------------------------------
+
+cmd [[
+function! JavaStartDebugCallback(err, port)
+  execute "cexpr! 'Java debug started on port: " . a:port . "'"
+  call vimspector#LaunchWithSettings({ "configuration": "Java Attach", "AdapterPort": a:port })
+endfunction
+
+function JavaStartDebug()
+  call CocActionAsync('runCommand', 'vscode.java.startDebugSession', function('JavaStartDebugCallback'))
+endfunction
+
+]]
+
+
 g.mapleader               = ','     -- Redefine the leader key
+g.vimspector_enable_mappings = 'HUMAN' -- Enable vimspector mappings
 
 opt.rtp:append('~/.fzf')  -- Active fzf
 opt.shortmess:append('c') -- Don't pass messages to |ins-completion-menu|.
@@ -184,6 +199,10 @@ opt.shiftwidth            = 2
 opt.softtabstop           = 2
 opt.tabstop               = 2       -- Set the behavior of tab
 
+-- Active le debug
+vimp.nnoremap('<leader>vd', function()
+	cmd [[call JavaStartDebug()]]
+	end)
 
 
 vimp.nnoremap('<leader>r', function() -- Active / Desactive les nombres relatifs

@@ -185,38 +185,38 @@ opt.softtabstop           = 2
 opt.tabstop               = 2       -- Set the behavior of tab
 
 
--- Active / Desactive les nombres relatifs
-vimp.nnoremap('<leader>r', function()
+
+vimp.nnoremap('<leader>r', function() -- Active / Desactive les nombres relatifs
   vim.wo.relativenumber = not vim.wo.relativenumber
 end)
 
--- Édite le fichier de configuration
-vimp.nnoremap('<leader>vn', function()
+
+vimp.nnoremap('<leader>vn', function() -- Édite le fichier de configuration
   cmd[[vsplit ~/.dotfiles/conf/nvim.lua]]
 end)
 
--- Édite le fichier de configuration 
-vimp.nnoremap('<leader>vz', function()
+ 
+vimp.nnoremap('<leader>vz', function()-- Édite le fichier de configuration
   cmd[[vsplit ~/.dotfiles/conf/zsh]]
 end)
 
--- Source le fichier lua courant 
-vimp.nnoremap('<C-s>l', function()
+
+vimp.nnoremap('<C-s>l', function() -- Source le fichier lua courant 
   cmd[[luafile %]]
 end)
 
--- Source le fichier vim courant 
-vimp.nnoremap('<C-s>s', function()
+
+vimp.nnoremap('<C-s>s', function() -- Source le fichier vim courant 
   cmd[[source %]]
 end)
 
--- Lance FZF
-vimp.nnoremap('<A-c>', function()
+
+vimp.nnoremap('<A-c>', function() -- Lance FZF
 	cmd[[silent! FZF]]
 end)
 
--- Montre les premieres lignes du fichier dans un split
-vimp.nnoremap('<leader>sh', function()
+
+vimp.nnoremap('<leader>sh', function() -- Montre les premieres lignes du fichier dans un split
 cmd[[5split +1]]
 end)
 

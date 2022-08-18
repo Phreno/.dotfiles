@@ -29,4 +29,6 @@
   - vim-awesome install nvim-treesitter
   - vim-awesome install nvim-treesitter-refactor
   - vim-awesome install aurora
+  - vim-awesome install plenary-vim
+  - vim-awesome install telescope-nvim
 

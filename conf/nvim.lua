@@ -214,18 +214,22 @@ vimp.nnoremap('<leader>vn', function() -- Édite le fichier de configuration
   cmd[[vsplit ~/.dotfiles/conf/nvim.lua]]
 end)
 
- 
+vimp.nnoremap('<leader>vc', function() -- Édite la configuration de dotfiles
+  cmd[[vsplit ~/.dotfiles/install.conf.yaml]]
+end)
+
+
 vimp.nnoremap('<leader>vz', function()-- Édite le fichier de configuration
   cmd[[vsplit ~/.dotfiles/conf/zsh]]
 end)
 
 
-vimp.nnoremap('<C-s>l', function() -- Source le fichier lua courant 
+vimp.nnoremap('<C-s>l', function() -- Source le fichier lua courant
   cmd[[luafile %]]
 end)
 
 
-vimp.nnoremap('<C-s>s', function() -- Source le fichier vim courant 
+vimp.nnoremap('<C-s>s', function() -- Source le fichier vim courant
   cmd[[source %]]
 end)
 

@@ -178,6 +178,9 @@ endfunction
 
 g.mapleader               = ','     -- Redefine the leader key
 g.vimspector_enable_mappings = 'HUMAN' -- Enable vimspector mappings
+g.aurora_transparent = true
+g.aurora_italic=true
+g.aurora_bold=true
 
 opt.rtp:append('~/.fzf')  -- Active fzf
 opt.shortmess:append('c') -- Don't pass messages to |ins-completion-menu|.
@@ -268,6 +271,10 @@ end)
 
 vimp.nnoremap('<A-c>', function() -- Lance FZF
 	cmd[[silent! FZF]]
+end)
+
+vimp.nnoremap('<C-t>', function() -- Lance telescope
+       cmd[[silent! Telescope find_files]]
 end)
 
 

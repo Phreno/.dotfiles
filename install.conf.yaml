@@ -1,8 +1,8 @@
-- clean: [ 
-  '~/.oh-my-zsh/custom/my_configs.zsh', 
-  '~/.vim_runtime/my_configs.vim', 
-  '~/.config/nvim/init.lua', 
-  '~/.config/nvim/coc-settings.json' 
+- clean: [
+  '~/.oh-my-zsh/custom/my_configs.zsh',
+  '~/.vim_runtime/my_configs.vim',
+  '~/.config/nvim/init.lua',
+  '~/.config/nvim/coc-settings.json'
 ]
 
 - link:
@@ -26,3 +26,7 @@
   - vim-awesome install vimpeccable
   - vim-awesome install vimspector
   - vim-awesome install vimwiki
+  - vim-awesome install nvim-treesitter
+  - vim-awesome install nvim-treesitter-refactor
+  - vim-awesome install aurora
+

@@ -26,6 +26,10 @@ alias c.='cd ~/.dotfiles'
 alias v.='c.; v; cd -'
 alias c.va='cat ~/.dotfiles/install.conf.yaml | egrep "vim-awesome.*install" | sed "s/^\s*-\s\(\S\+\|-\)\s\S\+//" | tr -d " " | egrep -v "^$"'
 alias al='cat ~/.dotfiles/conf/zsh | grep alias | column -t -s = | sort'
+alias mcp='mvn clean package | fzf -m --tac'
+alias mcpd='mvn clean package -Dmaven.surefire.debug'
+
+
 function c.va.td(){
     installed=`mktemp`
     wanted=`mktemp`

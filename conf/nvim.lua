@@ -181,6 +181,11 @@ g.vimspector_enable_mappings = 'HUMAN' -- Enable vimspector mappings
 g.aurora_transparent = true
 g.aurora_italic=true
 g.aurora_bold=true
+ 
+g.workspace_autocreate=1
+-- g.workspace_session_directory = '~/.vim/sessions/'
+g.workspace_autosave_always = 1
+
 
 opt.rtp:append('~/.fzf')  -- Active fzf
 opt.shortmess:append('c') -- Don't pass messages to |ins-completion-menu|.
@@ -283,9 +288,23 @@ vimp.nnoremap('<leader>sh', function() -- Montre les premieres lignes du fichier
 cmd[[5split +1]]
 end)
 
-vimp.nnoremap('<A-t>', function() -- Ouvre Tagbar
-       cmd [[Tagbar]]
+vimp.nnoremap('<leader>tb', function() -- Ouvre Tagbar
+        cmd [[Tagbar]]
+ end)
+ 
+vimp.nnoremap('<leader>gb', function() -- Git blame
+       cmd [[Git blame]]
 end)
+ 
+vimp.nnoremap('<leader>fe', function() -- Recharge le buffer courant
+       cmd [[edit!]]
+end)
+ 
+
+vimp.nnoremap('<leader>tw', function() -- Toggle workspace
+       cmd [[ToggleWorkspace]]
+end)
+
 
 
 

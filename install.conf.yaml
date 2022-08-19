@@ -13,22 +13,23 @@
 
 - shell:
   - vim-awesome clear # Supprime le cache non utilisé vim-awesome
-  - vim-awesome install ale
+  - vim-awesome install aurora
   - vim-awesome install coc-nvim
   - vim-awesome install fugitive-vim
   - vim-awesome install fzf
   - vim-awesome install goyo-vim
+  - vim-awesome install nvim-treesitter
+  - vim-awesome install nvim-treesitter-refactor
+  - vim-awesome install plenary-vim
   - vim-awesome install sideways-vim
   - vim-awesome install tabular
+  - vim-awesome install telescope-nvim
   - vim-awesome install vim-airline
   - vim-awesome install vim-argwrap
+  - vim-awesome install vim-workspace
   - vim-awesome install vimgym
   - vim-awesome install vimpeccable
   - vim-awesome install vimspector
   - vim-awesome install vimwiki
-  - vim-awesome install nvim-treesitter
-  - vim-awesome install nvim-treesitter-refactor
-  - vim-awesome install aurora
-  - vim-awesome install plenary-vim
-  - vim-awesome install telescope-nvim
+ 
 

@@ -1,5 +1,7 @@
 {
     "eslint.autoFixOnSave": true,
-
-    "diagnostic:displayByAle": true
+    "diagnostic:displayByAle": true,
+    "java.import.maven.enabled": true,
+    "java.maven.downloadSources": true,
+    "java.maven.updateSnapshots": true
 }

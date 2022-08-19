@@ -185,6 +185,7 @@ g.aurora_bold=true
 opt.rtp:append('~/.fzf')  -- Active fzf
 opt.shortmess:append('c') -- Don't pass messages to |ins-completion-menu|.
 
+opt.termguicolors         =true
 opt.cmdheight             = 2       -- Give more space for displaying messages.
 opt.encoding              = 'utf-8' -- unicode characters in the file autoload/float.vim
 opt.hidden                = true    -- TextEdit might fail if hidden is not set.
@@ -281,4 +282,11 @@ end)
 vimp.nnoremap('<leader>sh', function() -- Montre les premieres lignes du fichier dans un split
 cmd[[5split +1]]
 end)
+
+vimp.nnoremap('<A-t>', function() -- Ouvre Tagbar
+       cmd [[Tagbar]]
+end)
+
+
+
 

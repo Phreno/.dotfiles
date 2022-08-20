@@ -10,6 +10,7 @@
     ~/.vim_runtime/my_configs.vim: conf/vim
     ~/.config/nvim/coc-settings.json: conf/coc
     ~/.config/nvim/init.lua: conf/nvim.lua
+    ~/.local/share/fonts: fonts
 
 - shell:
   - vim-awesome clear # Supprime le cache non utilisé vim-awesome

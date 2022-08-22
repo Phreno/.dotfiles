@@ -7,15 +7,17 @@
 
 - create:
   - ~/.config/nvim/lua
+  - ~/.config/nvim/autoload
 
 - link:
-    ~/.tmux.conf: conf/tmux
-    ~/.oh-my-zsh/custom/my_configs.zsh: conf/zsh
-    ~/.vim_runtime/my_configs.vim: conf/vim
-    ~/.config/nvim/coc-settings.json: conf/coc
-    ~/.config/nvim/init.lua: conf/nvim.lua
-    ~/.config/nvim/lua/coc-settings.lua: conf/coc-config.lua
-    ~/.local/share/fonts: fonts
+    ~/.tmux.conf                         : conf/tmux
+    ~/.oh-my-zsh/custom/my_configs.zsh   : conf/zsh
+    ~/.vim_runtime/my_configs.vim        : conf/vim
+    ~/.config/nvim/coc-settings.json     : conf/coc
+    ~/.config/nvim/init.lua              : conf/nvim.lua
+    ~/.config/nvim/lua/coc-settings.lua  : conf/coc-config.lua
+    ~/.config/nvim/autoload/plug.vim : conf/plug.vim
+    ~/.local/share/fonts                 : fonts
 
 - shell:
   - vim-awesome clear # Supprime le cache non utilisé vim-awesome

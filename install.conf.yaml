@@ -5,11 +5,16 @@
   '~/.config/nvim/coc-settings.json'
 ]
 
+- create:
+  - ~/.config/nvim/lua
+
 - link:
+    ~/.tmux.conf: conf/tmux
     ~/.oh-my-zsh/custom/my_configs.zsh: conf/zsh
     ~/.vim_runtime/my_configs.vim: conf/vim
     ~/.config/nvim/coc-settings.json: conf/coc
     ~/.config/nvim/init.lua: conf/nvim.lua
+    ~/.config/nvim/lua/coc-settings.lua: conf/coc-config.lua
     ~/.local/share/fonts: fonts
 
 - shell:

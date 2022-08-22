@@ -1,4 +1,5 @@
 **/*log
+**/.uuid
 Session.vim
 .undodir
-**/.uuid
+

@@ -150,7 +150,7 @@ vimp.nnoremap('<leader>tb', function() -- Ouvre Tagbar
 vimp.nnoremap('<leader>gb', function() -- Git blame
        cmd [[Git blame]]
 end)
- 
+
 vimp.nnoremap('<leader>fe', function() -- Recharge le buffer courant
        cmd [[edit!]]
 end)

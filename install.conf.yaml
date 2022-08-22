@@ -29,6 +29,7 @@
   - vim-awesome install plenary-vim
   - vim-awesome install sideways-vim
   - vim-awesome install tabular
+  - vim-awesome install tagbar
   - vim-awesome install telescope-nvim
   - vim-awesome install vim-airline
   - vim-awesome install vim-argwrap

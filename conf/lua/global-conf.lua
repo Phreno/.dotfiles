@@ -31,12 +31,9 @@ cmd [[
 	endtry
 ]]
 
-
-
 vimp.nnoremap('<space>r', function() -- Active / Desactive les nombres relatifs
   vim.wo.relativenumber = not vim.wo.relativenumber
 end)
-
 
 vimp.nnoremap('<leader>vn', function() -- Édite le fichier de configuration
   cmd[[vsplit ~/.dotfiles/conf/nvim.lua]]
@@ -46,21 +43,14 @@ vimp.nnoremap('<leader>vc', function() -- Édite la configuration de dotfiles
   cmd[[vsplit ~/.dotfiles/install.conf.yaml]]
 end)
 
-
 vimp.nnoremap('<leader>vz', function()-- Édite le fichier de configuration
   cmd[[vsplit ~/.dotfiles/conf/zsh]]
 end)
 
-
-
-vimp.nnoremap('<C-s>s', function() -- Source le fichier vim courant
+vimp.nnoremap('<leader>sf', function() -- Source le fichier vim courant
   cmd[[source %]]
 end)
 
-
-
-vimp.nnoremap('<leader>fe', function() -- Recharge le buffer courant
+vimp.nnoremap('<leader>rf', function() -- Recharge le buffer courant
        cmd [[edit!]]
 end)
-
-

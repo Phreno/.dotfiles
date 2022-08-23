@@ -16,7 +16,6 @@
     ~/.config/nvim/coc-settings.json   : conf/coc
     ~/.config/nvim/init.lua            : conf/nvim.lua
     ~/.config/nvim/lua                 : conf/lua
-    ~/.config/nvim/autoload/plug.vim   : conf/plug.vim
     ~/.local/share/fonts               : fonts
 
 - shell:

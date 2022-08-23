@@ -78,7 +78,7 @@ installe_chrysalis(){
 }
 # sdkman
 [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
-
+ZSH_THEME="powerlevel10k/powerlevel10k"
 PATH="$HOME/bin:$PATH"
 
 

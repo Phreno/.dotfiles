@@ -22,3 +22,45 @@ opt.number                = true    -- Display line numbers
 opt.shiftwidth            = 2
 opt.softtabstop           = 2
 opt.tabstop               = 2       -- Set the behavior of tab
+
+-- Source un vimrc s'il existe
+cmd [[
+	try
+	source .vimrc
+	catch
+	endtry
+]]
+
+
+
+vimp.nnoremap('<space>r', function() -- Active / Desactive les nombres relatifs
+  vim.wo.relativenumber = not vim.wo.relativenumber
+end)
+
+
+vimp.nnoremap('<leader>vn', function() -- Édite le fichier de configuration
+  cmd[[vsplit ~/.dotfiles/conf/nvim.lua]]
+end)
+
+vimp.nnoremap('<leader>vc', function() -- Édite la configuration de dotfiles
+  cmd[[vsplit ~/.dotfiles/install.conf.yaml]]
+end)
+
+
+vimp.nnoremap('<leader>vz', function()-- Édite le fichier de configuration
+  cmd[[vsplit ~/.dotfiles/conf/zsh]]
+end)
+
+
+
+vimp.nnoremap('<C-s>s', function() -- Source le fichier vim courant
+  cmd[[source %]]
+end)
+
+
+
+vimp.nnoremap('<leader>fe', function() -- Recharge le buffer courant
+       cmd [[edit!]]
+end)
+
+

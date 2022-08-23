@@ -3,19 +3,6 @@ local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local g = vim.g      -- a table to access global variables
 local opt = vim.opt  -- to set options
 local vimp = require('vimp')
-
-
-require('coc-conf')
-require('aurora-conf')
-require('tree-sitter-conf')
-require('vimspector-conf')
-require('workspace-conf')
-require('fzf-conf')
-require('git-conf')
-require('tagbar-conf')
-
-
-
-
-
-
+vimp.nnoremap('<leader>tb', function() -- Ouvre Tagbar
+        cmd [[Tagbar]]
+ end)

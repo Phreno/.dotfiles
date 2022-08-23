@@ -4,6 +4,8 @@ local g = vim.g      -- a table to access global variables
 local opt = vim.opt  -- to set options
 local vimp = require('vimp')
 
+g.coc_disable_transparent_cursor = 1
+
 -- " Some servers have issues with backup files, see #649.
 cmd [[
   set nobackup

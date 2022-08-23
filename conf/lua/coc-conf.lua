@@ -5,13 +5,6 @@ local opt = vim.opt  -- to set options
 local vimp = require('vimp')
 
 g.coc_disable_transparent_cursor = 1
-
--- " Some servers have issues with backup files, see #649.
-cmd [[
-  set nobackup
-  set nowritebackup
-]]
-
 -- " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- " delays and poor user experience.
 -- set updatetime=300
@@ -22,6 +15,24 @@ opt.updatetime = 300
 -- set signcolumn=yes
 opt.signcolumn = 'yes'
 
+-- " Some servers have issues with backup files, see #649.
+cmd [[
+  set nobackup
+  set nowritebackup
+]]
+
+-- " Symbol renaming.
+-- nmap <leader>rn <Plug>(coc-rename)
+vimp.nnoremap('<leader>rn', function() -- Symbol renaming
+ cmd [[<Plug>(coc-rename)]]
+end)
+
+-- nmap <leader>ac
+vimp.nnoremap('<space>ca', function() -- Remap keys for applying codeAction to the current buffer.
+	cmd [[<Plug>(coc-codeaction)]]
+end)
+
+-- REPRIS DEPUIS LE REPO GIT DE COC
 cmd[[
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -157,14 +168,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ]]
 
 
--- " Symbol renaming.
--- nmap <leader>rn <Plug>(coc-rename)
-vimp.nnoremap('<leader>rn', function() -- Symbol renaming
- cmd [[<Plug>(coc-rename)]]
-end)
-
--- nmap <leader>ac
-vimp.nnoremap('<space>ca', function() -- Remap keys for applying codeAction to the current buffer.
-	cmd [[<Plug>(coc-codeaction)]]
-end)
 -----------------------------------------------------------

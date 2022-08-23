@@ -4,38 +4,24 @@ local g = vim.g      -- a table to access global variables
 local opt = vim.opt  -- to set options
 local vimp = require('vimp')
 
-g.coc_disable_transparent_cursor = 1
--- " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- " delays and poor user experience.
--- set updatetime=300
-opt.updatetime = 300
 
--- " Always show the signcolumn, otherwise it would shift the text each time
--- " diagnostics appear/become resolved.
--- set signcolumn=yes
-opt.signcolumn = 'yes'
+cmd([[
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
 
--- " Some servers have issues with backup files, see #649.
-cmd [[
-  set nobackup
-  set nowritebackup
-]]
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
 
--- " Symbol renaming.
--- nmap <leader>rn <Plug>(coc-rename)
-vimp.nnoremap('<leader>rn', function() -- Symbol renaming
- cmd [[<Plug>(coc-rename)]]
-end)
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
 
--- nmap <leader>ac
-vimp.nnoremap('<space>ca', function() -- Remap keys for applying codeAction to the current buffer.
-	cmd [[<Plug>(coc-codeaction)]]
-end)
-
--- REPRIS DEPUIS LE REPO GIT DE COC
-cmd[[
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file.
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1):
@@ -47,6 +33,7 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -84,6 +71,8 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
@@ -102,6 +91,8 @@ augroup end
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
@@ -165,7 +156,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-]]
-
-
------------------------------------------------------------
+]])

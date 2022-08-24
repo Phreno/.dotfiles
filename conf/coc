@@ -1,8 +1,0 @@
-{
-    "eslint.autoFixOnSave": true,
-    "diagnostic:displayByAle": true,
-    "java.import.maven.enabled": true,
-    "java.maven.downloadSources": true,
-    "java.maven.updateSnapshots": true,
-    "java.format.settings.url": "/home/eau6000/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
-}

@@ -1,9 +1,6 @@
 - clean: [
   '~/.oh-my-zsh/custom/my_configs.zsh',
-  '~/.vim_runtime/my_configs.vim',
-  '~/.config/nvim/init.lua',
-  '~/.config/nvim/lua',
-  '~/.config/nvim/coc-settings.json'
+  '~/.config/nvim'
 ]
 
 - create:
@@ -12,34 +9,9 @@
 - link:
     ~/.tmux.conf                       : conf/tmux
     ~/.oh-my-zsh/custom/my_configs.zsh : conf/zsh
-    ~/.vim_runtime/my_configs.vim      : conf/vim
-    ~/.config/nvim/coc-settings.json   : conf/coc
-    ~/.config/nvim/init.lua            : conf/nvim.lua
-    ~/.config/nvim/lua                 : conf/lua
     ~/.local/share/fonts               : fonts
-
-- shell:
-  - vim-awesome clear # Supprime le cache non utilisé vim-awesome
-  - vim-awesome install aurora
-  - vim-awesome install coc-nvim
-  - vim-awesome install vim-devicons
-  - vim-awesome install fugitive-vim
-  - vim-awesome install fzf
-  - vim-awesome install goyo-vim
-  - vim-awesome install nvim-treesitter
-  - vim-awesome install nvim-treesitter-refactor
-  - vim-awesome install plenary-nvim
-  - vim-awesome install sideways-vim
-  - vim-awesome install surround-vim
-  - vim-awesome install tabular
-  - vim-awesome install tagbar
-  - vim-awesome install telescope-nvim
-  - vim-awesome install vim-airline
-  - vim-awesome install vim-argwrap
-  - vim-awesome install vim-workspace
-  - vim-awesome install vimgym
-  - vim-awesome install vimpeccable
-  - vim-awesome install vimspector
-  - vim-awesome install vimwiki
-
+    ~/.config/nvim                     :
+      force: true
+      path: vendor/AstroNvim
+    ~/.config/nvim/lua/user : conf/nvim
 

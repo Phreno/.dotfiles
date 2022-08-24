@@ -31,19 +31,52 @@ cmd [[
 	endtry
 ]]
 
+-- Gestion des TABs
+
+vimp.nnoremap('<leader>tk', function() -- Ferme la tab courante
+	cmd[[tabclose]]
+end)
+
+vimp.nnoremap('<leader>tn', function() -- Ouvre une nouvelle tab
+	cmd[[tabnew]]
+end)
+
+vimp.nnoremap('<leader>tc', function() -- Saute à la tab precedente
+	cmd[[tabprevious]]
+end)
+
+vimp.nnoremap('<leader>tr', function() -- Saute à la tab suivante
+	cmd[[tabnext]]
+end)
+
+vimp.nnoremap('<leader>ta', function() -- Affiche toutes les tab
+	cmd[[tabs]]
+end)
+
+-- Miscs
 vimp.nnoremap('<space>r', function() -- Active / Desactive les nombres relatifs
   vim.wo.relativenumber = not vim.wo.relativenumber
 end)
 
-vimp.nnoremap('<leader>vn', function() -- Édite le fichier de configuration
+-- Gestion des fichiers de configuration
+
+vimp.nnoremap('<leader>vn', function() -- Édite le fichier de chargement de la conf
   cmd[[vsplit ~/.dotfiles/conf/nvim.lua]]
 end)
 
-vimp.nnoremap('<leader>vc', function() -- Édite la configuration de dotfiles
+vimp.nnoremap('<leader>vg', function() -- Édite le fichier de configuration global
+	cmd[[vsplit ~/.dotfiles/conf/lua/global-conf.lua]]
+end)
+
+vimp.nnoremap('<leader>vcc', function() -- Édite le fichier de configuration de coc
+	cmd[[vsplit ~/.dotfiles/conf/lua/coc-conf.lua]]
+end)
+
+vimp.nnoremap('<leader>vic', function() -- Édite la configuration de dotfiles
   cmd[[vsplit ~/.dotfiles/install.conf.yaml]]
 end)
 
-vimp.nnoremap('<leader>vz', function()-- Édite le fichier de configuration
+vimp.nnoremap('<leader>vz', function()-- Édite le fichier de configuration de zsh
   cmd[[vsplit ~/.dotfiles/conf/zsh]]
 end)
 

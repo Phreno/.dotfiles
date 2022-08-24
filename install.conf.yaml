@@ -22,6 +22,7 @@
   - vim-awesome clear # Supprime le cache non utilisé vim-awesome
   - vim-awesome install aurora
   - vim-awesome install coc-nvim
+  - vim-awesome install vim-devicons
   - vim-awesome install fugitive-vim
   - vim-awesome install fzf
   - vim-awesome install goyo-vim
@@ -29,6 +30,7 @@
   - vim-awesome install nvim-treesitter-refactor
   - vim-awesome install plenary-nvim
   - vim-awesome install sideways-vim
+  - vim-awesome install surround-vim
   - vim-awesome install tabular
   - vim-awesome install tagbar
   - vim-awesome install telescope-nvim

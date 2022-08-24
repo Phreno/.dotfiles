@@ -5,7 +5,6 @@ local opt = vim.opt  -- to set options
 local vinp = require('vimp')
 
 require('aurora-conf')      -- Gestion du thème et des couleurs
-require('coc-conf')         -- Gestion de l'éditeur de code
 require('fzf-conf')         -- Gestion de la recherche par fzf
 require('git-conf')         -- Gestion du git
 require('global-conf')      -- Gestion des fonctions ne nécessitant pas de plugin
@@ -14,3 +13,4 @@ require('telescope-conf')   -- Gestion de la recherche par telescope
 require('tree-sitter-conf') -- Gestion de la coloration syntaxique
 require('vimspector-conf')  -- Gestion du debug
 require('workspace-conf')   -- Gestion des espaces de travail
+require('coc-conf')         -- Gestion de l'éditeur de code

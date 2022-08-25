@@ -182,6 +182,7 @@ local config = {
 				"vsplit ~/.dotfiles/conf/zsh<cr>",
 				desc = "Édite le script de configuration de zsh",
 			},
+
 			-- quick save
 			-- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 		},
@@ -203,9 +204,6 @@ local config = {
 			-- VimSpector
 			{
 				"puremourning/vimspector",
-				config = function()
-					require("vimspector-conf")
-				end,
 			},
 			{ "vimwiki/vimwiki" },
 			{ "godlygeek/tabular" },
@@ -213,9 +211,6 @@ local config = {
 			{ "junegunn/goyo.vim" },
 			{
 				"thaerkh/vim-workspace",
-				config = function()
-					require("workspace-conf")
-				end,
 			},
 			-- {
 			--   "ray-x/lsp_signature.nvim",
@@ -343,5 +338,13 @@ local config = {
 		-- }
 	end,
 }
-
+for _, source in ipairs({
+	"user.plugins.workspace",
+	"user.plugins.vimspector",
+}) do
+	local status_ok, fault = pcall(require, source)
+	if not status_ok then
+		vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault)
+	end
+end
 return config

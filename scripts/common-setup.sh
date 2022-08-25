@@ -145,8 +145,13 @@ installe_tspreed(){
 }
 
 installe_fzf(){
-    wget -q https://script.install.devinsideyou.com/fzf
-    chmod +x fzf && ./fzf
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	chmod +x ~/.fzf/install
+  ~/.fzf/install
+}
+installe_jdtls(){
+	git submodule add https://github.com/eclipse/eclipse.jdt.ls.git ~/.dotfiles/vendor/eclipse.jdt.ls
+	
 }
 
 main(){
@@ -157,15 +162,15 @@ main(){
     installe_node
     installe_standard
 
-    installe_vimrc
-    installe_vim_awesome
+    #installe_vimrc
+    #installe_vim_awesome
     installe_copilot
-    installe_coc
+    #installe_coc
 
     installe_ohmyzsh
-    installe_sdkman
+    #installe_sdkman
 
-    installe_fzf
+    #installe_fzf
 }
 
 main

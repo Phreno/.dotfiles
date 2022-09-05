@@ -1,26 +1,25 @@
 - defaults:
-  link:
-    force: true
-    create: true
-  create:
-    mode: 700
-  clean:
-    force: true
-    recursive: true
+    link:
+        force: true
+        create: true
+    create:
+        mode: 700
+    clean:
+        force: true
+        recursive: true
 
 - clean:
-  - ~/
-  - ~/.config
+    - ~/
+    - ~/.config
 
 - create:
-  - ~/git
-  - ~/workspace
-  - ~/bin
+    - ~/git
+    - ~/workspace
+    - ~/bin
 
 - link:
-  ~/.tmux.conf: conf/tmux
-  ~/.oh-my-zsh/custom/my_configs.zsh: conf/zsh
-  ~/.local/share/fonts: fonts
-  ~/.config/lazycli/config.yaml: conf/lazycli.yaml
-  ~/.config/lvim/config.lua: conf/lunarvim.lua
-  
+    ~/.tmux.conf: conf/tmux
+    ~/.oh-my-zsh/custom/my_configs.zsh: conf/zsh
+    ~/.local/share/fonts: fonts
+    ~/.config/lazycli/config.yaml: conf/lazycli.yaml
+    ~/.config/lvim/config.lua: conf/lunarvim.lua

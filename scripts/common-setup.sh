@@ -81,12 +81,6 @@ cartouche(){
     echo "-------------------------------------------------"
 }
 
-installe_vim_awesome(){
-    cd "${SCRIPT_DIR}/../vendor/vim-awesome-cli"
-    make install
-    cd -
-
-}
 
 installe_node(){
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -97,10 +91,6 @@ installe_node(){
     nvm use node
 }
 
-installe_vimrc(){
-    git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-    sh ${HOME}/.vim_runtime/install_awesome_vimrc.sh
-}
 
 installe_ohmyzsh(){
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -119,19 +109,6 @@ cree_repertoire_de_travail(){
     ensureDir ${HOME}/workspace
 }
 
-installe_coc(){
-    cd "${HOME}/.local/share/nvim/site/pack/vim-awesome/start/coc-nvim"
-    npx yarn install
-    cd -
-}
-
-installe_copilot(){
-    git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
-}
-
-installe_sdkman(){
-    curl -s "https://get.sdkman.io" | bash
-}
 
 installe_standard(){
     npm install -g standard
@@ -144,14 +121,8 @@ installe_tspreed(){
     cd -
 }
 
-installe_fzf(){
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	chmod +x ~/.fzf/install
-  ~/.fzf/install
-}
-installe_jdtls(){
-	git submodule add https://github.com/eclipse/eclipse.jdt.ls.git ~/.dotfiles/vendor/eclipse.jdt.ls
-	
+installe_lunar_vim(){
+  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 }
 
 main(){
@@ -161,16 +132,12 @@ main(){
     cree_bin_perso
     installe_node
     installe_standard
-
-    #installe_vimrc
-    #installe_vim_awesome
     installe_copilot
-    #installe_coc
-
     installe_ohmyzsh
-    #installe_sdkman
-
-    #installe_fzf
+    installe_sdkman
+    installe_fzf
+    installe_lunar_vim
+    installe_tspreed
 }
 
 main

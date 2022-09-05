@@ -56,24 +56,30 @@ main(){
     cartouche
     # add-apt-repository ppa: deadsnakes / ppa
     pacman -S --noconfirm \
-        cmake          \
-        coreutils      \
-        curl           \
-        docker         \
-        git            \
-        gzip           \
-        jq             \
-        lazygit\
-        make           \
-        neovim         \
-        pandoc         \
-        python\
-        tmux           \
-        xclip          \
-        xdg-utils      \
-        zsh            \
-    ${SCRIPT_DIR}/../scripts/common-setup.sh
-    ${SCRIPT_DIR}/../install
+        cmake     \
+        coreutils \
+        curl      \
+        docker    \
+        git       \
+        gzip      \
+        jq        \
+        lazygit   \
+        make      \
+        neovim    \
+        pandoc    \
+        python    \
+        thefuck   \
+        tmux      \
+        xclip     \
+        xdg-utils \
+        yay       \
+        zsh
+
+    yay -S lazydocker
+
+
+    ${SCRIPT_DIR}/../../scripts/common-setup.sh
+    ${SCRIPT_DIR}/../../install
 }
 
 main

@@ -71,6 +71,10 @@ install_lazy_git(){
 	sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 }
 
+install_lazy_docker(){
+  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+}
+
 main(){
     cartouche
     apt-get -y install \
@@ -82,6 +86,7 @@ main(){
         git       \
         gzip      \
         htop      \
+        thefuck   \
         jq        \
         ncdu      \
         neovim    \
@@ -98,8 +103,8 @@ main(){
 
     make_damn_dirty_snake_visible
     install_lazy_git
-    ${SCRIPT_DIR}/../scripts/common-setup.sh
-    ${SCRIPT_DIR}/../install
+    ${SCRIPT_DIR}/../../scripts/common-setup.sh
+    ${SCRIPT_DIR}/../../install
 }
 
 main

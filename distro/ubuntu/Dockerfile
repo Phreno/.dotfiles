@@ -8,6 +8,9 @@ RUN git clone https://github.com/Phreno/.dotfiles.git /root/.dotfiles
 
 WORKDIR /root/.dotfiles/ubuntu
 RUN chown -R root:root ./
+RUN pwd
+RUN ls -la
 RUN chmod +x ./setup.sh
+
 RUN ./setup.sh
 WORKDIR /root

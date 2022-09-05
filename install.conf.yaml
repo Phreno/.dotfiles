@@ -1,8 +1,4 @@
-- clean: [
-  ~/.oh-my-zsh/custom/my_configs.zsh,
-  ~/.config/nvim,
-  ~/.config/lazycli/config.yaml,
-]
+- clean: [~/.oh-my-zsh/custom/my_configs.zsh,~/.config/nvim,~/.config/lazycli/config.yaml,~/.config/lvim/config.lua,]
 
 - create:
   - ~/.config/nvim/autoload
@@ -12,6 +8,7 @@
     ~/.oh-my-zsh/custom/my_configs.zsh : conf/zsh
     ~/.local/share/fonts               : fonts
     ~/.config/lazycli/config.yaml      : conf/lazycli.yaml
+    ~/.config/lvim/config.lua          : conf/lunarvim.lua
     ~/.config/nvim                     :
       force: true
       path: vendor/AstroNvim

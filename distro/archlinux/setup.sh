@@ -57,20 +57,21 @@ main(){
     # add-apt-repository ppa: deadsnakes / ppa
     pacman -S --noconfirm \
         cmake          \
-        make           \
-        tmux           \
-        neovim         \
-        xclip          \
-        docker         \
-        zsh            \
-        curl           \
-        git            \
-        pandoc         \
-        gzip           \
         coreutils      \
+        curl           \
+        docker         \
+        git            \
+        gzip           \
         jq             \
+        lazygit\
+        make           \
+        neovim         \
+        pandoc         \
+        python\
+        tmux           \
+        xclip          \
         xdg-utils      \
-        python
+        zsh            \
     ${SCRIPT_DIR}/../scripts/common-setup.sh
     ${SCRIPT_DIR}/../install
 }

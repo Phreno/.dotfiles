@@ -82,11 +82,6 @@ installe_sdkman(){
     curl -s "https://get.sdkman.io" | bash
 }
 
-installe_neovim(){
-     wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz -O ~/bin/nvim
-     chmod u+x ~/bin/nvim
-}
-
 installe_lunar_vim(){
   bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 }
@@ -96,7 +91,6 @@ termine_installation(){
   installe_chrysalis
   installe_fzf
   installe_sdkman
-  installe_neovim
   installe_lunar_vim
 }
 

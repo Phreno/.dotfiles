@@ -75,6 +75,11 @@ install_lazy_docker(){
   curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 }
 
+install_neovim(){
+  wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb -O /tmp/nvim.deb
+  apt-get install /tmp/nvim.deb
+}
+
 main(){
     cartouche
     apt-get -y install \

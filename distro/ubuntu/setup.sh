@@ -89,7 +89,6 @@ main(){
         thefuck   \
         jq        \
         ncdu      \
-        neovim    \
         pandoc    \
         python3.9 \
         ripgrep   \

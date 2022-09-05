@@ -8,3 +8,6 @@
 [submodule "vendor/tspreed"]
 	path = vendor/tspreed
 	url = https://github.com/n-ivkovic/tspreed
+[submodule "vendor/AstroNvim"]
+	path = vendor/AstroNvim
+	url = https://github.com/AstroNvim/AstroNvim

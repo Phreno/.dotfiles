@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Développeur ....: K3rn€l_P4n1K
-# Nom ............: ubuntu-setup
-# Description ....: Configure un nouveau poste ubuntu pour le dev
+# Nom ............: archlinux-setup
+# Description ....: Configure un nouveau poste archlinux pour le dev
 # Version ........: 1.0
 # Date ...........: Fri Jul 29 21:21:30 CEST 2022
 # Dépendances ....: git curl dotbot
@@ -44,14 +44,6 @@ SCRIPT_NAME="$( basename ${0} )"
 # Dossier du script
 SCRIPT_DIR="$( dirname ${0} )"
 
-ensureDir(){
-    file="${1}"
-    if [ ! -d "${file}" ]; then
-        echo "${file} n'existe pas, création du dossier manquant"
-        mkdir "${file}"
-    fi
-}
-
 # -----------
 # TRAITEMENTS
 # -----------
@@ -60,34 +52,34 @@ cartouche(){
     echo "-------------------------------------------------"
 }
 
-make_damn_dirty_snake_visible(){
-    ensureDir "${HOME}/bin"
-    ln -s /usr/bin/python3.9 ${HOME}/bin/python
-}
-
 main(){
     cartouche
-    apt-get -y install \
-        cmake          \
-        yarn           \
-        tmux           \
-        apt-utils      \
-        neovim         \
-        xclip          \
-        docker         \
-        zsh            \
-        curl           \
-        git            \
-        pandoc         \
-        gzip           \
-        coreutils      \
-        jq             \
-        xdg-utils      \
-        python3.9
+    # add-apt-repository ppa: deadsnakes / ppa
+    pacman -S --noconfirm \
+        cmake     \
+        coreutils \
+        curl      \
+        docker    \
+        git       \
+        gzip      \
+        jq        \
+        lazygit   \
+        make      \
+        neovim    \
+        pandoc    \
+        python    \
+        thefuck   \
+        tmux      \
+        xclip     \
+        xdg-utils \
+        yay       \
+        zsh
 
-    make_damn_dirty_snake_visible
-    ${SCRIPT_DIR}/../scripts/common-setup.sh
-    ${SCRIPT_DIR}/../install
+    yay -S lazydocker
+
+
+    ${SCRIPT_DIR}/../../scripts/common-setup.sh
+    ${SCRIPT_DIR}/../../install
 }
 
 main

@@ -6,28 +6,31 @@
 # Version ........: 1.0
 # Date ...........: Fri Jul 29 21:31:48 CEST 2022
 # Dépendances ....: zsh
-alias vim='nvim'
-alias v='nvim'
+#
+alias vim='lvim'
+alias v='lvim'
 alias v.v='v .vimrc'
 
 # edition des dotfiles
 alias rc='~/.dotfiles/install'
 alias sz='source ~/.zshrc'
 
-alias l.va='lynx http://github.com/amix/vimrc -dump'
 alias vv='v ~/.dotfiles/conf/vim'
 alias vvrc='cd ~/.vim_runtime/vimrcs; v; cd -'
 alias cvrc='cd ~/.vim_runtime/vimrcs'
 alias cn='cd ~/.config/nvim'
-alias vn='v ~/.dotfiles/conf/nvim.lua'
+alias vn='v ~/.dotfiles/conf/lunarvim.lua'
 alias vz='v ~/.dotfiles/conf/zsh; sz'
 alias vc='v ~/.dotfiles/install.conf.yaml'
+alias v.lc='v ~/.dotfiles/conf/lazycli.yaml'
 alias c.='cd ~/.dotfiles'
 alias v.='c.; v; cd -'
-alias c.va='cat ~/.dotfiles/install.conf.yaml | egrep "vim-awesome.*install" | sed "s/^\s*-\s\(\S\+\|-\)\s\S\+//" | tr -d " " | egrep -v "^$"'
+
 alias al='cat ~/.dotfiles/conf/zsh | grep alias | column -t -s = | sort'
+
 alias mcp='mvn clean package | fzf -m --tac'
 alias mcpd='mvn clean package -Dmaven.surefire.debug | fzf -m --tac'
+
 alias t.d='tmux resize-pane -D 10'
 alias t.u='tmux resize-pane -U 10'
 alias t.r='tmux resize-pane -R 10'
@@ -37,14 +40,16 @@ alias t.U='tmux resize-pane -U 50'
 alias t.R='tmux resize-pane -R 50'
 alias t.L='tmux resize-pane -L 50'
 
-function c.va.td(){
-    installed=`mktemp`
-    wanted=`mktemp`
-    vim-awesome search -i | sort | uniq > ${installed}
-    c.va | sort | uniq > ${wanted}
-    comm -3 ${installed} ${wanted}
-}
-alias c.va.DEL='c.va.td | xargs -n1 vim-awesome uninstall'
+alias lzn='lazynpm'
+alias lzg='lazygit'
+alias lzc='lazycli'
+alias lzd='lazydocker'
+
+# Perment l'edition de commande dans un éditeur
+export EDITOR=lvim
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
 
 # configuration du clavier
 alias k='chrysalis'
@@ -54,35 +59,54 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# docker
-alias docker.arrete_tous_les_containers='docker container stop $(docker container ls -aq)'
-alias docker.supprime_tous_les_containers='docker container rm $(docker container ls -q)'
-alias docker.supprime_toutes_les_images='docker image rm $(docker image ls -q)'
-
-alias docker.NETTOIE_TOUT='docker.arrete_tous_les_containers; docker.supprime_tous_les_containers; docker.supprime_toutes_les_images'
-
 # atuin
 installe_atuin(){
     # do not run this as root, root will be asked for if required
     bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
     echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
 }
-docker.status(){ # TODO: faire un script avec bash simple curses 
-    echo
-    echo "volumes"
-    docker volume ls
-    echo
-    echo "images"
-    docker image ls
-    echo
-    echo "containers"
-    docker container ls
-}
+
 # chrysalis
 installe_chrysalis(){
     wget  https://github.com/keyboardio/Chrysalis/releases/download/v0.11.0/Chrysalis-0.11.0.AppImage -O ~/bin/chrysalis
     chmod +x ~/bin/chrysalis
 }
+
+installe_fzf(){
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	chmod +x ~/.fzf/install
+  ~/.fzf/install
+}
+
+installe_sdkman(){
+    curl -s "https://get.sdkman.io" | bash
+}
+
+termine_installation(){
+  installe_atuin
+  installe_chrysalis
+  installe_fzf
+  installe_sdkman
+}
+
+fuck () {
+    TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+    export TF_SHELL=zsh;
+    export TF_ALIAS=fuck;
+    TF_SHELL_ALIASES=$(alias);
+    export TF_SHELL_ALIASES;
+    TF_HISTORY="$(fc -ln -10)";
+    export TF_HISTORY;
+    export PYTHONIOENCODING=utf-8;
+    TF_CMD=$(
+        thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+    ) && eval $TF_CMD;
+    unset TF_HISTORY;
+    export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+    test -n "$TF_CMD" && print -s $TF_CMD
+}
+        
+
 # sdkman
 [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 ZSH_THEME="powerlevel10k/powerlevel10k"

@@ -115,7 +115,6 @@ installe_standard(){
 }
 
 installe_tspreed(){
-    git clone https://github.com/n-ivkovic/tspreed ~/.dotfiles/vendor/tspreed
     cd ~/.dotfiles.vendor.tspreed
     make install
     cd -

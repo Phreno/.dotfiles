@@ -2,12 +2,3 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "vendor/vim-awesome-cli"]
-	path = vendor/vim-awesome-cli
-	url = https://github.com/chuck-flowers/vim-awesome-cli.git
-[submodule "vendor/tspreed"]
-	path = vendor/tspreed
-	url = https://github.com/n-ivkovic/tspreed
-[submodule "vendor/AstroNvim"]
-	path = vendor/AstroNvim
-	url = https://github.com/AstroNvim/AstroNvim

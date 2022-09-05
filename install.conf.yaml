@@ -4,6 +4,14 @@
     ~/.config:
       recursive: true
 
+- create:
+  ~/git:
+    mode: 700
+  ~/workspace:
+    mode: 700
+  ~/bin:
+    mode: 700
+
 - link:
     ~/.tmux.conf:
       force: true
@@ -20,4 +28,4 @@
     ~/.config/lvim/config.lua:
       force: true
       path: conf/lunarvim.lua
-
+  

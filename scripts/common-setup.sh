@@ -91,7 +91,6 @@ installe_node(){
     nvm use node
 }
 
-
 installe_ohmyzsh(){
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
@@ -100,36 +99,18 @@ actualise_dependances(){
     git submodule update --init --recursive
 }
 
-cree_bin_perso(){
-    ensureDir ${HOME}/bin
-    PATH="${HOME}/bin:${PATH}"
-}
-
-cree_repertoire_de_travail(){
-    ensureDir ${HOME}/workspace
-}
-
-
 installe_standard(){
     npm install -g standard
 }
 
-installe_tspreed(){
-    cd ~/.dotfiles.vendor.tspreed
-    make install
-    cd -
-}
-
-
 main(){
     cartouche
     actualise_dependances
-    cree_repertoire_de_travail
-    cree_bin_perso
+    # cree_repertoire_de_travail
+    # cree_bin_perso
     installe_node
     installe_standard
     installe_ohmyzsh
-    installe_tspreed
 }
 
 main

@@ -1,6 +1,7 @@
 - clean: [
-  '~/.oh-my-zsh/custom/my_configs.zsh',
-  '~/.config/nvim'
+  ~/.oh-my-zsh/custom/my_configs.zsh,
+  ~/.config/nvim,
+  ~/.config/lazycli/config.yaml,
 ]
 
 - create:
@@ -10,6 +11,7 @@
     ~/.tmux.conf                       : conf/tmux
     ~/.oh-my-zsh/custom/my_configs.zsh : conf/zsh
     ~/.local/share/fonts               : fonts
+    ~/.config/lazycli/config.yaml      : conf/lazycli.yaml
     ~/.config/nvim                     :
       force: true
       path: vendor/AstroNvim

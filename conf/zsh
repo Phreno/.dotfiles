@@ -6,8 +6,9 @@
 # Version ........: 1.0
 # Date ...........: Fri Jul 29 21:31:48 CEST 2022
 # Dépendances ....: zsh
-alias vim='nvim'
-alias v='nvim'
+#
+alias vim='lvim'
+alias v='lvim'
 alias v.v='v .vimrc'
 
 # edition des dotfiles
@@ -22,12 +23,16 @@ alias cn='cd ~/.config/nvim'
 alias vn='v ~/.dotfiles/conf/nvim.lua'
 alias vz='v ~/.dotfiles/conf/zsh; sz'
 alias vc='v ~/.dotfiles/install.conf.yaml'
+alias v.lc='v ~/.dotfiles/conf/lazycli.yaml'
 alias c.='cd ~/.dotfiles'
 alias v.='c.; v; cd -'
 alias c.va='cat ~/.dotfiles/install.conf.yaml | egrep "vim-awesome.*install" | sed "s/^\s*-\s\(\S\+\|-\)\s\S\+//" | tr -d " " | egrep -v "^$"'
+
 alias al='cat ~/.dotfiles/conf/zsh | grep alias | column -t -s = | sort'
+
 alias mcp='mvn clean package | fzf -m --tac'
 alias mcpd='mvn clean package -Dmaven.surefire.debug | fzf -m --tac'
+
 alias t.d='tmux resize-pane -D 10'
 alias t.u='tmux resize-pane -U 10'
 alias t.r='tmux resize-pane -R 10'
@@ -36,6 +41,18 @@ alias t.D='tmux resize-pane -D 50'
 alias t.U='tmux resize-pane -U 50'
 alias t.R='tmux resize-pane -R 50'
 alias t.L='tmux resize-pane -L 50'
+
+alias ln='lazynpm'
+alias lg='lazygit'
+alias lc='lazycli'
+
+
+
+# Perment l'edition de commande dans un éditeur
+export EDITOR=lvim
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
 
 function c.va.td(){
     installed=`mktemp`

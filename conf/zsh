@@ -83,7 +83,7 @@ installe_sdkman(){
 }
 
 installe_neovim(){
-     wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz -O ~/bin/testvim
+     wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz -O ~/bin/nvim
      chmod u+x ~/bin/nvim
 }
 

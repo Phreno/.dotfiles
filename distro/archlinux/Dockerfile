@@ -7,7 +7,7 @@ RUN pacman -S git --noconfirm
 
 RUN git clone https://github.com/Phreno/.dotfiles.git /home/root/.dotfiles
 
-WORKDIR /home/root/.dotfiles/archlinux
+WORKDIR /home/root/.dotfiles/distro/archlinux
 RUN chown -R root:root ./
 RUN chmod +x setup.sh
 RUN ./setup.sh

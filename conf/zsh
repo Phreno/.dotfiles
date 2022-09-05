@@ -82,11 +82,16 @@ installe_sdkman(){
     curl -s "https://get.sdkman.io" | bash
 }
 
+installe_lunar_vim(){
+  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+}
+
 termine_installation(){
   installe_atuin
   installe_chrysalis
   installe_fzf
   installe_sdkman
+  installe_lunar_vim
 }
 
 fuck () {

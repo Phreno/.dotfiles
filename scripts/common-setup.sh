@@ -121,9 +121,6 @@ installe_tspreed(){
     cd -
 }
 
-installe_lunar_vim(){
-  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-}
 
 main(){
     cartouche
@@ -132,11 +129,7 @@ main(){
     cree_bin_perso
     installe_node
     installe_standard
-    installe_copilot
     installe_ohmyzsh
-    installe_sdkman
-    installe_fzf
-    installe_lunar_vim
     installe_tspreed
 }
 

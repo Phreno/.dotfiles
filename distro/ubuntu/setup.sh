@@ -60,11 +60,6 @@ cartouche(){
     echo "-------------------------------------------------"
 }
 
-make_damn_dirty_snake_visible(){
-    ensureDir "${HOME}/bin"
-    ln -s /usr/bin/python3.9 ${HOME}/bin/python
-}
-
 main(){
     cartouche
     apt-get -y install \
@@ -92,8 +87,6 @@ main(){
         yarn      \
         zip       \
         zsh
-    ${SCRIPT_DIR}/../../scripts/installe_dotbot.sh
-    ${SCRIPT_DIR}/../../install
 }
 
 main

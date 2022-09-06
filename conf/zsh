@@ -15,16 +15,11 @@ alias v.v='v .vimrc'
 alias rc='~/.dotfiles/install'
 alias sz='source ~/.zshrc'
 
-alias vv='v ~/.dotfiles/conf/vim'
-alias vvrc='cd ~/.vim_runtime/vimrcs; v; cd -'
-alias cvrc='cd ~/.vim_runtime/vimrcs'
-alias cn='cd ~/.config/nvim'
 alias vn='v ~/.dotfiles/conf/lunarvim.lua'
 alias vz='v ~/.dotfiles/conf/zsh; sz'
 alias vc='v ~/.dotfiles/install.conf.yaml'
 alias v.lc='v ~/.dotfiles/conf/lazycli.yaml'
 alias c.='cd ~/.dotfiles'
-alias v.='c.; v; cd -'
 
 alias al='cat ~/.dotfiles/conf/zsh | grep alias | column -t -s = | sort'
 
@@ -59,40 +54,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# atuin
-installe_atuin(){
-    # do not run this as root, root will be asked for if required
-    bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
-    echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
-}
-
-# chrysalis
-installe_chrysalis(){
-    wget  https://github.com/keyboardio/Chrysalis/releases/download/v0.11.0/Chrysalis-0.11.0.AppImage -O ~/bin/chrysalis
-    chmod +x ~/bin/chrysalis
-}
-
-installe_fzf(){
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	chmod u+x ~/.fzf/install
-  ~/.fzf/install
-}
-
-installe_sdkman(){
-    curl -s "https://get.sdkman.io" | bash
-}
-
-installe_lunar_vim(){
-  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-}
-
-termine_installation(){
-  installe_atuin
-  installe_chrysalis
-  installe_fzf
-  installe_sdkman
-  installe_lunar_vim
-}
 
 fuck () {
     TF_PYTHONIOENCODING=$PYTHONIOENCODING;

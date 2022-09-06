@@ -65,21 +65,6 @@ make_damn_dirty_snake_visible(){
     ln -s /usr/bin/python3.9 ${HOME}/bin/python
 }
 
-install_lazy_git(){
-	LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[0-35.]+')
-	curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-	sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
-}
-
-install_lazy_docker(){
-  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-}
-
-install_neovim(){
-  wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb -O /tmp/nvim.deb
-  apt-get install /tmp/nvim.deb
-}
-
 main(){
     cartouche
     apt-get -y install \
@@ -106,7 +91,6 @@ main(){
         zsh
 
     make_damn_dirty_snake_visible
-    install_lazy_git
     ${SCRIPT_DIR}/../../scripts/common-setup.sh
     ${SCRIPT_DIR}/../../install
 }

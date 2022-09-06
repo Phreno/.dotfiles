@@ -49,11 +49,6 @@ bindkey '^Xe' edit-command-line
 # configuration du clavier
 alias k='chrysalis'
 
-# node
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 fuck () {
     TF_PYTHONIOENCODING=$PYTHONIOENCODING;
@@ -72,9 +67,16 @@ fuck () {
     test -n "$TF_CMD" && print -s $TF_CMD
 }
         
+# node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # sdkman
 [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-PATH="$HOME/bin:$PATH"
+
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
 

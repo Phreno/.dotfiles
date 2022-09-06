@@ -73,6 +73,7 @@ main(){
         coreutils \
         curl      \
         docker    \
+        fuse      \
         git       \
         gzip      \
         htop      \

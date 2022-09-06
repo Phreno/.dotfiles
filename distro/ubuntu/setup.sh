@@ -77,6 +77,7 @@ main(){
         git       \
         gzip      \
         htop      \
+        lsb       \
         thefuck   \
         jq        \
         ncdu      \

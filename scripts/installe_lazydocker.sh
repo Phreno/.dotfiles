@@ -1,10 +1,12 @@
-installe_lazy_docker(){
+#!/bin/bash
+
+installe_lazydocker(){
   curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 }
 
 
 main(){
-  installe_lazy_docker
+  installe_lazydocker
 }
 
 

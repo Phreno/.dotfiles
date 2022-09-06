@@ -6,11 +6,13 @@
         mode: 700
     clean:
         force: true
-        recursive: true
 
 - clean:
-    - ~/
-    - ~/.config
+    - ~/.tmux.conf
+    - ~/.oh-my-zsh/custom/my_configs.zsh
+    - ~/.local/share/fonts
+    - ~/.config/lazycli/config.yaml
+    - ~/.config/lvim/config.lua
 
 - create:
     - ~/git

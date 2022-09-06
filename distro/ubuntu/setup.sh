@@ -92,9 +92,7 @@ main(){
         yarn      \
         zip       \
         zsh
-
-    make_damn_dirty_snake_visible
-    ${SCRIPT_DIR}/../../scripts/common-setup.sh
+    ${SCRIPT_DIR}/../../scripts/installe_dotbot.sh
     ${SCRIPT_DIR}/../../install
 }
 

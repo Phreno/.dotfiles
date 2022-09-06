@@ -88,6 +88,7 @@ main(){
         xclip     \
         xdg-utils \
         yarn      \
+        zip       \
         zsh
 
     make_damn_dirty_snake_visible

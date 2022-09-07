@@ -8,7 +8,8 @@ RUN apt-get install zsh -y
 # Création de l'utilisateur de dev
 RUN useradd -ms /bin/zsh dev
 
-RUN git clone https://github.com/Phreno/.dotfiles.git /home/dev/.dotfiles
+#RUN git clone https://github.com/Phreno/.dotfiles.git /home/dev/.dotfiles
+ADD ~/.dotfiles /home/dev
 
 WORKDIR /home/dev/.dotfiles/distro/ubuntu
 RUN chmod +x ./setup.sh

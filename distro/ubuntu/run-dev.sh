@@ -51,7 +51,7 @@ SCRIPT_DIR="$( dirname ${0} )"
 USAGE="USAGE: ${SCRIPT_NAME} [argOptionnel]"
 
 # Si pas de deuxième argument, on fixe une valeur par default
-nomImage=${1:-"ubuntu-dev-vim"}
+nomImage=${1:-"ubuntu-dev"}
 
 
 # -----------

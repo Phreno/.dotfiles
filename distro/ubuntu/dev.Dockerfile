@@ -1,10 +1,6 @@
 FROM ubuntu-base
 
 # Installing minimum deps
-RUN apt-get -qq update
-RUN apt-get install git -y
-RUN apt-get install zsh -y
-
 RUN useradd -ms /bin/zsh dev
 RUN adduser dev sudo
 USER dev
@@ -14,9 +10,6 @@ RUN git clone https://github.com/Phreno/.dotfiles.git /home/dev/.dotfiles
 
 WORKDIR /home/dev/.dotfiles
 RUN ./install
-
-USER root
-RUN chown -R dev:dev /home/dev/
 
 USER dev
 WORKDIR /home/dev/.dotfiles/scripts

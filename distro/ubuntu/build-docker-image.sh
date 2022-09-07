@@ -43,7 +43,7 @@ SCRIPT_NAME="$( basename ${0} )"
 
 # Dossier du script
 SCRIPT_DIR="$( dirname ${0} )"
-
+WORK_DIR="$( pwd )"
 # --------------
 # INITIALISATION
 # --------------
@@ -57,15 +57,14 @@ nomImage=${1:-"ubuntu-dev-vim"}
 # TRAITEMENTS
 # -----------
 cartouche(){
-    head -n 33 "${SCRIPT_DIR}/${SCRIPT_NAME}" | grep -v "#!"
-    echo "-------------------------------------------------"
+head -n 33 "${SCRIPT_DIR}/${SCRIPT_NAME}" | grep -v "#!"
+echo "-------------------------------------------------"
 }
 
 main(){
-    cartouche
-    cd "${SCRIPT_DIR}"
-    docker build -t "${nomImage}" .
-    cd -
+cartouche
+cd 
+docker build $WORK_DIR -t "${nomImage}" -f .dotfiles/distro/ubuntu/Dockerfile
 }
 
 

@@ -5,7 +5,7 @@ tar -xvf /tmp/nvim -C ~/bin/
 
 
 main(){
-stalle_neovim
+installe_neovim
 }
 
 main

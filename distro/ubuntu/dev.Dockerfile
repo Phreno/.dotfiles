@@ -11,8 +11,16 @@ RUN git clone https://github.com/Phreno/.dotfiles.git /home/dev/.dotfiles
 WORKDIR /home/dev/.dotfiles
 RUN ./install
 
+USER root
+RUN chown -R dev:dev /home/dev
+RUN chown -R dev:dev /home/dev/.dotfiles
+RUN chown -R dev:dev /home/dev/bin
+RUN chmod -R 700  /home/dev/.dotfiles
+RUN chmod -R 700  /home/dev/bin
+
 USER dev
 WORKDIR /home/dev/.dotfiles/scripts
+
 RUN ./installe_neovim.sh
 RUN ./installe_lunavim.sh
 RUN ./installe_p10k.sh

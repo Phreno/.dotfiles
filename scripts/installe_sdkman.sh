@@ -1,6 +1,6 @@
 #!/bin/bash
 installe_sdkman(){
- -s "https://get.sdkman.io" | bash
+   curl -s "https://get.sdkman.io" | bash
 }
 main(){
 installe_sdkman

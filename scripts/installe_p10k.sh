@@ -5,7 +5,7 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 }
 
 main(){
-stalle_p10k
+  installe_p10k
 }
 main
 

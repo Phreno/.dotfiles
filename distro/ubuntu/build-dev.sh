@@ -51,7 +51,7 @@ WORK_DIR="$( pwd )"
 USAGE="USAGE: ${SCRIPT_NAME} [nomImage]"
 
 # Si pas de deuxième argument, on fixe une valeur par default
-nomImage=${1:-"ubuntu-dev-vim"}
+nomImage=${1:-"ubuntu-dev"}
 
 # -----------
 # TRAITEMENTS
@@ -64,7 +64,7 @@ echo "-------------------------------------------------"
 main(){
 cartouche
 cd 
-docker build $WORK_DIR -t "${nomImage}" -f .dotfiles/distro/ubuntu/Dockerfile
+docker build $WORK_DIR -t "${nomImage}" -f .dotfiles/distro/ubuntu/dev.Dockerfile
 }
 
 

@@ -3,7 +3,7 @@ installe_ohmyzsh(){
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 main(){
-installe_fzf
+installe_ohmyzsh
 }
 main
 

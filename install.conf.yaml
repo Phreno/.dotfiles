@@ -25,3 +25,6 @@
     ~/.local/share/fonts: fonts
     ~/.config/lazycli/config.yaml: conf/lazycli.yaml
     ~/.config/lvim/config.lua: conf/lunarvim.lua
+    ~/.config/awesome: conf/awesome
+    ~/.config/alacritty: conf/alacritty
+

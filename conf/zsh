@@ -15,6 +15,7 @@ alias v.v='v .vimrc'
 alias rc='~/.dotfiles/install'
 alias sz='source ~/.zshrc'
 
+alias vA='v ~/.config/alacritty/alacritty.yml'
 alias va='v ~/.config/awesome/rc.lua'
 alias vn='v ~/.dotfiles/conf/lunarvim.lua'
 alias vz='v ~/.dotfiles/conf/zsh; sz'

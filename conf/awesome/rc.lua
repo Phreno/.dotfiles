@@ -167,12 +167,24 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+
+
 awful.screen.connect_for_each_screen(function(s)
   -- Wallpaper
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+  awful.tag({
+    "1. main",
+    "2. board",
+    "3. search",
+    "4. doc",
+    "5. social",
+    "6. fun",
+    "7. dotfiles",
+    "8. training",
+    "9. administration"
+  }, s, awful.layout.layouts[1])
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -188,14 +200,18 @@ awful.screen.connect_for_each_screen(function(s)
   s.mytaglist = awful.widget.taglist {
     screen  = s,
     filter  = awful.widget.taglist.filter.all,
-    buttons = taglist_buttons
+    buttons = taglist_buttons,
+    style   = {
+      shape = gears.shape.rectangle,
+      bg_focus = "#ff0000",
+    },
   }
 
   -- Create a tasklist widget
   s.mytasklist = awful.widget.tasklist {
     screen  = s,
     filter  = awful.widget.tasklist.filter.currenttags,
-    buttons = tasklist_buttons
+    buttons = tasklist_buttons,
   }
 
   -- Create the wibox
@@ -392,10 +408,11 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
+local np_map = { 87, 88, 89, 83, 84, 85, 79, 80, 81 }
 for i = 1, 9 do
   globalkeys = gears.table.join(globalkeys,
     -- View tag only.
-    awful.key({ modkey }, "#" .. i + 9,
+    awful.key({ modkey }, "#" .. np_map[i],
       function()
         local screen = awful.screen.focused()
         local tag = screen.tags[i]
@@ -405,7 +422,7 @@ for i = 1, 9 do
       end,
       { description = "view tag #" .. i, group = "tag" }),
     -- Toggle tag display.
-    awful.key({ modkey, "Control" }, "#" .. i + 9,
+    awful.key({ modkey, "Control" }, "#" .. np_map[i],
       function()
         local screen = awful.screen.focused()
         local tag = screen.tags[i]
@@ -415,7 +432,7 @@ for i = 1, 9 do
       end,
       { description = "toggle tag #" .. i, group = "tag" }),
     -- Move client to tag.
-    awful.key({ modkey, "Shift" }, "#" .. i + 9,
+    awful.key({ modkey, "Shift" }, "#" .. np_map[i],
       function()
         if client.focus then
           local tag = client.focus.screen.tags[i]
@@ -426,7 +443,7 @@ for i = 1, 9 do
       end,
       { description = "move focused client to tag #" .. i, group = "tag" }),
     -- Toggle tag on focused client.
-    awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+    awful.key({ modkey, "Control", "Shift" }, "#" .. np_map[i],
       function()
         if client.focus then
           local tag = client.focus.screen.tags[i]
@@ -438,6 +455,52 @@ for i = 1, 9 do
       { description = "toggle focused client on tag #" .. i, group = "tag" })
   )
 end
+-- for i = 1, 9 do
+--   globalkeys = gears.table.join(globalkeys,
+--     -- View tag only.
+--     awful.key({ modkey }, "#" .. i + 9,
+--       function()
+--         local screen = awful.screen.focused()
+--         local tag = screen.tags[i]
+--         if tag then
+--           tag:view_only()
+--         end
+--       end,
+--       { description = "view tag #" .. i, group = "tag" }),
+--     -- Toggle tag display.
+--     awful.key({ modkey, "Control" }, "#" .. i + 9,
+--       function()
+--         local screen = awful.screen.focused()
+--         local tag = screen.tags[i]
+--         if tag then
+--           awful.tag.viewtoggle(tag)
+--         end
+--       end,
+--       { description = "toggle tag #" .. i, group = "tag" }),
+--     -- Move client to tag.
+--     awful.key({ modkey, "Shift" }, "#" .. i + 9,
+--       function()
+--         if client.focus then
+--           local tag = client.focus.screen.tags[i]
+--           if tag then
+--             client.focus:move_to_tag(tag)
+--           end
+--         end
+--       end,
+--       { description = "move focused client to tag #" .. i, group = "tag" }),
+--     -- Toggle tag on focused client.
+--     awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+--       function()
+--         if client.focus then
+--           local tag = client.focus.screen.tags[i]
+--           if tag then
+--             client.focus:toggle_tag(tag)
+--           end
+--         end
+--       end,
+--       { description = "toggle focused client on tag #" .. i, group = "tag" })
+--   )
+-- end
 
 clientbuttons = gears.table.join(
   awful.button({}, 1, function(c)
@@ -532,44 +595,44 @@ client.connect_signal("manage", function(c)
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
-client.connect_signal("request::titlebars", function(c)
-  -- buttons for the titlebar
-  local buttons = gears.table.join(
-    awful.button({}, 1, function()
-      c:emit_signal("request::activate", "titlebar", { raise = true })
-      awful.mouse.client.move(c)
-    end),
-    awful.button({}, 3, function()
-      c:emit_signal("request::activate", "titlebar", { raise = true })
-      awful.mouse.client.resize(c)
-    end)
-  )
+-- client.connect_signal("request::titlebars", function(c)
+--   -- buttons for the titlebar
+--   local buttons = gears.table.join(
+--     awful.button({}, 1, function()
+--       c:emit_signal("request::activate", "titlebar", { raise = true })
+--       awful.mouse.client.move(c)
+--     end),
+--     awful.button({}, 3, function()
+--       c:emit_signal("request::activate", "titlebar", { raise = true })
+--       awful.mouse.client.resize(c)
+--     end)
+--   )
 
-  awful.titlebar(c):setup {
-    { -- Left
-      awful.titlebar.widget.iconwidget(c),
-      buttons = buttons,
-      layout  = wibox.layout.fixed.horizontal
-    },
-    { -- Middle
-      { -- Title
-        align  = "center",
-        widget = awful.titlebar.widget.titlewidget(c)
-      },
-      buttons = buttons,
-      layout  = wibox.layout.flex.horizontal
-    },
-    { -- Right
-      awful.titlebar.widget.floatingbutton(c),
-      awful.titlebar.widget.maximizedbutton(c),
-      awful.titlebar.widget.stickybutton(c),
-      awful.titlebar.widget.ontopbutton(c),
-      awful.titlebar.widget.closebutton(c),
-      layout = wibox.layout.fixed.horizontal()
-    },
-    layout = wibox.layout.align.horizontal
-  }
-end)
+--   awful.titlebar(c):setup {
+--     { -- Left
+--       awful.titlebar.widget.iconwidget(c),
+--       buttons = buttons,
+--       layout  = wibox.layout.fixed.horizontal
+--     },
+--     { -- Middle
+--       { -- Title
+--         align  = "center",
+--         widget = awful.titlebar.widget.titlewidget(c)
+--       },
+--       buttons = buttons,
+--       layout  = wibox.layout.flex.horizontal
+--     },
+--     { -- Right
+--       awful.titlebar.widget.floatingbutton(c),
+--       awful.titlebar.widget.maximizedbutton(c),
+--       awful.titlebar.widget.stickybutton(c),
+--       awful.titlebar.widget.ontopbutton(c),
+--       awful.titlebar.widget.closebutton(c),
+--       layout = wibox.layout.fixed.horizontal()
+--     },
+--     layout = wibox.layout.align.horizontal
+--   }
+-- end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 -- client.connect_signal("mouse::enter", function(c)

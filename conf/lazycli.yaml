@@ -25,6 +25,12 @@ profiles:
       - key: u
         command: cd $8
     lines_to_skip: 1
+  - name: ps -ef
+    registered_commands:
+      - ps -ef
+    key_bindings:
+      - key: K
+        command: kill -9 $1
   - name: git status --short
     registered_commands:
       - git status --short

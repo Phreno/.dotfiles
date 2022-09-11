@@ -39,8 +39,9 @@ alias t.L='tmux resize-pane -L 50'
 
 alias lzn='lazynpm'
 alias lzg='lazygit'
-alias lzc='lazycli'
+alias lzc='lazycli --'
 alias lzd='lazydocker'
+alias f='fuck'
 
 # Perment l'edition de commande dans un éditeur
 export EDITOR=lvim

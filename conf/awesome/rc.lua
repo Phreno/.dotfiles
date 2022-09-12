@@ -51,6 +51,7 @@ end
 -- This is used later as the default terminal and editor to run.
 -- terminal = "xterm"
 -- terminal = "xfce4-terminal"
+-- terminal = "alacritty"
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
@@ -175,10 +176,10 @@ awful.screen.connect_for_each_screen(function(s)
 
   -- Each screen has its own tag table.
   awful.tag({
-    "1. main",
-    "2. board",
-    "3. search",
-    "4. doc",
+    "1. term",
+    "2. dev",
+    "3. board",
+    "4. conf",
     "5. social",
     "6. fun",
     "7. dotfiles",

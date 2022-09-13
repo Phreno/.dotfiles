@@ -174,18 +174,6 @@ awful.screen.connect_for_each_screen(function(s)
   -- Wallpaper
   set_wallpaper(s)
 
-  -- Each screen has its own tag table.
-  -- awful.tag({
-  --   "1. term",
-  --   "2. dev",
-  --   "3. board",
-  --   "4. web",
-  --   "5. social",
-  --   "6. fun",
-  --   "7. conf",
-  --   "8. training",
-  --   "9. administration"
-  -- }, s, awful.layout.layouts[1])
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -456,52 +444,6 @@ for i = 1, 9 do
       { description = "toggle focused client on tag #" .. i, group = "tag" })
   )
 end
--- for i = 1, 9 do
---   globalkeys = gears.table.join(globalkeys,
---     -- View tag only.
---     awful.key({ modkey }, "#" .. i + 9,
---       function()
---         local screen = awful.screen.focused()
---         local tag = screen.tags[i]
---         if tag then
---           tag:view_only()
---         end
---       end,
---       { description = "view tag #" .. i, group = "tag" }),
---     -- Toggle tag display.
---     awful.key({ modkey, "Control" }, "#" .. i + 9,
---       function()
---         local screen = awful.screen.focused()
---         local tag = screen.tags[i]
---         if tag then
---           awful.tag.viewtoggle(tag)
---         end
---       end,
---       { description = "toggle tag #" .. i, group = "tag" }),
---     -- Move client to tag.
---     awful.key({ modkey, "Shift" }, "#" .. i + 9,
---       function()
---         if client.focus then
---           local tag = client.focus.screen.tags[i]
---           if tag then
---             client.focus:move_to_tag(tag)
---           end
---         end
---       end,
---       { description = "move focused client to tag #" .. i, group = "tag" }),
---     -- Toggle tag on focused client.
---     awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
---       function()
---         if client.focus then
---           local tag = client.focus.screen.tags[i]
---           if tag then
---             client.focus:toggle_tag(tag)
---           end
---         end
---       end,
---       { description = "toggle focused client on tag #" .. i, group = "tag" })
---   )
--- end
 
 clientbuttons = gears.table.join(
   awful.button({}, 1, function(c)
@@ -574,9 +516,6 @@ awful.rules.rules = {
   }, properties = { titlebars_enabled = false }
   },
 
-  -- Set Firefox to always map on the tag named "2" on screen 1.
-  -- { rule = { class = "Firefox" },
-  --   properties = { screen = 1, tag = "2" } },
 }
 -- }}}
 
@@ -595,54 +534,6 @@ client.connect_signal("manage", function(c)
   end
 end)
 
--- Add a titlebar if titlebars_enabled is set to true in the rules.
--- client.connect_signal("request::titlebars", function(c)
---   -- buttons for the titlebar
---   local buttons = gears.table.join(
---     awful.button({}, 1, function()
---       c:emit_signal("request::activate", "titlebar", { raise = true })
---       awful.mouse.client.move(c)
---     end),
---     awful.button({}, 3, function()
---       c:emit_signal("request::activate", "titlebar", { raise = true })
---       awful.mouse.client.resize(c)
---     end)
---   )
-
---   awful.titlebar(c):setup {
---     { -- Left
---       awful.titlebar.widget.iconwidget(c),
---       buttons = buttons,
---       layout  = wibox.layout.fixed.horizontal
---     },
---     { -- Middle
---       { -- Title
---         align  = "center",
---         widget = awful.titlebar.widget.titlewidget(c)
---       },
---       buttons = buttons,
---       layout  = wibox.layout.flex.horizontal
---     },
---     { -- Right
---       awful.titlebar.widget.floatingbutton(c),
---       awful.titlebar.widget.maximizedbutton(c),
---       awful.titlebar.widget.stickybutton(c),
---       awful.titlebar.widget.ontopbutton(c),
---       awful.titlebar.widget.closebutton(c),
---       layout = wibox.layout.fixed.horizontal()
---     },
---     layout = wibox.layout.align.horizontal
---   }
--- end)
-
--- Enable sloppy focus, so that focus follows mouse.
--- client.connect_signal("mouse::enter", function(c)
---   c:emit_signal("request::activate", "mouse_enter", { raise = false })
--- end)
-
--- client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
--- client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
--- }}}
 
 client.connect_signal("manage", function(c)
   c.shape = gears.shape.rounded_rect
@@ -655,77 +546,31 @@ end)
 -- {{{
 local tyrannical = require("tyrannical")
 tyrannical.tags = {
-  -----------------
-  -- Main screen --
-  -----------------
   {
-    name      = "Term", -- Call the tag "Term"
+    name      = "1. Term", -- Call the tag "Term"
     init      = true, -- Load the tag on startup
     exclusive = true, -- Refuse any other type of clients (by classes)
-    screen    = 2, -- Create this tag on screen 1 and screen 2
     layout    = awful.layout.suit.tile, -- Use the tile layout
-    instance  = { "dev", "ops" }, -- Accept the following instances. This takes precedence over 'class'
     class     = { --Accept the following classes, refuse everything else (because of "exclusive=true")
       "alacritty"
     }
   },
   {
-    name      = "Develop",
+    name      = "2. Develop",
     init      = true,
     exclusive = true,
-    screen    = 2,
-    layout    = awful.layout.suit.max,
+    layout    = awful.layout.suit.tile, -- Use the tile layout
     class     = {
-      "Code"
+      "code",
     }
   },
-  ----------------------
-  -- Secondary screen --
-  ----------------------
   {
-    name      = "Internet",
+    name      = "3. Internet",
     init      = true,
     exclusive = true,
-    --icon        = "~net.png",                 -- Use this icon for the tag (uncomment with a real path)
-    screen    = 1, -- Setup on screen 2 if there is more than 1 screen, else on screen 1
-    layout    = awful.layout.suit.max, -- Use the max layout
+    layout    = awful.layout.suit.tile, -- Use the tile layout
     class     = {
       "Firefox", "brave"
-    }
-  },
-  {
-    name      = "Social",
-    init      = true,
-    exclusive = true,
-    --icon        = "~net.png",                 -- Use this icon for the tag (uncomment with a real path)
-    screen    = 1, -- Setup on screen 2 if there is more than 1 screen, else on screen 1
-    layout    = awful.layout.suit.max, -- Use the max layout
-    class     = {
-      "Teams"
-    }
-  },
-  {
-    name      = "Files",
-    init      = true,
-    exclusive = true,
-    screen    = 1,
-    layout    = awful.layout.suit.tile,
-    exec_once = { "dolphin" }, --When the tag is accessed for the first time, execute this command
-    class     = {
-      "Thunar", "Konqueror", "Dolphin", "ark", "Nautilus", "emelfm"
-    }
-  },
-  {
-    name      = "Doc",
-    init      = false, -- This tag wont be created at startup, but will be when one of the
-    screen    = 1,
-    -- client in the "class" section will start. It will be created on
-    -- the client startup screen
-    exclusive = true,
-    layout    = awful.layout.suit.max,
-    class     = {
-      "Assistant", "Okular", "Evince", "EPDFviewer", "xpdf",
-      "Xpdf",
     }
   },
 }
@@ -761,7 +606,11 @@ tyrannical.settings.group_children = true --Force popups/dialogs to have the sam
 -- }}}
 
 
--- Autostart
+---------------
+-- Autostart --
+---------------
+-- {{{
 beautiful.useless_gap = 1
 awful.spawn.with_shell("picom -f -c")
 awful.spawn.with_shell("nitrogen --restore")
+-- }}}

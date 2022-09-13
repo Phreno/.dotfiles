@@ -9,7 +9,7 @@
 
 - clean:
     - ~/.tmux.conf
-    - ~/.oh-my-zsh/custom/my_configs.zsh
+    - ~/.oh-my-zsh/custom
     - ~/.local/share/fonts
     - ~/.config/lazycli/config.yaml
     - ~/.config/lvim/config.lua
@@ -21,7 +21,7 @@
 
 - link:
     ~/.tmux.conf: conf/tmux
-    ~/.oh-my-zsh/custom/my_configs.zsh: conf/zsh
+    ~/.oh-my-zsh/custom: conf/custom-zsh
     ~/.local/share/fonts: fonts
     ~/.config/lazycli/config.yml: conf/lazycli.yaml
     ~/.config/lvim/config.lua: conf/lunarvim.lua

@@ -353,12 +353,34 @@ globalkeys = gears.table.join(
   ----------------
   -- Revelation --
   ----------------
-  awful.key({ modkey, }, "e", revelation),
+  awful.key({ modkey, }, "e", revelation, { description = "display all clients", group = "custom" }),
   -- }}}
 
 
+  -- {{{
+  ----------------
+  -- Navigateur --
+  ----------------
+  awful.key({ modkey }, "b", function()
+    awful.util.spawn("firefox")
+  end,
+    { description = "lance le navigateur", group = "custom" }),
 
+  awful.key({ modkey }, "y", function()
+    awful.util.spawn("firefox www.youtube.com")
+  end,
+    { description = "lance le navigateur sur youtube", group = "custom" }),
 
+  awful.key({ modkey }, "g", function()
+    awful.util.spawn("firefox www.google.com")
+  end,
+    { description = "lance le navigateur sur google", group = "custom" }),
+
+  awful.key({ modkey }, "d", function()
+    awful.util.spawn("firefox www.discord.com")
+  end,
+    { description = "lance le navigateur sur discord", group = "custom" }),
+  -- }}}
 
 
   awful.key({ modkey }, "x",

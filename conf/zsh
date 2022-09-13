@@ -10,7 +10,6 @@
 
 alias vim='lvim'
 alias v='lvim'
-alias v.v='v .vimrc'
 
 alias t.d='tmux resize-pane -D 10'
 alias t.u='tmux resize-pane -U 10'

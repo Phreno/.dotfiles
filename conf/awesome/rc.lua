@@ -179,10 +179,10 @@ awful.screen.connect_for_each_screen(function(s)
     "1. term",
     "2. dev",
     "3. board",
-    "4. conf",
+    "4. web",
     "5. social",
     "6. fun",
-    "7. dotfiles",
+    "7. conf",
     "8. training",
     "9. administration"
   }, s, awful.layout.layouts[1])
@@ -644,8 +644,12 @@ end)
 -- client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+client.connect_signal("manage", function(c)
+  c.shape = gears.shape.rounded_rect
+end)
 
 -- Autostart
-beautiful.useless_gap = 5
+beautiful.useless_gap = 1
 awful.spawn.with_shell("picom -f -c")
 awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("alacritty")

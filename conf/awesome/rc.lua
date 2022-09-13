@@ -46,7 +46,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
--- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init()
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "xterm"
@@ -82,6 +82,15 @@ awful.layout.layouts = {
   -- awful.layout.suit.corner.sw,
   -- awful.layout.suit.corner.se,
 }
+-- }}}
+
+-- {{{
+----------------
+-- Revelation --
+----------------
+-- IMPORTANT: After `beautiful.init()`
+local revelation = require("revelation")
+revelation.init()
 -- }}}
 
 -- {{{ Menu
@@ -328,12 +337,29 @@ globalkeys = gears.table.join(
     end,
     { description = "restore minimized", group = "client" }),
 
+  -- {{{
+  -----------
+  -- Dmenu --
+  -----------
   -- Prompt
   awful.key({ modkey }, "r", function()
     --  awful.screen.focused().mypromptbox:run()
     awful.util.spawn("dmenu_run")
   end,
     { description = "run prompt", group = "launcher" }),
+  -- }}}
+
+  -- {{{
+  ----------------
+  -- Revelation --
+  ----------------
+  awful.key({ modkey, }, "e", revelation),
+  -- }}}
+
+
+
+
+
 
   awful.key({ modkey }, "x",
     function()
@@ -540,14 +566,14 @@ client.connect_signal("manage", function(c)
 end)
 
 
+-- {{{
 ----------------
 -- TYRANNICAL --
 ----------------
--- {{{
 local tyrannical = require("tyrannical")
 tyrannical.tags = {
   {
-    name      = "1. Term", -- Call the tag "Term"
+    name      = "1.  Term", -- Call the tag "Term"
     init      = true, -- Load the tag on startup
     exclusive = true, -- Refuse any other type of clients (by classes)
     layout    = awful.layout.suit.tile, -- Use the tile layout
@@ -556,7 +582,7 @@ tyrannical.tags = {
     }
   },
   {
-    name      = "2. Develop",
+    name      = "2.  Develop",
     init      = true,
     exclusive = true,
     layout    = awful.layout.suit.tile, -- Use the tile layout
@@ -565,7 +591,7 @@ tyrannical.tags = {
     }
   },
   {
-    name      = "3. Internet",
+    name      = "3. 爵Internet",
     init      = true,
     exclusive = true,
     layout    = awful.layout.suit.tile, -- Use the tile layout
@@ -605,11 +631,10 @@ tyrannical.settings.group_children = true --Force popups/dialogs to have the sam
 
 -- }}}
 
-
+-- {{{
 ---------------
 -- Autostart --
 ---------------
--- {{{
 beautiful.useless_gap = 10
 awful.spawn.with_shell("picom -f -c")
 awful.spawn.with_shell("nitrogen --restore")

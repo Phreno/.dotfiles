@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "conf/awesome/revelation"]
+	path = conf/awesome/revelation
+	url = https://github.com/guotsuan/awesome-revelation

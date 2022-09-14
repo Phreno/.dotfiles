@@ -1,0 +1,18 @@
+{
+  "name": "dotfiles",
+  "scripts": {
+    "version:increment-revision": "awk -F'.' '{printf(\"%d.%d.%d\n\",$1,$2,$3+1)}' version > version",
+    "version:increment-minor": "awk -F'.' '{printf(\"%d.%d.%d\n\",$1,$2+1,$3)}' version > version",
+    "version:increment-major": "awk -F'.' '{printf(\"%d.%d.%d\n\",$1+1,$2,$3)}' version > version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phreno/.dotfiles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phreno/.dotfiles/issues"
+  },
+  "homepage": "https://github.com/Phreno/.dotfiles#readme"
+}

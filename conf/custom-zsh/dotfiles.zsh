@@ -30,4 +30,4 @@ alias vc='v ~/.dotfiles/install.conf.yaml'
 alias v.lc='v ~/.dotfiles/conf/lazycli.yaml'
 alias c.='cd ~/.dotfiles'
 
-alias al='cat ~/.dotfiles/conf/custom-zsh/* | egrep ^alias'
+alias al='cat ~/.dotfiles/conf/custom-zsh/* | egrep ^alias | sort | F'

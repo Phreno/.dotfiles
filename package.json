@@ -8,9 +8,9 @@
     "release:auto-rev": "npm run release:prepare-rev; npm run release:finish",
     "release:auto-min": "npm run release:prepare-min; npm run release:finish",
     "release:auto-maj": "npm run release:prepare-maj; npm run release:finish",
-    "version:next-rev": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version",
-    "version:next-min": "awk -F'.' '{printf(\"%d.%d.0\\n\",$1,$2+1)}' version",
-    "version:next-maj": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}' version",
+    "version:next-rev": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version ",
+    "version:next-min": "awk -F'.' '{printf(\"%d.%d.0\\n\",$1,$2+1)}'     version ",
+    "version:next-maj": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}'         version ",
     "version:increment-rev": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version > version.bak; rm version; mv version.bak version; git add version; git commit -m \"RELEASE(rev)\"",
     "version:increment-min": "awk -F'.' '{printf(\"%d.%d.0\\n\",$1,$2+1)}'     version > version.bak; rm version; mv version.bak version; git add version; git commit -m \"RELEASE(min)\"",
     "version:increment-maj": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}'         version > version.bak; rm version; mv version.bak version; git add version; git commit -m \"RELEASE(maj)\""

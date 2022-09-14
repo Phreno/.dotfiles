@@ -267,8 +267,8 @@ globalkeys = gears.table.join(
     end,
     { description = "focus previous by index", group = "client" }
   ),
-  awful.key({ modkey, }, "w", function() mymainmenu:show() end,
-    { description = "show main menu", group = "awesome" }),
+  -- awful.key({ modkey, }, "w", function() mymainmenu:show() end,
+  --   { description = "show main menu", group = "awesome" }),
 
   -- Layout manipulation
   awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end,
@@ -370,27 +370,32 @@ globalkeys = gears.table.join(
   -- Navigateur --
   ----------------
   awful.key({ modkey }, "b", function()
-    awful.util.spawn("firefox")
+    awful.util.spawn("firefox -new-tab")
   end,
     { description = "lance le navigateur", group = "custom" }),
 
   awful.key({ modkey }, "y", function()
-    awful.util.spawn("firefox www.youtube.com")
+    awful.util.spawn("firefox -new-tab www.youtube.com")
   end,
     { description = "lance le navigateur sur youtube", group = "custom" }),
 
   awful.key({ modkey }, "g", function()
-    awful.util.spawn("firefox www.google.com")
+    awful.util.spawn("firefox -new-tab www.google.com")
   end,
     { description = "lance le navigateur sur google", group = "custom" }),
 
   awful.key({ modkey }, "d", function()
-    awful.util.spawn("firefox www.discord.com")
+    awful.util.spawn("firefox -new-tab www.discord.com")
   end,
     { description = "lance le navigateur sur discord", group = "custom" }),
 
   awful.key({ modkey }, "h", function()
-    awful.util.spawn("firefox https://github.com/Phreno")
+    awful.util.spawn("firefox -new-tab https://github.com/Phreno")
+  end,
+    { description = "lance le navigateur sur github", group = "custom" }),
+
+  awful.key({ modkey }, "w", function()
+    awful.util.spawn("firefox -new-tab http://localhost:4321")
   end,
     { description = "lance le navigateur sur github", group = "custom" }),
   -- }}}

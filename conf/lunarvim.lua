@@ -343,10 +343,6 @@ lvim.plugins = {
   },
   { "tpope/vim-speeddating" },
   { "rebelot/kanagawa.nvim" },
-  {
-    "rktjmp/lush.nvim",
-  },
-
 }
 -- Can not be placed into the config method of the plugins.
 lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"

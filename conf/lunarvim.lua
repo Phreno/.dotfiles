@@ -211,22 +211,21 @@ lvim.plugins = {
     event = "BufRead",
     config = function() require "lsp_signature".on_attach() end,
   },
-  { "zbirenbaum/copilot.lua",
+  {
+    "zbirenbaum/copilot.lua",
     event = { "VimEnter" },
-    panel = {
-      enable = true
-    },
     config = function()
       vim.defer_fn(function()
-        require("copilot").setup {
-          plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-        }
+        require("copilot").setup()
       end, 100)
     end,
   },
-
-  { "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua", "nvim-cmp" },
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end
   },
   {
     "f-person/git-blame.nvim",

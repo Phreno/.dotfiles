@@ -356,6 +356,14 @@ globalkeys = gears.table.join(
   awful.key({ modkey, }, "e", revelation, { description = "display all clients", group = "custom" }),
   -- }}}
 
+  -- {{{
+  ----------
+  -- code --
+  ----------
+  awful.key({ modkey, }, "c", function()
+    awful.util.spawn("code")
+  end, { description = "lance vscode", group = "custom" }),
+  -- }}}
 
   -- {{{
   ----------------

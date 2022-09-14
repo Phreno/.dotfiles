@@ -1,19 +1,19 @@
 {
   "name": "dotfiles",
   "scripts": {
-    "release:prepare-revision": "git flow release start `npm run version:next-revision | tail -n1`; npm run version:increment-revision",
-    "release:prepare-minor": "git flow release start `npm run version:next-minor | tail -n1`; npm run version:increment-minor",
-    "release:prepare-major": "git flow release start `npm run version:next-major | tail -n1`; npm run version:increment-major",
+    "release:prepare-rev": "git flow release start `npm run version:next-rev | tail -n1`; npm run version:increment-rev",
+    "release:prepare-min": "git flow release start `npm run version:next-min | tail -n1`; npm run version:increment-min",
+    "release:prepare-maj": "git flow release start `npm run version:next-maj | tail -n1`; npm run version:increment-maj",
     "release:finish": "git flow release finish; git push --tags",
-    "release:auto-revision": "npm run release:prepare-revision; npm run release:finish",
-    "release:auto-minor": "npm run release:prepare-minor; npm run release:finish",
-    "release:auto-major": "npm run release:prepare-major; npm run release:finish",
-    "version:next-revision": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version",
-    "version:next-minor": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2+1,$3)}' version",
-    "version:next-major": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1+1,$2,$3)}' version",
-    "version:increment-revision": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version > version.bak; rm version; mv version.bak version; git add version; git commit -m \"RELEASE(revision)\"",
-    "version:increment-minor": "awk -F'.' '{printf(\"%d.%d.0\\n\",$1,$2+1)}' version > version.bak; rm version; mv version.bak version; git commit -m \"RELEASE(minor)\"",
-    "version:increment-major": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}' version > version.bak; rm version; mv version.bak version; git commit -m \"RELEASE(major)\""
+    "release:auto-rev": "npm run release:prepare-rev; npm run release:finish",
+    "release:auto-min": "npm run release:prepare-min; npm run release:finish",
+    "release:auto-maj": "npm run release:prepare-maj; npm run release:finish",
+    "version:next-rev": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version",
+    "version:next-min": "awk -F'.' '{printf(\"%d.%d.0\\n\",$1,$2+1)}' version",
+    "version:next-maj": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}' version",
+    "version:increment-rev": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version > version.bak; rm version; mv version.bak version; git add version; git commit -m \"RELEASE(rev)\"",
+    "version:increment-min": "awk -F'.' '{printf(\"%d.%d.0\\n\",$1,$2+1)}'     version > version.bak; rm version; mv version.bak version; git add version; git commit -m \"RELEASE(min)\"",
+    "version:increment-maj": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}'         version > version.bak; rm version; mv version.bak version; git add version; git commit -m \"RELEASE(maj)\""
   },
   "repository": {
     "type": "git",

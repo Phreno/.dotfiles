@@ -1,6 +1,12 @@
 {
   "name": "dotfiles",
   "scripts": {
+    "release:prepare-revision": "git flow release start `npm run version:next-revision`",
+    "release:prepare-minor": "git flow release start `npm run version:next-minor`",
+    "release:prepare-major": "git flow release start `npm run version:next-major`",
+    "version:next-revision": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version",
+    "version:next-minor": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2+1,$3)}' version",
+    "version:next-major": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1+1,$2,$3)}' version",
     "version:increment-revision": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version > version.bak; rm version; mv version.bak version",
     "version:increment-minor": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2+1,$3)}' version > version.bak; rm version; mv version.bak version",
     "version:increment-major": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1+1,$2,$3)}' version > version.bak; rm version; mv version.bak version"

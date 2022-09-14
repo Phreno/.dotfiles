@@ -1,0 +1,6 @@
+[Unit]
+Description=Neuron
+[Service]
+ExecStart=~/.nix-profile/bin/neuron -d ~/neuron -ws 127.0.0.1:4321
+[Install]
+WantedBy=multi-user.target

@@ -658,6 +658,6 @@ tyrannical.settings.group_children = true --Force popups/dialogs to have the sam
 -- Autostart --
 ---------------
 beautiful.useless_gap = 10
-awful.spawn.with_shell("picom -f -c")
+awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nitrogen --restore")
 -- }}}

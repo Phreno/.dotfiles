@@ -388,6 +388,11 @@ globalkeys = gears.table.join(
     awful.util.spawn("firefox www.discord.com")
   end,
     { description = "lance le navigateur sur discord", group = "custom" }),
+
+  awful.key({ modkey }, "h", function()
+    awful.util.spawn("firefox https://github.com/Phreno")
+  end,
+    { description = "lance le navigateur sur github", group = "custom" }),
   -- }}}
 
 

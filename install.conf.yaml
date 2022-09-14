@@ -13,6 +13,7 @@
     - ~/.local/share/fonts
     - ~/.config/lazycli/config.yaml
     - ~/.config/lvim/config.lua
+    - ~/neuron
 
 - create:
     - ~/git
@@ -28,4 +29,5 @@
     ~/.config/awesome: conf/awesome
     ~/.config/alacritty: conf/alacritty
     ~/.config/picom: conf/picom
+    ~/neuron: conf/neuron
 

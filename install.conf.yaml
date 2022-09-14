@@ -8,11 +8,12 @@
         force: true
 
 - clean:
-    - ~/.tmux.conf
-    - ~/.oh-my-zsh/custom
-    - ~/.local/share/fonts
     - ~/.config/lazycli/config.yaml
     - ~/.config/lvim/config.lua
+    - ~/.config/systemd
+    - ~/.local/share/fonts
+    - ~/.oh-my-zsh/custom
+    - ~/.tmux.conf
     - ~/neuron
 
 - create:
@@ -21,13 +22,14 @@
     - ~/bin
 
 - link:
-    ~/.tmux.conf: conf/tmux
-    ~/.oh-my-zsh/custom: conf/custom-zsh
-    ~/.local/share/fonts: fonts
+    ~/.config/alacritty: conf/alacritty
+    ~/.config/awesome: conf/awesome
     ~/.config/lazycli/config.yml: conf/lazycli.yaml
     ~/.config/lvim/config.lua: conf/lunarvim.lua
-    ~/.config/awesome: conf/awesome
-    ~/.config/alacritty: conf/alacritty
     ~/.config/picom: conf/picom
+    ~/.config/systemd: conf/systemd
+    ~/.local/share/fonts: fonts
+    ~/.oh-my-zsh/custom: conf/custom-zsh
+    ~/.tmux.conf: conf/tmux
     ~/neuron: conf/neuron
 

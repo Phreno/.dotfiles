@@ -79,6 +79,9 @@ profiles:
     key_bindings:
       - key: c
         command: git checkout $0
+      - key: o
+        command: firefox -new-tab `git config --get remote.origin.url | sed "s/^ssh:\/\///;s/^git@//; s/.git$//; s/:[0-9]\+/\//g; s/:/\//"`/commit/$0
+
   - name: lsof -iTCP | grep LISTEN
     registered_commands:
       - lsof -iTCP | grep LISTEN

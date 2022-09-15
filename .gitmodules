@@ -8,3 +8,6 @@
 [submodule "conf/awesome/tyrannical"]
 	path = conf/awesome/tyrannical
 	url = https://github.com/Elv13/tyrannical.git
+[submodule "conf/awesome/awesome-wm-widgets"]
+	path = conf/awesome/awesome-wm-widgets
+	url = https://github.com/streetturtle/awesome-wm-widgets.git

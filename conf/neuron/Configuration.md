@@ -3,6 +3,16 @@
 
 https://pavelmakhov.com/awesome-wm-widgets/
 
+
+## Dépendances
+
+- lolcat
+- fortune ubuntu / fortune-mod arch
+
+
+
+
+
 ## Installation de neuron 
 
 Suivre cette procédure d'installation

@@ -15,6 +15,8 @@ beautiful.border_width = 1
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -213,26 +215,26 @@ awful.screen.connect_for_each_screen(function(s)
   }
 
   -- -- Create the wibox
-  -- s.mywibox = awful.wibar({ position = "top", screen = s })
+  s.mywibox = awful.wibar({ position = "top", screen = s })
 
   -- -- Add widgets to the wibox
-  -- s.mywibox:setup {
-  --   layout = wibox.layout.align.horizontal,
-  --   { -- Left widgets
-  --     layout = wibox.layout.fixed.horizontal,
-  --     mylauncher,
-  --     s.mytaglist,
-  --     s.mypromptbox,
-  --   },
-  --   s.mytasklist, -- Middle widget
-  --   { -- Right widgets
-  --     layout = wibox.layout.fixed.horizontal,
-  --     mykeyboardlayout,
-  --     wibox.widget.systray(),
-  --     mytextclock,
-  --     s.mylayoutbox,
-  --   },
-  -- }
+  s.mywibox:setup {
+    layout = wibox.layout.align.horizontal,
+    { -- Left widgets
+      layout = wibox.layout.fixed.horizontal,
+      mylauncher,
+      s.mytaglist,
+      -- s.mypromptbox,
+    },
+    -- s.mytasklist, -- Middle widget
+    { -- Right widgets
+      layout = wibox.layout.fixed.horizontal,
+      mykeyboardlayout,
+      wibox.widget.systray(),
+      mytextclock,
+      s.mylayoutbox,
+    },
+  }
 end)
 -- }}}
 

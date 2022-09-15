@@ -1,21 +1,19 @@
 
-| .   | Spring est un framework léger open source largement utilisé pour développer des applications d’entreprise. | Spring Boot est construit sur le framework Spring conventionnel, largement utilisé pour développer des API REST. |   |   |
-|-----|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|---|---|
-| 2.  | La fonctionnalité la plus importante de Spring Framework est l’injection de dépendances.                   | La fonctionnalité la plus importante de Spring Boot est la configuration automatique.                            |   |   |
-| 3.  | Cela aide à créer une application faiblement couplée.                                                      | Il aide à créer une application autonome.                                                                        |   |   |
-| 4.  | Pour exécuter l’application Spring, nous devons définir explicitement le serveur.                          | Spring Boot fournit des serveurs intégrés tels que Tomcat et Jetty, etc.                                         |   |   |
-| 5.  | Pour exécuter l’application Spring, un descripteur de déploiement est requis.                              | Il n’y a aucune exigence pour un descripteur de déploiement.                                                     |   |   |
-| 6.  | Pour créer une application Spring, les développeurs écrivent beaucoup de code.                             | Cela réduit les lignes de code.                                                                                  |   |   |
-| 7.  | Il ne prend pas en charge la base de données en mémoire.                                                   | Il prend en charge la base de données en mémoire telle que H2.                                                   |   |   |
+|    | Spring                                                                                                     | SpringBoot                                                                                                       |   |   |
+|----|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|---|---|
+| 1. | Spring est un framework léger open source largement utilisé pour développer des applications d’entreprise. | Spring Boot est construit sur le framework Spring conventionnel, largement utilisé pour développer des API REST. |   |   |
+| 2. | La fonctionnalité la plus importante de Spring Framework est l’injection de dépendances.                   | La fonctionnalité la plus importante de Spring Boot est la configuration automatique.                            |   |   |
+| 3. | Cela aide à créer une application faiblement couplée.                                                      | Il aide à créer une application autonome.                                                                        |   |   |
+| 4. | Pour exécuter l’application Spring, nous devons définir explicitement le serveur.                          | Spring Boot fournit des serveurs intégrés tels que Tomcat et Jetty, etc.                                         |   |   |
+| 5. | Pour exécuter l’application Spring, un descripteur de déploiement est requis.                              | Il n’y a aucune exigence pour un descripteur de déploiement.                                                     |   |   |
+| 6. | Pour créer une application Spring, les développeurs écrivent beaucoup de code.                             | Cela réduit les lignes de code.                                                                                  |   |   |
+| 7. | Il ne prend pas en charge la base de données en mémoire.                                                   | Il prend en charge la base de données en mémoire telle que H2.                                                   |   |   |
 
 
 
 1. Qu’est-ce que Spring boot ?
-Sprint boot est un framework spring basé sur Java utilisé pour le développement accéléré d’applications (pour construire des microservices autonomes). Il dispose d’un support supplémentaire d’auto-configuration et d’un serveur d’application embarqué comme tomcat, jetty, etc.
 
- 
- 
- 
+Sprint boot est un framework spring basé sur Java utilisé pour le développement accéléré d’applications (pour construire des microservices autonomes). Il dispose d’un support supplémentaire d’auto-configuration et d’un serveur d’application embarqué comme tomcat, jetty, etc.
 
 2. Quelles sont les caractéristiques de Spring Boot qui le rendent différent ?
 
@@ -23,10 +21,6 @@ Sprint boot est un framework spring basé sur Java utilisé pour le développeme
     Il intègre tomcat et jetty, ce qui permet de coder et d’exécuter l’application.
     Fournit des fonctionnalités prêtes pour la production telles que les métriques, le bilan de santé(health checks) et la configuration externalisée.
     Absolument aucune exigence pour la configuration XML.
-
- 
- 
- 
 
 3. Quels sont les avantages de l’utilisation de Spring Boot ?
 
@@ -36,10 +30,6 @@ Sprint boot est un framework spring basé sur Java utilisé pour le développeme
     Configuration minimale.
     Nous n’avons pas besoin d’écrire de configuration XML, seules quelques annotations sont nécessaires pour effectuer la configuration.
 
- 
- 
- 
-
 4. Quels sont les composants clés de Spring Boot ?
 
     Autoconfiguration de Spring Boot.
@@ -47,11 +37,8 @@ Sprint boot est un framework spring basé sur Java utilisé pour le développeme
     POMs de démarrage de Spring Boot.
     Les actionneurs de Spring Boot.
 
- 
- 
- 
-
 5. Pourquoi préférer Spring Boot à Spring ?
+
 Vous trouverez ci-dessous quelques points essentiels que Spring Boot offre, mais pas Spring:
 
     Gestion des versions.
@@ -62,11 +49,8 @@ Vous trouverez ci-dessous quelques points essentiels que Spring Boot offre, mais
     Starter POM.
     Actionneurs.
 
- 
- 
- 
-
 6. Quelles sont les dépendances Spring Boot Starter ?
+
 Spring boot fournit un certain nombre de dépendances Starter, dont voici les plus couramment utilisées.
 
     Data JPA starter.
@@ -76,31 +60,21 @@ Spring boot fournit un certain nombre de dépendances Starter, dont voici les pl
     Mail starter.
     Thymeleaf starter.
 
- 
- 
- 
-
 7. Comment fonctionne Spring Boot ?
+
 Spring Boot configure automatiquement votre application en fonction des dépendances que vous avez ajoutées au projet en utilisant des annotations. Le point d’entrée de l’application Spring Boot est la classe qui contient l’annotation @SpringBootApplication et la méthode main.
 
 Spring Boot scanne automatiquement tous les composants inclus dans le projet en utilisant l’annotation @ComponentScan.
 
- 
- 
- 
-
 8. Que fait l’annotation @SpringBootApplication en interne ?
+
 L’annotation @SpringBootApplication équivaut à utiliser @Configuration, @EnableAutoConfiguration et @ComponentScan avec leurs attributs par défaut. Spring Boot permet au développeur d’utiliser une seule annotation au lieu d’en utiliser plusieurs. Mais, comme nous le savons, Spring a fourni des fonctionnalités faiblement couplées que nous pouvons utiliser pour chaque annotation en fonction des besoins de notre projet.
 
- 
- 
- 
-
 9. Quel est le but de l’utilisation de @ComponentScan dans une classe ?
+
 L’application Spring Boot scanne tous les beans et les déclarations de package lors de l’initialisation de l’application. Vous devez ajouter l’annotation @ComponentScan à votre classe pour analyser les composants ajoutés à votre projet.
 
- 
- 1. Comment démarre une application Spring Boot ?
+1. Comment démarre une application Spring Boot ?
 Comme tout autre programme Java, une application Spring Boot doit avoir une méthode main. Cette méthode sert de point d’entrée, qui invoque la méthode SpringApplication#run
 pour démarrer l’application.
 
@@ -113,10 +87,6 @@ public class MyApp
                // code...    
        } 
 }
-
- 
- 
- 
 
 2. Quelles sont les dépendances spring-boot-starter?
 Spring boot starter est un template maven qui contient une collection de toutes les dépendances transitives pertinentes qui sont nécessaires pour démarrer une fonctionnalité particulière.

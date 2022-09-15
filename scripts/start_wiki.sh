@@ -1,2 +1,3 @@
-#!/bin/bash
-neuron -d ~/neuron gen -ws 127.0.0.1:4321 > /dev/null& 
+#!/bin/bash 
+cd ~/.dotfiles/conf/neuron/
+ls *md  | entr -r /usr/local/bin/neuron -d ~/neuron gen -ws localhost:4321

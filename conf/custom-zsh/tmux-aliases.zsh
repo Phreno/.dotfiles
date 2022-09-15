@@ -1,4 +1,6 @@
 
+alias t.k='tmux kill-server'
+
 alias t.d='tmux resize-pane -D 10'
 alias t.u='tmux resize-pane -U 10'
 alias t.r='tmux resize-pane -R 10'

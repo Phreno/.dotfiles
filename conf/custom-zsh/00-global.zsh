@@ -1,0 +1,17 @@
+export DOTFILES=~/.dotfiles
+export DOTFILES_ASSETS=$DOTFILES/assets
+export DOTFILES_CONF=$DOTFILES/conf
+export DOTFILES_ALACRITTY=$DOTFILES/conf/alacritty
+export DOTFILES_ATREUS=$DOTFILES/conf/atreus
+export DOTFILES_AWESOME=$DOTFILES/conf/awesome
+export DOTFILES_ZSH=$DOTFILES/conf/custom-zsh
+export DOTFILES_NEURON=$DOTFILES/conf/neuron
+export DOTFILES_PICOM=$DOTFILES/conf/picom
+export DOTFILES_SYSTEMD=$DOTFILES/conf/systemd
+export DOTFILES_USER_CONTROL=$DOTFILES/conf/systemd/user.control
+export DOTFILES_TASKS=$DOTFILES/conf/vimgym-tasks
+export DOTFILES_DISTRO=$DOTFILES/distro
+export DOTFILES_ARCHLINUX=$DOTFILES/distro/archlinux
+export DOTFILES_UBUNTU=$DOTFILES/distro/ubuntu
+export DOTFILES_SKELETONS=$DOTFILES/skeletons
+export DOTFILES_SCRIPTS=$DOTFILES/scripts

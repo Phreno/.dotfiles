@@ -1,33 +1,42 @@
 ##########
 # Config #
 ##########
-alias rc='~/.dotfiles/install'
+alias rc='$DOTFILES/install'
 alias sz='source ~/.zshrc'
 
-alias vA='v ~/.dotfiles/conf/alacritty/alacritty.yml'
-alias va='v ~/.dotfiles/conf/awesome/rc.lua'
-alias vp='v ~/.dotfiles/conf/picom/picom.conf'
-alias vn='v ~/.dotfiles/conf/lunarvim.lua'
+alias vA='v $DOTFILES_ALACRITTY/alacritty.yml'
+alias va='v $DOTFILES_AWESOME/rc.lua'
+alias vp='v $DOTFILES_PICOM/picom.conf'
+alias vn='v $DOTFILES_CONF/lunarvim.lua'
 alias vz='v ~/.zshrc'
 # {{{
 #######
 # zsh #
 #######
-alias vzc='v ~/.dotfiles/conf/custom-zsh/chrysalis.zsh'
-alias vzd='v ~/.dotfiles/conf/custom-zsh/dotfiles.zsh'
-alias vze='v ~/.dotfiles/conf/custom-zsh/edit-command-line.zsh'
-alias vzf='v ~/.dotfiles/conf/custom-zsh/fuck.zsh'
-alias vzg='v ~/.dotfiles/conf/custom-zsh/git.zsh'
-alias vzgs='v ~/.dotfiles/conf/custom-zsh/gnome.zsh'
-alias vzj='v ~/.dotfiles/conf/custom-zsh/java.zsh'
-alias vzl='v ~/.dotfiles/conf/custom-zsh/lazy.zsh'
-alias vzt='v ~/.dotfiles/conf/custom-zsh/tmux-aliases.zsh'
-alias vzts='v ~/.dotfiles/conf/custom-zsh/tspreed.zsh'
-alias vzz='v ~/.dotfiles/conf/custom-zsh/zsh.zsh'
+alias vzc='v $DOTFILES_ZSH/chrysalis.zsh'
+alias vzd='v $DOTFILES_ZSH/dotfiles.zsh'
+alias vze='v $DOTFILES_ZSH/edit-command-line.zsh'
+alias vzf='v $DOTFILES_ZSH/fuck.zsh'
+alias vzg='v $DOTFILES_ZSH/git.zsh'
+alias vzgs='v $DOTFILES_ZSH/gnome.zsh'
+alias vzj='v $DOTFILES_ZSH/java.zsh'
+alias vzl='v $DOTFILES_ZSH/lazy.zsh'
+alias vzt='v $DOTFILES_ZSH/tmux-aliases.zsh'
+alias vzts='v $DOTFILES_ZSH/tspreed.zsh'
+alias vzv='v $DOTFILES_ZSH/00-global.zsh'
+alias vzz='v $DOTFILES_ZSH/zsh.zsh'
 # }}}
 
-alias vc='v ~/.dotfiles/install.conf.yaml'
-alias v.lc='v ~/.dotfiles/conf/lazycli.yaml'
-alias c.='cd ~/.dotfiles'
+alias vc='v $DOTFILES/install.conf.yaml'
+alias v.lc='v $DOTFILES_CONF/lazycli.yaml'
+alias c.='cd $DOTFILES'
 
-alias al='cat ~/.dotfiles/conf/custom-zsh/* | egrep ^alias | sort | F'
+alias al='c "cat $DOTFILES_ZSH/* | egrep ^alias | sort"'
+alias dot='env | egrep ^DOTFILES | column -t -s ='
+alias dot.c='c "env | egrep ^DOTFILES | column -t -s ="'
+alias dot.f='dot | F'
+
+watch_wiki(){
+  cd ~/.dotfiles
+  npm run wiki:watch
+}

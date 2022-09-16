@@ -27,7 +27,7 @@
     ~/.config/picom: conf/picom
     ~/.config/systemd: conf/systemd
     ~/.local/share/fonts: fonts
-    ~/.oh-my-zsh/custom: conf/custom-zsh
+    ~/.oh-my-zsh/custom: conf/zsh
     ~/.tmux.conf: conf/tmux
     ~/neuron: conf/neuron
     ~/bin: bin

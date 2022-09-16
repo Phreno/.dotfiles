@@ -35,6 +35,9 @@
 [boxes](boxes)
 : Pour encadrer du texte
 
+[entr](entr)
+: Observe les évènnements sur les fichiers 
+
 ## Lazy
 
 [lazygit](lazygit)

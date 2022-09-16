@@ -3,7 +3,8 @@
 Session.vim
 .undodir
 
-
 conf/neuron/.neuron/output
 conf/systemd/user/multi-user.target.wants
-conf/neuron/secret.*
+conf/neuron/secret-*
+
+bin/secret

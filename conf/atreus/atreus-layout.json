@@ -34,9 +34,30 @@
         "rangeStart": 51218,
         "categories": ["layer", "dualuse"]
       },
-      {"code": 22, "label": {"base": "s", "shifted": "S"}},
-      {"code": 7, "label": {"base": "d", "shifted": "D"}},
-      {"code": 9, "label": {"base": "f", "shifted": "F"}},
+      {
+        "code": 49703,
+        "baseCode": 22,
+        "label": {"hint": "Alt/", "base": "s"},
+        "modifier": "Alt",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "alt"]
+      },
+      {
+        "code": 50712,
+        "baseCode": 7,
+        "label": {"hint": "AltGr/", "base": "d"},
+        "modifier": "AltGr",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "altgr"]
+      },
+      {
+        "code": 49178,
+        "baseCode": 9,
+        "label": {"hint": "Control/", "base": "f"},
+        "modifier": "Control",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "ctrl"]
+      },
       {"code": 10, "label": {"base": "g", "shifted": "G"}},
       {
         "code": 0,
@@ -49,9 +70,30 @@
         "categories": ["blanks"]
       },
       {"code": 11, "label": {"base": "h", "shifted": "H"}},
-      {"code": 13, "label": {"base": "j", "shifted": "J"}},
-      {"code": 14, "label": {"base": "k", "shifted": "K"}},
-      {"code": 15, "label": {"base": "l", "shifted": "L"}},
+      {
+        "code": 49182,
+        "baseCode": 13,
+        "label": {"hint": "Control/", "base": "j"},
+        "modifier": "Control",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "ctrl"]
+      },
+      {
+        "code": 50719,
+        "baseCode": 14,
+        "label": {"hint": "AltGr/", "base": "k"},
+        "modifier": "AltGr",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "altgr"]
+      },
+      {
+        "code": 49696,
+        "baseCode": 15,
+        "label": {"hint": "Alt/", "base": "l"},
+        "modifier": "Alt",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "alt"]
+      },
       {
         "code": 51781,
         "baseCode": 51,
@@ -70,21 +112,35 @@
       },
       {"code": 27, "label": {"base": "x", "shifted": "X"}},
       {"code": 6, "label": {"base": "c", "shifted": "C"}},
-      {"code": 25, "label": {"base": "v", "shifted": "V"}},
+      {
+        "code": 49962,
+        "baseCode": 25,
+        "label": {"hint": "Super/", "base": "v"},
+        "modifier": "Super",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "gui"]
+      },
       {"code": 5, "label": {"base": "b", "shifted": "B"}},
       {
-        "code": 2272,
+        "code": 6368,
         "label": {
-          "hint": {"full": "Shift+", "1u": "S+"},
+          "hint": {"full": "Shift+Super+", "1u": "S+Su+"},
           "base": {"full": "Control", "1u": "Ctrl"}
         },
         "location": "left",
-        "categories": ["with-modifiers", "shift"],
+        "categories": ["with-modifiers", "shift", "gui"],
         "baseCode": 224
       },
       {"code": 83, "label": {"base": {"full": "Num Lock", "1u": "NumLK"}}},
       {"code": 49, "label": {"base": "\\", "shifted": "|"}},
-      {"code": 16, "label": {"base": "m", "shifted": "M"}},
+      {
+        "code": 49953,
+        "baseCode": 16,
+        "label": {"hint": "Super/", "base": "m"},
+        "modifier": "Super",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "gui"]
+      },
       {"code": 54, "label": {"base": ",", "shifted": "<"}},
       {"code": 55, "label": {"base": ".", "shifted": ">"}},
       {
@@ -96,17 +152,11 @@
         "categories": ["layer", "dualuse"]
       },
       {"code": 41, "label": {"base": "Esc"}},
+      {"code": 76, "label": {"base": {"full": "Delete", "1u": "Del"}}},
       {
-        "code": 226,
-        "label": {"base": "Alt"},
-        "location": "left",
-        "categories": ["modifier"]
-      },
-      {
-        "code": 230,
-        "label": {"base": {"full": "AltGr", "1u": "AGr"}},
-        "location": "right",
-        "categories": ["modifier"]
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
       },
       {
         "code": 51517,
@@ -117,24 +167,20 @@
         "categories": ["layer", "dualuse"]
       },
       {
+        "code": 224,
+        "label": {"base": {"full": "Control", "1u": "Ctrl"}},
+        "location": "left",
+        "categories": ["modifier"]
+      },
+      {
         "code": 231,
         "label": {"base": {"full": "Super", "1u": "Sup.", "short": "Su"}},
         "location": "right",
         "categories": ["modifier"]
       },
       {
-        "code": 736,
-        "label": {
-          "hint": {"full": "Alt+", "1u": "A+"},
-          "base": {"full": "Control", "1u": "Ctrl"}
-        },
-        "location": "left",
-        "categories": ["with-modifiers", "alt"],
-        "baseCode": 224
-      },
-      {
-        "code": 224,
-        "label": {"base": {"full": "Control", "1u": "Ctrl"}},
+        "code": 227,
+        "label": {"base": {"full": "Super", "1u": "Sup.", "short": "Su"}},
         "location": "left",
         "categories": ["modifier"]
       },
@@ -152,9 +198,9 @@
         "rangeStart": 51218,
         "categories": ["layer", "dualuse"]
       },
-      {"code": 52, "label": {"base": "'", "shifted": "\""}},
+      {"code": 48, "label": {"base": "]", "shifted": "}"}},
       {"code": 47, "label": {"base": "[", "shifted": "{"}},
-      {"code": 48, "label": {"base": "]", "shifted": "}"}}
+      {"code": 52, "label": {"base": "'", "shifted": "\""}}
     ],
     [
       {
@@ -199,14 +245,34 @@
         "categories": ["blanks"]
       },
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "code": 53598,
+        "label": {"hint": {"full": "Dynamic Macro", "1u": "DM"}, "base": "#2"},
+        "rangeStart": 53596,
+        "categories": ["dynmacros"]
+      },
+      {
+        "code": 53600,
+        "label": {"hint": {"full": "Dynamic Macro", "1u": "DM"}, "base": "#4"},
+        "rangeStart": 53596,
+        "categories": ["dynmacros"]
+      },
+      {
+        "code": 53599,
+        "label": {"hint": {"full": "Dynamic Macro", "1u": "DM"}, "base": "#3"},
+        "rangeStart": 53596,
+        "categories": ["dynmacros"]
+      },
+      {
+        "code": 53601,
+        "label": {"hint": {"full": "Dynamic Macro", "1u": "DM"}, "base": "#5"},
+        "rangeStart": 53596,
+        "categories": ["dynmacros"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
         "categories": ["blanks"]
       },
-      {"code": 87, "label": {"base": "+"}, "location": "numpad"},
-      {"code": 86, "label": {"base": "-"}, "location": "numpad"},
-      {"code": 85, "label": {"base": "*"}, "location": "numpad"},
-      {"code": 84, "label": {"base": "/"}, "location": "numpad"},
       {
         "code": 303,
         "label": {"hint": {"full": "Ctrl+", "1u": "C+"}, "base": "["},
@@ -347,10 +413,9 @@
         "categories": ["blanks"]
       },
       {
-        "code": 53597,
-        "label": {"hint": {"full": "Dynamic Macro", "1u": "DM"}, "base": "#1"},
-        "rangeStart": 53596,
-        "categories": ["dynmacros"]
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
       }
     ],
     [
@@ -477,7 +542,12 @@
         "categories": ["blanks"]
       },
       {"code": 46, "label": {"base": "=", "shifted": "+"}},
-      {"code": 28, "label": {"base": "y", "shifted": "Y"}},
+      {
+        "code": 53596,
+        "label": {"hint": {"full": "Dynamic Macro", "1u": "DM"}, "base": "#0"},
+        "rangeStart": 53596,
+        "categories": ["dynmacros"]
+      },
       {
         "code": 1057,
         "label": {"hint": {"full": "Ctrl+", "1u": "C+"}, "base": "4"},
@@ -612,77 +682,10 @@
       {"code": 68, "label": {"base": "F11"}},
       {"code": 69, "label": {"base": "F12"}},
       {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {"code": 95, "label": {"base": "7"}, "location": "numpad"},
-      {"code": 96, "label": {"base": "8"}, "location": "numpad"},
-      {"code": 97, "label": {"base": "9"}, "location": "numpad"},
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {"code": 64, "label": {"base": "F7"}},
-      {"code": 65, "label": {"base": "F8"}},
-      {"code": 66, "label": {"base": "F9"}},
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {"code": 92, "label": {"base": "4"}, "location": "numpad"},
-      {"code": 93, "label": {"base": "5"}, "location": "numpad"},
-      {"code": 94, "label": {"base": "6"}, "location": "numpad"},
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {"code": 61, "label": {"base": "F4"}},
-      {"code": 62, "label": {"base": "F5"}},
-      {"code": 63, "label": {"base": "F6"}},
       {
         "code": 0,
         "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
@@ -698,19 +701,74 @@
         "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
+      {"code": 95, "label": {"base": "7"}, "location": "numpad"},
+      {"code": 96, "label": {"base": "8"}, "location": "numpad"},
+      {"code": 97, "label": {"base": "9"}, "location": "numpad"},
+      {"code": 87, "label": {"base": "+"}, "location": "numpad"},
       {
         "code": 0,
         "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {"code": 64, "label": {"base": "F7"}},
+      {"code": 65, "label": {"base": "F8"}},
+      {"code": 66, "label": {"base": "F9"}},
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
+      },
+      {"code": 92, "label": {"base": "4"}, "location": "numpad"},
+      {"code": 93, "label": {"base": "5"}, "location": "numpad"},
+      {"code": 94, "label": {"base": "6"}, "location": "numpad"},
+      {"code": 86, "label": {"base": "-"}, "location": "numpad"},
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {"code": 61, "label": {"base": "F4"}},
+      {"code": 62, "label": {"base": "F5"}},
+      {"code": 63, "label": {"base": "F6"}},
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
       {"code": 89, "label": {"base": "1"}, "location": "numpad"},
       {"code": 90, "label": {"base": "2"}, "location": "numpad"},
       {"code": 91, "label": {"base": "3"}, "location": "numpad"},
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
+      {"code": 84, "label": {"base": "/"}, "location": "numpad"},
       {
         "code": 0,
         "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
@@ -720,25 +778,21 @@
       {"code": 59, "label": {"base": "F2"}},
       {"code": 60, "label": {"base": "F3"}},
       {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
       {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
       {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
+      {"code": 37, "label": {"base": "8", "shifted": "*"}},
       {"code": 98, "label": {"base": "0"}, "location": "numpad"},
       {
         "code": 0,
@@ -750,11 +804,7 @@
         "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
         "categories": ["blanks"]
       },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      }
+      {"code": 85, "label": {"base": "*"}, "location": "numpad"}
     ],
     [
       {"code": 5, "label": {"base": "b", "shifted": "B"}},
@@ -790,9 +840,30 @@
         "rangeStart": 51218,
         "categories": ["layer", "dualuse"]
       },
-      {"code": 24, "label": {"base": "u", "shifted": "U"}},
-      {"code": 12, "label": {"base": "i", "shifted": "I"}},
-      {"code": 8, "label": {"base": "e", "shifted": "E"}},
+      {
+        "code": 49705,
+        "baseCode": 24,
+        "label": {"hint": "Alt/", "base": "u"},
+        "modifier": "Alt",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "alt"]
+      },
+      {
+        "code": 50717,
+        "baseCode": 12,
+        "label": {"hint": "AltGr/", "base": "i"},
+        "modifier": "AltGr",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "altgr"]
+      },
+      {
+        "code": 49177,
+        "baseCode": 8,
+        "label": {"hint": "Control/", "base": "e"},
+        "modifier": "Control",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "ctrl"]
+      },
       {"code": 16, "label": {"base": "m", "shifted": "M"}},
       {
         "code": 0,
@@ -805,9 +876,30 @@
         "categories": ["blanks"]
       },
       {"code": 6, "label": {"base": "c", "shifted": "C"}},
-      {"code": 23, "label": {"base": "t", "shifted": "T"}},
-      {"code": 22, "label": {"base": "s", "shifted": "S"}},
-      {"code": 21, "label": {"base": "r", "shifted": "R"}},
+      {
+        "code": 49192,
+        "baseCode": 23,
+        "label": {"hint": "Control/", "base": "t"},
+        "modifier": "Control",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "ctrl"]
+      },
+      {
+        "code": 50727,
+        "baseCode": 22,
+        "label": {"hint": "AltGr/", "base": "s"},
+        "modifier": "AltGr",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "altgr"]
+      },
+      {
+        "code": 49702,
+        "baseCode": 21,
+        "label": {"hint": "Alt/", "base": "r"},
+        "modifier": "Alt",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "alt"]
+      },
       {
         "code": 52771,
         "baseCode": 17,
@@ -826,7 +918,14 @@
       },
       {"code": 28, "label": {"base": "y", "shifted": "Y"}},
       {"code": 27, "label": {"base": "x", "shifted": "X"}},
-      {"code": 99, "label": {"base": "."}, "location": "numpad"},
+      {
+        "code": 50036,
+        "baseCode": 99,
+        "label": {"hint": "Super/", "base": "."},
+        "modifier": "Super",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "gui"]
+      },
       {"code": 14, "label": {"base": "k", "shifted": "K"}},
       {
         "code": 2272,
@@ -840,7 +939,14 @@
       },
       {"code": 83, "label": {"base": {"full": "Num Lock", "1u": "NumLK"}}},
       {"code": 38, "label": {"base": "9", "shifted": "("}},
-      {"code": 4, "label": {"base": "a", "shifted": "A"}},
+      {
+        "code": 49941,
+        "baseCode": 4,
+        "label": {"hint": "Super/", "base": "a"},
+        "modifier": "Super",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "gui"]
+      },
       {"code": 10, "label": {"base": "g", "shifted": "G"}},
       {"code": 11, "label": {"base": "h", "shifted": "H"}},
       {
@@ -1447,9 +1553,30 @@
       {"code": 15, "label": {"base": "l", "shifted": "L"}},
       {"code": 13, "label": {"base": "j", "shifted": "J"}},
       {"code": 4, "label": {"base": "a", "shifted": "A"}},
-      {"code": 24, "label": {"base": "u", "shifted": "U"}},
-      {"code": 12, "label": {"base": "i", "shifted": "I"}},
-      {"code": 8, "label": {"base": "e", "shifted": "E"}},
+      {
+        "code": 49705,
+        "baseCode": 24,
+        "label": {"hint": "Alt/", "base": "u"},
+        "modifier": "Alt",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "alt"]
+      },
+      {
+        "code": 50717,
+        "baseCode": 12,
+        "label": {"hint": "AltGr/", "base": "i"},
+        "modifier": "AltGr",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "altgr"]
+      },
+      {
+        "code": 49177,
+        "baseCode": 8,
+        "label": {"hint": "Control/", "base": "e"},
+        "modifier": "Control",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "ctrl"]
+      },
       {"code": 54, "label": {"base": ",", "shifted": "<"}},
       {
         "code": 0,
@@ -1469,7 +1596,14 @@
       {"code": 4, "label": {"base": "a", "shifted": "A"}},
       {"code": 28, "label": {"base": "y", "shifted": "Y"}},
       {"code": 27, "label": {"base": "x", "shifted": "X"}},
-      {"code": 55, "label": {"base": ".", "shifted": ">"}},
+      {
+        "code": 49992,
+        "baseCode": 55,
+        "label": {"hint": "Super/", "base": "."},
+        "modifier": "Super",
+        "rangeStart": 49169,
+        "categories": ["modifier", "dualuse", "gui"]
+      },
       {"code": 14, "label": {"base": "k", "shifted": "K"}},
       {
         "code": 2272,
@@ -1595,9 +1729,82 @@
         "categories": ["blanks"]
       },
       {
+        "code": 18665,
+        "legacyCode": 23785,
+        "label": {
+          "hint": {"full": "Volume", "1u": "Vol."},
+          "base": {"full": "Up", "1u": "🔊"}
+        },
+        "categories": ["consumer"]
+      },
+      {
         "code": 0,
         "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
         "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 18614,
+        "legacyCode": 22710,
+        "label": {"base": {"full": "Previous track", "1u": "⏮"}},
+        "categories": ["consumer"]
+      },
+      {
+        "code": 18637,
+        "legacyCode": 22733,
+        "label": {"base": {"full": "Play / pause", "1u": "⏯"}},
+        "categories": ["consumer"]
+      },
+      {
+        "code": 18615,
+        "legacyCode": 22711,
+        "label": {"base": "Stop"},
+        "categories": ["consumer"]
+      },
+      {
+        "code": 18613,
+        "legacyCode": 22709,
+        "label": {"base": {"full": "Next track", "1u": "⏭"}},
+        "categories": ["consumer"]
       },
       {
         "code": 0,
@@ -1650,9 +1857,32 @@
         "categories": ["blanks"]
       },
       {
+        "code": 18666,
+        "legacyCode": 23786,
+        "label": {
+          "hint": {"full": "Volume", "1u": "Vol."},
+          "base": {"full": "Down", "1u": "🔉"}
+        },
+        "categories": ["consumer"]
+      },
+      {
         "code": 0,
         "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
         "categories": ["blanks"]
+      },
+      {
+        "code": 0,
+        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
+        "categories": ["blanks"]
+      },
+      {
+        "code": 18544,
+        "legacyCode": 23664,
+        "label": {
+          "hint": {"full": "Brightness", "1u": "Brght."},
+          "base": {"full": "Down", "1u": "🔅"}
+        },
+        "categories": ["consumer"]
       },
       {
         "code": 0,
@@ -1695,9 +1925,10 @@
         "categories": ["blanks"]
       },
       {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
+        "code": 18658,
+        "legacyCode": 19682,
+        "label": {"base": "Mute"},
+        "categories": ["consumer"]
       },
       {
         "code": 0,
@@ -1705,89 +1936,13 @@
         "categories": ["blanks"]
       },
       {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 0,
-        "label": {"base": {"full": "Blocked", "1u": "Blkd"}},
-        "categories": ["blanks"]
+        "code": 18543,
+        "legacyCode": 23663,
+        "label": {
+          "hint": {"full": "Brightness", "1u": "Brght."},
+          "base": {"full": "Up", "1u": "🔆"}
+        },
+        "categories": ["consumer"]
       }
     ]
   ],

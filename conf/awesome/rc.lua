@@ -193,10 +193,6 @@ globalkeys = gears.table.join(
   ----------------
   -- Navigateur --
   ----------------
-  awful.key({ modkey }, "b", function()
-    awful.util.spawn("firefox -new-tab")
-  end,
-    { description = "ouvre le navigateur", group = "launcher" }),
 
   awful.key({ modkey }, "y", function()
     awful.util.spawn("firefox -new-tab www.youtube.com")
@@ -255,12 +251,12 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-local np_map = { 87, 88, 89 }
-for i = 1, 3 do
+local np_map = { "b", "é", "p", "o", "è" }
+for i = 1, 5 do
   globalkeys = gears.table.join(globalkeys,
 
     -- View tag only.
-    awful.key({ modkey }, "#" .. np_map[i],
+    awful.key({ modkey }, np_map[i],
       function()
         local screen = awful.screen.focused()
         local tag = screen.tags[i]
@@ -270,8 +266,20 @@ for i = 1, 3 do
       end,
       { description = "view tag #" .. i, group = "view-tag" }),
 
+    -- Move client to tag.
+    awful.key({ modkey, "Shift" }, np_map[i],
+      function()
+        if client.focus then
+          local tag = client.focus.screen.tags[i]
+          if tag then
+            client.focus:move_to_tag(tag)
+          end
+        end
+      end,
+      { description = "move focused client to tag #" .. i, group = "move-to-tag" }),
+
     -- -- Toggle tag display.
-    awful.key({ modkey, "Control" }, "#" .. np_map[i],
+    awful.key({ modkey, "Control" }, np_map[i],
       function()
         local screen = awful.screen.focused()
         local tag = screen.tags[i]
@@ -279,7 +287,7 @@ for i = 1, 3 do
           awful.tag.viewtoggle(tag)
         end
       end,
-      { description = "toggle tag #" .. i, group = "tag" })
+      { description = "toggle tag #" .. i, group = "toggle-tag" })
   )
 end
 

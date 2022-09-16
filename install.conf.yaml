@@ -18,8 +18,6 @@
 
 - create:
     - ~/git
-    - ~/workspace
-    - ~/bin
 
 - link:
     ~/.config/alacritty: conf/alacritty
@@ -32,4 +30,5 @@
     ~/.oh-my-zsh/custom: conf/custom-zsh
     ~/.tmux.conf: conf/tmux
     ~/neuron: conf/neuron
+    ~/bin: bin
 

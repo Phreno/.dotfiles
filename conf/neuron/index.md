@@ -17,5 +17,5 @@
 
 
 ## Professionel
-[index](secret/index)
+[Index](./secret/index)
 : Toutes les pages non versionnées

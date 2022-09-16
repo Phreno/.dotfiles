@@ -19,6 +19,9 @@
 - create:
     - ~/git
 
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
 - link:
     ~/.config/alacritty: conf/alacritty
     ~/.config/awesome: conf/awesome

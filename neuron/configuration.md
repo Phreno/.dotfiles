@@ -1,36 +1,62 @@
 ## Gestionnaire de fenêtre
 
-Configuration de [awsome](awsome)
+[awsome](awsome)
 : Gestionnaire de fenêtre
 
-Configuration de [alacritty](alacritty)
+[alacritty](alacritty)
 : Apparence du terminal
 
-Configuration de [picom](picom)
+[picom](picom)
 : Apparence des fenêtres
 
-Configuration de [nitrogen](nitrogen)
+[nitrogen](nitrogen)
 : Fond d'écran 
 
 ## Terminal
 
-Configuration de [zsh](zsh)
+[zsh](zsh)
 : Shell
 
-Configuration de [tmux](tmux)
+[oh my zsh](oh-my-zsh)
+: Pimp my shell
+
+[powerlevel10k](powerlevel10k)
+: Sexy prompt
+
+[tmux](tmux)
 : Multiplexer
+
+[figlet](figlet)
+: ASCII Art
+
+[lolcat](lolcat)
+: Un shell multicolore
+
+[boxes](boxes)
+: Pour encadrer du texte
+
+## Lazy
+
+[lazygit](lazygit)
+: Sexy git
+
+[lazycli](lazycli)
+: Sexy stdout wrapper
+
+[lazydocker](lazydocker)
+: Sexy docker
 
 ## Code
 
-Configuration de [vim](vim)
+[vim](vim)
 : Éditeur de code embarqué dans le terminal
 
-Configuration de [vscode](vscode)
+[vscode](vscode)
 : Éditeur de code graphique
 
 ## Firefox
 
-[Vimium](vimium)
+[vimium](vimium)
 : La navigation dans vim
 
 [bbookmarks](bbookmarks)
@@ -41,6 +67,6 @@ Configuration de [vscode](vscode)
 
 ## Documentation
 
-Configuration du [wiki](wiki)
+[wiki](wiki)
 : Wiki
 

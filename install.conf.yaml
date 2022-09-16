@@ -29,6 +29,6 @@
     ~/.local/share/fonts: fonts
     ~/.oh-my-zsh/custom: conf/zsh
     ~/.tmux.conf: conf/tmux
-    ~/neuron: conf/neuron
+    ~/neuron: neuron
     ~/bin: bin
 

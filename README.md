@@ -1,1 +1,1 @@
-Liens vers la [documentation](/conf/neuron/index)
+Liens vers la [documentation](/conf/neuron/index.md)

@@ -8,3 +8,5 @@ conf/systemd/user/multi-user.target.wants
 conf/neuron/secret-*
 
 bin/secret
+
+conf/neuron/secret

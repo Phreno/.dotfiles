@@ -28,6 +28,16 @@ Configuration de [vim](vim)
 Configuration de [vscode](vscode)
 : Éditeur de code graphique
 
+## Firefox
+
+[Vimium](vimium)
+: La navigation dans vim
+
+[bbookmarks](bbookmarks)
+: Script de lancement d'un favoris depuis le terminal
+
+[bhistory](bhistory)
+: Script de lancement d'un site historisé depuis le terminal
 
 ## Documentation
 

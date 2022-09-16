@@ -20,7 +20,8 @@
     - ~/git
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+  - [git submodule update --init --recursive, Actualise les sous modules]
+  - [sed -i "s/<utilisateur>/`whoami`/g" ~/.dotfiles/conf/systemd/user.control/neuron.service, Configure le service du wiki]
 
 - link:
     ~/.config/alacritty: conf/alacritty

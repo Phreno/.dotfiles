@@ -1,8 +1,4 @@
 
-## Configuration de awesome
-
-https://pavelmakhov.com/awesome-wm-widgets/
-
 ## Installation de neuron 
 
 Suivre cette procédure d'installation

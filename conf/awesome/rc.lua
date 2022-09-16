@@ -218,6 +218,11 @@ globalkeys = gears.table.join(
   end,
     { description = "ouvre github", group = "browser" }),
 
+  awful.key({ modkey }, ".", function()
+    awful.util.spawn("firefox -new-tab https://github.com/Phreno/.dotfiles")
+  end,
+    { description = "ouvre le repo dotfiles", group = "browser" }),
+
   awful.key({ modkey }, "w", function()
     awful.util.spawn("firefox -new-tab http://localhost:4321")
   end,

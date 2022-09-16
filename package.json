@@ -20,7 +20,10 @@
     "version:increment-maj": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}'         version > version.bak; rm version; mv version.bak version; git add version; git commit -m \"RELEASE(maj)\"",
     "version:next-rev": "awk -F'.' '{printf(\"%d.%d.%d\\n\",$1,$2,$3+1)}' version ",
     "version:next-min": "awk -F'.' '{printf(\"%d.%d.0\\n\",$1,$2+1)}'     version ",
-    "version:next-maj": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}'         version "
+    "version:next-maj": "awk -F'.' '{printf(\"%d.0.0\\n\",$1+1)}'         version ",
+    "git:ignore-secret:checkout": "git config filter.ignore-secret.smudge 'sed \"s/^!secret:.*//\"'",
+    "git:ignore-secret:add": "git config filter.ignore-secret.clean 'sed \"s/^!secret:.*//\"'",
+    "git:ignore-secret": "npm run git:ignore-secret:add; npm run git:ignore-secret:checkout"
   },
   "repository": {
     "type": "git",

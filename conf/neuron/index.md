@@ -1,10 +1,19 @@
+## Installation de poste
+
+[Configuration](configuration)
+: Détail les étapes à suivre pour mettre en place le poste de développement.
 
 
-## Configuration des .dotfiles
+## Développement
 
-[Configuration](Configuration)
+[Git](git)
+: Gestion des sources
 
-## Culture Informatique
 
-[Spring](Spring)
+## Culture informatique
+
+[Interview](interview)
+: Ressources pour les entretiens techniques
+
+
 

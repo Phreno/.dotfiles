@@ -1,0 +1,14 @@
+#!/bin/bash
+installe_lazycli(){
+	LAZYCLI_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazycli/releases/latest" | grep -Po '"tag_name": "v\K[0-35.]+')
+https://github.com/jesseduffield/lazycli/releases/download/v0.1.15/lazycli-linux-x64.tar.gz
+	curl -Lo lazycli.tar.gz "https://github.com/jesseduffield/lazycli/releases/download/v${LAZYCLI_VERSION}/lazycli-linux-x64.tar.gz"
+	sudo tar xf lazycli.tar.gz -C /usr/local/bin lazycli
+}
+
+main(){
+  installe_lazycli
+}
+
+main
+

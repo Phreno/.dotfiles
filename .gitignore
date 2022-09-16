@@ -6,3 +6,4 @@ Session.vim
 
 conf/neuron/.neuron/output
 conf/systemd/user/multi-user.target.wants
+conf/neuron/secret.*

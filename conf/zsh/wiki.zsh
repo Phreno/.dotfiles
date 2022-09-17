@@ -33,7 +33,7 @@ alias dww='dotfiles.wiki_watch'
 #   search                   Search zettels and print their path                 #
 ##################################################################################
 alias n='neuron -d $DOTFILES_NEURON'
-
+alias no='n open'
 ####################################################################################
 # Usage: neuron new [TITLEID] [-e|--edit] [--date DATE/TIME]                       #
 #   Create a new zettel                                                            #

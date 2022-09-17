@@ -380,12 +380,6 @@ client.connect_signal("manage", function(c)
   end
 end)
 
-
-client.connect_signal("manage", function(c)
-  c.shape = gears.shape.rounded_rect
-end)
-
-
 -- {{{
 ----------------
 -- TYRANNICAL --
@@ -398,7 +392,7 @@ tyrannical.tags = {
     exclusive = true, -- Refuse any other type of clients (by classes)
     layout    = awful.layout.suit.tile, -- Use the tile layout
     class     = { --Accept the following classes, refuse everything else (because of "exclusive=true")
-      "alacritty"
+      "alacritty", "coreshot"
     }
   },
   {
@@ -407,7 +401,7 @@ tyrannical.tags = {
     exclusive = true,
     layout    = awful.layout.suit.tile, -- Use the tile layout
     class     = {
-      "code",
+      "code", "coreshot"
     }
   },
   {
@@ -416,7 +410,7 @@ tyrannical.tags = {
     exclusive = true,
     layout    = awful.layout.suit.tile, -- Use the tile layout
     class     = {
-      "Firefox", "brave"
+      "Firefox", "brave", "coreshot"
     }
   },
 }

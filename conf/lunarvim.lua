@@ -342,6 +342,8 @@ lvim.plugins = {
   },
   { "tpope/vim-speeddating" },
   { "rebelot/kanagawa.nvim" },
+  -- Optional but recommended for better markdown syntax
+  { 'plasticboy/vim-markdown' },
   {
     "oberblastmeister/neuron.nvim",
     config = function()

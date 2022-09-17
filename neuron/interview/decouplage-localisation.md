@@ -1,0 +1,61 @@
+# Le découplage localisation
+
+## Problématiue
+
+Pouvoir accéder à une fonctionnalité distante sans avoir à connaître précisément le ou les dispositif(s) qui en ont la charge. 
+
+## Objectifs
+
+- Informatique distribuée 
+- les machines distantes sont
+  - remplacables
+  - déplacables
+  - scalable 
+  - supprimabre
+
+## Mise en place
+
+Le moyen est la mise en place d’une couche d’indirection entre les systèmes comme un DNS ou des proxys : 
+au lieu d’accéder à un système directement par son nom, on utilise un intermédiaire.
+
+Différents types de service distribué
+- comme CORBA 
+- SOAP 
+- REST
+- Bases de données non locales
+- Systèmes de fichiers distants
+
+
+:::{.rounded .border-1 .border-solid .border-yellow-400  .mb-4}
+Le découplage de localisation n'entraîne pas nécessairement un découplage de format
+:::
+
+:::{.rounded .border-1 .border-solid .border-red-400  .mb-4}
+Rien ne garantit que ce contrat de service permette par lui-même un réel découplage
+:::
+
+> Par exemple on peut penser qu’exposer des fonctionnalités en REST et fournir une documentation Swagger permet un découplage de format car il est alors possible de les appeller avec un minimum de connaissances et d’interractions avec les personnes qui en sont responsables. Mais si ce contrat d’interface évolue toutes les semaines, le fait d’avoir un contrat de service formalisé ne vous sauvera pas d’avoir à modifier votre code à chaque fois.
+
+## Inconvénients
+
+
+- Nouveaux types d’erreurs et d’incertitudes ;
+- Complexité pour suivre et débugger les traitements ;
+- Latence pour la sérialisation / désérialisation et les transferts réseau.
+
+> Ainsi, si votre besoin est un découplage de format et pas un découplage de localisation, travailler sur des modules d’un même applicatif est une stratégie tout à fait valide.
+
+Un découplage de localisation sans découplage de format peut être utile à l’intérieur d’un même système car il permet de déployer séparément différents composants et de pouvoir gérer la résilience. 
+
+> C’est le cas par exemple des bases de données où une bibliothèque cliente expose une API pour requêter le serveur.
+
+## Bonnes Pratiques
+
+
+:::{.rounded .border-1 .border-solid .border-blue-400  .mb-4}
+Le cas le plus courant, correspond à un découplage de localisation et de format.
+C’est lui qui permet à des équipes de travailler et de déployer leurs composants en encadrant et en limitant les dépendances.
+:::
+
+
+

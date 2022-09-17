@@ -8,6 +8,7 @@
 | 5. | Pour exécuter l’application Spring, un descripteur de déploiement est requis.                              | Il n’y a aucune exigence pour un descripteur de déploiement.                                                     |   |   |
 | 6. | Pour créer une application Spring, les développeurs écrivent beaucoup de code.                             | Cela réduit les lignes de code.                                                                                  |   |   |
 | 7. | Il ne prend pas en charge la base de données en mémoire.                                                   | Il prend en charge la base de données en mémoire telle que H2.                                                   |   |   |
-
-## Spring boot
+## [Spring](spring)
+![spring-overview](./static/spring/spring-overview.png)
+## [Spring boot](spring-boot)
 ![spring-boot-overview](./static/spring/spring-boot-overview.png)

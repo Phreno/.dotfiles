@@ -346,6 +346,7 @@ lvim.plugins = {
   { 'plasticboy/vim-markdown' },
   {
     "oberblastmeister/neuron.nvim",
+    branch = 'unstable',
     config = function()
       require 'neuron'.setup {
         virtual_titles = true,

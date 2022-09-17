@@ -14,3 +14,44 @@ alias dws='dotfiles.wiki_start'
 alias dwr='dotfiles.wiki_restart'
 alias dww='dotfiles.wiki_watch'
 
+
+
+
+##################################################################################
+# Usage: neuron [--version] [-d PATH] [-o PATH] COMMAND                          #
+#   Neuron, future-proof Zettelkasten app <https://neuron.zettel.page/>          #
+#                                                                                #
+# Available options:                                                             #
+#   --version                Show version                                        #
+#   -d PATH                  Run as if neuron was started in PATH instead of the #
+#                            current working directory                           #
+#   -o PATH                  Custom path to generate static site in              #
+#                                                                                #
+# Available commands:                                                            #
+#   new                      Create a new zettel                                 #
+#   open                     Open the local static site                          #
+#   search                   Search zettels and print their path                 #
+##################################################################################
+alias n='neuron -d $DOTFILES_NEURON'
+
+####################################################################################
+# Usage: neuron new [TITLEID] [-e|--edit] [--date DATE/TIME]                       #
+#   Create a new zettel                                                            #
+#                                                                                  #
+# Available options:                                                               #
+#   TITLEID                  Custom (title) ID to use; otherwise random ID will be #
+#                            generated                                             #
+#   -e,--edit                Open the newly-created zettel in $EDITOR              #
+####################################################################################
+alias nne='n new -e'
+
+##################################################################
+# Usage: neuron search [-a|--full-text] [-e|--edit]              #
+#   Search zettels and print their path                          #
+#                                                                #
+# Available options:                                             #
+#   -a,--full-text           Full-text search                    #
+#   -e,--edit                Open the matching zettel in $EDITOR #
+##################################################################
+alias nsa='n search -a'
+alias nse='n search -e'

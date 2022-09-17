@@ -19,6 +19,10 @@
 - create:
     - ~/git
 
+- shell:
+  - [git submodule update --init --recursive, Actualise les sous modules]
+  - [sed -i "s/<utilisateur>/`whoami`/g" ~/.dotfiles/conf/systemd/user.control/neuron.service, Configure le service du wiki]
+
 - link:
     ~/.config/alacritty: conf/alacritty
     ~/.config/awesome: conf/awesome
@@ -27,8 +31,8 @@
     ~/.config/picom: conf/picom
     ~/.config/systemd: conf/systemd
     ~/.local/share/fonts: fonts
-    ~/.oh-my-zsh/custom: conf/custom-zsh
+    ~/.oh-my-zsh/custom: conf/zsh
     ~/.tmux.conf: conf/tmux
-    ~/neuron: conf/neuron
+    ~/neuron: neuron
     ~/bin: bin
 

@@ -12,6 +12,11 @@ alias vim='lvim'
 alias v='lvim'
 
 
+NVIM=$HOME/bin/nvim-linux64/bin/nvim
+DOT_BIN=$HOME/bin
+VENDOR_BIN=$DOT_BIN/vendor
+SECRET_BIN=$DOT_BIN/secret
+LOCAL_BIN=$HOME/.local/bin
 
-PATH="$HOME/bin/nvim-linux64/bin/nvim:$HOME/bin:$HOME/.local/bin:$PATH"
+PATH="$NVIM:$DOT_BIN:$VENDOR_BIN:$SECRET_BIN:$LOCAL_BIN:$PATH"
 

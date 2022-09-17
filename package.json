@@ -1,13 +1,6 @@
 {
   "name": "dotfiles",
   "scripts": {
-    "wiki:reload-daemon": "systemctl --user daemon-reload",
-    "wiki:status": "systemctl --user status neuron.service",
-    "wiki:enable": "systemctl --user enable neuron.service",
-    "wiki:stop": "systemctl --user stop neuron.service",
-    "wiki:start": "systemctl --user start neuron.service",
-    "wiki:restart": "npm run wiki:stop; npm run wiki:start",
-    "wiki:watch": "find -name \"*md\" | entr npm run wiki:restart",
     "release:auto-rev": "npm run release:prepare-rev; npm run release:finish",
     "release:auto-min": "npm run release:prepare-min; npm run release:finish",
     "release:auto-maj": "npm run release:prepare-maj; npm run release:finish",

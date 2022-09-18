@@ -12,8 +12,8 @@ lvim.transparent_window = true
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
--- lvim.colorscheme = "onedarker"
-lvim.colorscheme = "kanagawa"
+lvim.colorscheme = "onedarker"
+-- lvim.colorscheme = "kanagawa"
 
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -22,7 +22,28 @@ lvim.colorscheme = "kanagawa"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["gzz"] = ":lua require'neuron/telescope'.find_zettels()<CR>"
+-- " find your notes, click enter to create the note if there are not notes that match
+lvim.keys.normal_mode["gzZ"] = ":lua require'neuron/telescope'.find_zettels()<CR>"
+-- " insert the id of the note that is found
+lvim.keys.normal_mode["gzZ"] = ":lua require'neuron/telescope'.find_zettels {insert = true}<CR>"
 
+-- " find the backlinks of the current note all the note that link this note
+lvim.keys.normal_mode["gzb"] = ":lua require'neuron/telescope'.find_backlinks()<CR>"
+
+-- " same as above but insert the found id
+lvim.keys.normal_mode["gzB"] = ":lua require'neuron/telescope'.find_backlinks {insert = true}<CR>"
+
+-- " find all tags and insert
+lvim.keys.normal_mode["gzt"] = ":lua require'neuron/telescope'.find_tags()<CR>"
+
+-- " start the neuron server and render markdown, auto reload on save
+lvim.keys.normal_mode["gzs"] = ":lua require'neuron'.rib {address = \"127.0.0.1:8200\", verbose = true}<CR>"
+
+-- " go to next [[my_link]] or [[[my_link]]]
+lvim.keys.normal_mode["gz]"] = ":lua require'neuron'.goto_next_extmark()<CR>"
+-- " go to previous
+lvim.keys.normal_mode["gz["] = ":lua require'neuron'.goto_prev_extmark()<CR>]]"
 
 vim.cmd [[set relativenumber]]
 

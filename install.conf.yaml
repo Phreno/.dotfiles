@@ -27,7 +27,7 @@
     ~/.config/alacritty: conf/alacritty
     ~/.config/awesome: conf/awesome
     ~/.config/lazycli/config.yml: conf/lazycli.yaml
-    ~/.config/lvim/config.lua: conf/lunarvim.lua
+    ~/.config/lvim/config.lua: conf/lunarvim/lunarvim.lua
     ~/.config/picom: conf/picom
     ~/.config/systemd: conf/systemd
     ~/.local/share/fonts: fonts

@@ -1,0 +1,11 @@
+{
+  {
+    "major system": {
+      "prefix": "ms",
+      "body": [
+        "<img src=\"./static/major-system/$1\" width=\"$2\"/>"
+      ],
+      "description": "Ajoute une image correspondant au nombre donné en $1"
+    },
+  }
+}

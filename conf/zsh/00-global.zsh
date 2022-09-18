@@ -6,6 +6,7 @@ export DOTFILES_ATREUS=$DOTFILES/conf/atreus
 export DOTFILES_AWESOME=$DOTFILES/conf/awesome
 export DOTFILES_ZSH=$DOTFILES/conf/zsh
 export DOTFILES_NEURON=$DOTFILES/neuron
+export DOTFILES_NEURON_SECRET=$DOTFILES/neuron/secret
 export DOTFILES_PICOM=$DOTFILES/conf/picom
 export DOTFILES_SYSTEMD=$DOTFILES/conf/systemd
 export DOTFILES_USER_CONTROL=$DOTFILES/conf/systemd/user.control

@@ -1,5 +1,7 @@
 # Le découplage localisation
 
+![résumé](./static/decouplage/decouplage-localisation.png)
+
 ## Problématiue
 
 Pouvoir accéder à une fonctionnalité distante sans avoir à connaître précisément le ou les dispositif(s) qui en ont la charge. 

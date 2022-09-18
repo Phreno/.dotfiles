@@ -1,5 +1,9 @@
 # Le découplage temporalité
 
+
+![resumé](./static/decouplage/decouplage-temporalite.png)
+
+
 ## Objectifs
 
 Traiter de mannière asynchrone. 

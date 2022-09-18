@@ -27,7 +27,8 @@
     ~/.config/alacritty: conf/alacritty
     ~/.config/awesome: conf/awesome
     ~/.config/lazycli/config.yml: conf/lazycli.yaml
-    ~/.config/lvim/config.lua: conf/lunarvim.lua
+    ~/.config/lvim/config.lua: conf/lunarvim/lunarvim.lua
+    ~/.config/lvim/snippets: conf/lunarvim/snippets
     ~/.config/picom: conf/picom
     ~/.config/systemd: conf/systemd
     ~/.local/share/fonts: fonts
@@ -35,8 +36,3 @@
     ~/.tmux.conf: conf/tmux
     ~/neuron: neuron
     ~/bin: bin
-
-- shell:
-  - [systemctl --user daemon-reload]
-
-

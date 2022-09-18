@@ -1,6 +1,9 @@
 
 #  Le découplage de format
 
+![résumé](./static/decouplage/decouplage-format.png)
+
+
 ## Problématique
 Les contrats « à usage internes » qui ne font pas l’objet de ces garanties.
 

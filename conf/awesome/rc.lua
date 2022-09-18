@@ -199,6 +199,11 @@ globalkeys = gears.table.join(
   end,
     { description = "ouvre youtube", group = "browser" }),
 
+  awful.key({ modkey }, "m", function()
+    awful.util.spawn("firefox -new-tab mail.google.com")
+  end,
+    { description = "ouvre youtube", group = "browser" }),
+
   awful.key({ modkey }, "g", function()
     awful.util.spawn("firefox -new-tab www.google.com")
   end,
@@ -220,7 +225,8 @@ globalkeys = gears.table.join(
     { description = "ouvre le repo dotfiles", group = "browser" }),
 
   awful.key({ modkey }, "w", function()
-    awful.util.spawn("firefox -new-tab http://localhost:4321")
+    awful.util.spawn("firefox -new-tab file:///home/phreno/.dotfiles/neuron/.neuron/output/impulse.html")
+
   end,
     { description = "ouvre le wiki", group = "browser" })
 -- }}}
@@ -238,14 +244,14 @@ clientkeys = gears.table.join(
     { description = "close", group = "client" }),
 
   awful.key({ modkey, }, "o", function(c) c:move_to_screen() end,
-    { description = "move to screen", group = "client" }),
+    { description = "move to screen", group = "client" })
 
-  awful.key({ modkey, }, "m",
-    function(c)
-      c.maximized = not c.maximized
-      c:raise()
-    end,
-    { description = "(un)maximize", group = "client-max" })
+-- awful.key({ modkey, }, "m",
+--   function(c)
+--     c.maximized = not c.maximized
+--     c:raise()
+--   end,
+--   { description = "(un)maximize", group = "client-max" })
 )
 
 -- Bind all key numbers to tags.

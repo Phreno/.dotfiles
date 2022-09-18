@@ -35,8 +35,3 @@
     ~/.tmux.conf: conf/tmux
     ~/neuron: neuron
     ~/bin: bin
-
-- shell:
-  - [systemctl --user daemon-reload]
-
-

@@ -14,9 +14,6 @@ alias dws='dotfiles.wiki_start'
 alias dwr='dotfiles.wiki_restart'
 alias dww='dotfiles.wiki_watch'
 
-
-
-
 ##################################################################################
 # Usage: neuron [--version] [-d PATH] [-o PATH] COMMAND                          #
 #   Neuron, future-proof Zettelkasten app <https://neuron.zettel.page/>          #
@@ -33,7 +30,23 @@ alias dww='dotfiles.wiki_watch'
 #   search                   Search zettels and print their path                 #
 ##################################################################################
 alias n='neuron -d $DOTFILES_NEURON'
-alias no='n open'
+alias N='neuron -d $DOTFILES_NEURON_SECRET'
+
+
+##################################################################################
+# Usage: neuron gen [(-s|--serve [HOST]:PORT) | -S] [-w|--watch] [--pretty-urls] #
+#   Generate and serve the static site                                           #
+#                                                                                #
+# Available options:                                                             #
+#   -s,--serve [HOST]:PORT   Run a HTTP server on the generated directory        #
+#   -S                       Like `-s 127.0.0.1:8080`                            #
+#   -w,--watch               Watch for changes and regenerate                    #
+#   --pretty-urls            Drop the .html at the end of Zettel URLs            #
+#   -h,--help                Show this help text                                 #
+##################################################################################
+alias ngw='n gen -w'
+alias Ngw='n gen -w'
+
 ####################################################################################
 # Usage: neuron new [TITLEID] [-e|--edit] [--date DATE/TIME]                       #
 #   Create a new zettel                                                            #
@@ -44,6 +57,7 @@ alias no='n open'
 #   -e,--edit                Open the newly-created zettel in $EDITOR              #
 ####################################################################################
 alias nne='n new -e'
+alias Nne='N new -e'
 
 ##################################################################
 # Usage: neuron search [-a|--full-text] [-e|--edit]              #
@@ -54,4 +68,6 @@ alias nne='n new -e'
 #   -e,--edit                Open the matching zettel in $EDITOR #
 ##################################################################
 alias nsa='n search -a'
+alias Nsa='N search -a'
 alias nse='n search -e'
+alias Nse='N search -e'

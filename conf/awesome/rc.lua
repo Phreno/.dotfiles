@@ -204,6 +204,11 @@ globalkeys = gears.table.join(
   end,
     { description = "ouvre youtube", group = "browser" }),
 
+  awful.key({ modkey }, "x", function()
+    awful.util.spawn("firefox -new-tab https://app.dashlane.com/#/login")
+  end,
+    { description = "ouvre dashlane", group = "browser" }),
+
   awful.key({ modkey }, "g", function()
     awful.util.spawn("firefox -new-tab www.google.com")
   end,

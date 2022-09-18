@@ -462,5 +462,6 @@ tyrannical.settings.group_children = true --Force popups/dialogs to have the sam
 ---------------
 beautiful.useless_gap = 10
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("nitrogen --restore")
+
+awful.spawn.with_shell("nitrogen --set-zoom-fill --random ~/.dotfiles/wallpapers --save")
 -- }}}

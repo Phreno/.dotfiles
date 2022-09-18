@@ -13,18 +13,19 @@ alias vz='v ~/.zshrc'
 #######
 # zsh #
 #######
-alias vzc='v $DOTFILES_ZSH/chrysalis.zsh'
-alias vzd='v $DOTFILES_ZSH/dotfiles.zsh'
-alias vze='v $DOTFILES_ZSH/edit-command-line.zsh'
-alias vzf='v $DOTFILES_ZSH/fuck.zsh'
-alias vzg='v $DOTFILES_ZSH/git.zsh'
-alias vzgs='v $DOTFILES_ZSH/gnome.zsh'
-alias vzj='v $DOTFILES_ZSH/java.zsh'
-alias vzl='v $DOTFILES_ZSH/lazy.zsh'
-alias vzt='v $DOTFILES_ZSH/tmux-aliases.zsh'
-alias vzts='v $DOTFILES_ZSH/tspreed.zsh'
-alias vzv='v $DOTFILES_ZSH/00-global.zsh'
-alias vzz='v $DOTFILES_ZSH/zsh.zsh'
+alias vzc='v $DOTFILES_ZSH/chrysalis.zsh; sz'
+alias vzd='v $DOTFILES_ZSH/dotfiles.zsh; sz'
+alias vze='v $DOTFILES_ZSH/edit-command-line.zsh; sz'
+alias vzf='v $DOTFILES_ZSH/fuck.zsh; sz'
+alias vzg='v $DOTFILES_ZSH/git.zsh; sz'
+alias vzgs='v $DOTFILES_ZSH/gnome.zsh; sz'
+alias vzj='v $DOTFILES_ZSH/java.zsh; sz'
+alias vzl='v $DOTFILES_ZSH/lazy.zsh; sz'
+alias vzt='v $DOTFILES_ZSH/tmux-aliases.zsh; sz'
+alias vzts='v $DOTFILES_ZSH/tspreed.zsh; sz'
+alias vzv='v $DOTFILES_ZSH/00-global.zsh; sz'
+alias vzz='v $DOTFILES_ZSH/zsh.zsh; sz'
+alias vzn='v $DOTFILES_ZSH/wiki.zsh; sz'
 # }}}
 
 alias vc='v $DOTFILES/install.conf.yaml'
@@ -36,7 +37,3 @@ alias dot='env | egrep ^DOTFILES | column -t -s ='
 alias dot.c='c "env | egrep ^DOTFILES | column -t -s ="'
 alias dot.f='dot | F'
 
-watch_wiki(){
-  cd ~/.dotfiles
-  npm run wiki:watch
-}

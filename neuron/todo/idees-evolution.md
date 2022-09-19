@@ -4,16 +4,27 @@ date: 2022-09-18T00:05
 
 # TODO
 
-## wiki
+## Backlog
 
-- [x] Ajouter des images de 1-10... pour associer aux notes (major systeme)
-  - [x] Faire appel a une api pour trouver des images qui corresponde au major systeme
-    - Pour éviter de travailler toujours avec les memes images ce qui me perturbe
-
-- [ ] Désactiver le neurone.service
-- [ ] Documenter le package.json 
-- [ ] Un script qui déplace automatiquement toutes les notes dans un dossier correspondant au premier tag
+- documentation
+  - build
+    - [ ] Documenter le package.json 
+- refacto
+  - [ ] Supprimer le nom des notes, passer par des ID
+  - [ ] Ajouter la source des images pexels
+- feat
+  - wiki
+    - [ ] Un script qui déplace automatiquement toutes les notes dans un dossier correspondant au premier tag
+- build
+  - awsome
+    - [ ] Gérer le multi écran 
+    - [ ] Splitter le rc.lua
+- fix
+  - wiki
+    - [ ] Désactiver le neurone.service
+    - [ ] Corriger le chemin de la doc dans github
   
-## nvim
+## Done
+
 - [x] Ajouter les fonctions neurons à la main si j'arrive pas a faire marcher le plugin
   - https://raw.githubusercontent.com/oberblastmeister/neuron.nvim/master/lua/neuron.lua

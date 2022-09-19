@@ -1,7 +1,7 @@
 ---
 date: dim. 18 sept. 2022 15:23:44 CEST
 tags:
-  - java/spring/spring-boot
+  - developpement/java/spring/spring-boot
   - interview
 ---
 

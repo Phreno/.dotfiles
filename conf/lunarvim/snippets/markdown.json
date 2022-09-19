@@ -1,11 +1,30 @@
 {
-  {
-    "major system": {
-      "prefix": "ms",
-      "body": [
-        "<img src=\"./static/major-system/$1\" width=\"$2\"/>"
-      ],
-      "description": "Ajoute une image correspondant au nombre donné en $1"
-    },
+  "bug": {
+    "prefix": "bug",
+    "body": [
+      "##    Name/ID",
+      "##    Summary",
+      "##    Visual proof",
+      "##    Environment",
+      "##    Source URL",
+      "##    Console logs",
+      "##    Steps to reproduce",
+      "##    Expected vs. actual results"
+    ],
+    "description": "template de snippet"
+  },
+  "icon": {
+    "prefix": "icon",
+    "body": [
+      "<img width=30 src=\"./static/icons/$1\"/>"
+    ],
+    "description": "intègre une icone"
+  },
+  "icon-ban": {
+    "prefix": "icon-ban",
+    "body": [
+      "<img width=30 src=\"./static/icons/icon-ban.svg\"/>"
+    ],
+    "description": "intègre une icon-ban"
   }
 }

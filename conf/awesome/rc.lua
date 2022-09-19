@@ -398,7 +398,6 @@ end)
 local tyrannical = require("tyrannical")
 tyrannical.tags = {
   {
-    name      = "1.  Term", -- Call the tag "Term"
     init      = true, -- Load the tag on startup
     exclusive = true, -- Refuse any other type of clients (by classes)
     layout    = awful.layout.suit.tile, -- Use the tile layout
@@ -407,7 +406,6 @@ tyrannical.tags = {
     }
   },
   {
-    name      = "2.  Develop",
     init      = true,
     exclusive = true,
     layout    = awful.layout.suit.tile, -- Use the tile layout
@@ -416,9 +414,9 @@ tyrannical.tags = {
     }
   },
   {
-    name      = "3. 爵Internet",
     init      = true,
     exclusive = true,
+    screen    = 1,
     layout    = awful.layout.suit.tile, -- Use the tile layout
     class     = {
       "Firefox", "brave", "coreshot"

@@ -1,4 +1,3 @@
-!-- MathJax -->
 <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <!-- Prism.js -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
@@ -51,3 +50,110 @@ cf. https://github.com/tw-in-js/twind/discussions/161#discussioncomment-535632
   twindObserve.observe(document.documentElement)
 </script>
 <!-- End of Twind script -->
+<script src="https://cdn.jsdelivr.net/npm/minisearch@5.0.0/dist/umd/index.min.js">
+</script>
+
+<script>
+
+  function docReady(fn) {
+    console.log("e$(e)")
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      // call on next available tick
+      setTimeout(fn, 1);
+    } else {
+      document.addEventListener("DOMContentLoaded", fn);
+    }
+  }
+  docReady(() => {// A collection of documents for our examples
+    const documents = [
+      {
+        id: 1,
+        title: 'Moby Dick',
+        text: 'Call me Ishmael. Some years ago...',
+        category: 'fiction'
+      },
+      {
+        id: 2,
+        title: 'Zen and the Art of Motorcycle Maintenance',
+        text: 'I can see by my watch...',
+        category: 'fiction'
+      },
+      {
+        id: 3,
+        title: 'Neuromancer',
+        text: 'The sky above the port was...',
+        category: 'fiction'
+      },
+      {
+        id: 4,
+        title: 'Zen and the Art of Archery',
+        text: 'At first sight it must seem...',
+        category: 'non-fiction'
+      },
+      // ...and more
+    ]
+
+    let miniSearch = new MiniSearch({
+      fields: ['title', 'text'], // fields to index for full-text search
+      storeFields: ['title', 'category'] // fields to return with search results
+    })
+
+    // Index all documents
+    miniSearch.addAll(documents)
+
+    // Search with default options
+    let results = miniSearch.search('zen art motorcycle')
+    // => [
+    //   { id: 2, title: 'Zen and the Art of Motorcycle Maintenance', category: 'fiction', score: 2.77258, match: { ... } },
+    //   { id: 4, title: 'Zen and the Art of Archery', category: 'non-fiction', score: 1.38629, match: { ... } }
+    // ]
+    console.log("test")
+    [
+      "<div class=\"container\">",
+      "  <header class=\"header\"></header>",
+      "  <div class=\"wrapper flex\">",
+      "    <div class=\"primary\">",
+      "      <main class=\"main\">",
+      "        <article class=\"post\">",
+      "          <div class=\"content post__content clearfix\">",
+      "            <h2>How to Integrate Lunr.js with a Static Web Site</h2>",
+      "            <p>This CodePen demonstrates the HTML, CSS and JavaScropt presented in a blog post on my website, <a href=\"https://aaronluna.dev/blog/add-search-to-static-site-lunrjs-hugo-vanillajs/\" target=\"_blank\" rel=\"noopener\">Add Search to Your Static Site with Lunr.js</a>.</p>",
+      "            <p>The only difference between the implementation that is documented in the blog post and this CodePen is related to the JSON page data file used to build the Lunr search index. In the blog post, the JSON poge data file contains the full text of all blog posts and is fetched from the static web site. For various reasons, I have hardcoded a much smaller version (roughly the first 500 words) in the JavaScript section of this CodePen.</p>",
+      "          </div>",
+      "        </article>",
+      "      </main>",
+      "    </div>",
+      "    <section class=\"search-results hide-element\">",
+      "      <div id=\"search-header\">",
+      "        <div class=\"search-query search-query-left\">search term: <span id=\"query\"></span></div>",
+      "        <div class=\"search-query search-query-right\"><span id=\"results-count\"></span><span id=\"results-count-text\"></span></div>",
+      "      </div>",
+      "      <button id=\"clear-search-results-mobile\" class=\"button clear-search-results\">Clear Search Results</button>",
+      "      <ul></ul>",
+      "    </section>",
+      "    <aside class=\"sidebar\">",
+      "      <div id=\"site-search\">",
+      "        <h4><span class=\"underline--magical\">Search</span></h4>",
+      "        <div class=\"search-flex\">",
+      "          <form id=\"search-form\" name=\"searchForm\" role=\"form\" onsubmit=\"return false\">",
+      "            <div class=\"search-wrapper\">",
+      "              <div class=\"search-container\">",
+      "                <i class=\"fa fa-search\"></i>",
+      "                <input autocomplete=\"off\" placeholder=\"\" id=\"search\" class=\"search-input\" aria-label=\"Search site\" type=\"text\" name=\"q\">",
+      "              </div>",
+      "              <div class=\"search-error hide-element\"><span class=\"search-error-message\"></span></div>",
+      "            </div>",
+      "          </form>",
+      "          <button id=\"clear-search-results-sidebar\" class=\"button clear-search-results hide-element\">Clear Search Results</button>",
+      "        </div>",
+      "      </div>",
+      "    </aside>",
+      "  </div>",
+      "</div>"
+    ]
+    let inputSearch = document.createElement("input");
+    let container = document.getElementById("zettel-container")
+    container.insertBefore(inputSearch, container.children[0])
+  })
+</script>

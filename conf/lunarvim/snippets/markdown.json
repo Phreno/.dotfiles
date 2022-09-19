@@ -1,11 +1,16 @@
 {
-  {
-    "major system": {
-      "prefix": "ms",
-      "body": [
-        "<img src=\"./static/major-system/$1\" width=\"$2\"/>"
-      ],
-      "description": "Ajoute une image correspondant au nombre donné en $1"
-    },
+  "bug": {
+    "prefix": "bug",
+    "body": [
+      "##    Name/ID",
+      "##    Summary",
+      "##    Visual proof",
+      "##    Environment",
+      "##    Source URL",
+      "##    Console logs",
+      "##    Steps to reproduce",
+      "##    Expected vs. actual results"
+    ],
+    "description": "template de snippet"
   }
 }

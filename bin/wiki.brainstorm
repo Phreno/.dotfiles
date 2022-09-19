@@ -1,0 +1,24 @@
+#!/bin/bash
+neuron_dir=${1:-$DOTFILES_NEURON}
+
+recupereCheminCible(){
+  source=${1:?"aucun fichier fourni"}
+  head $source | grep tags -A 1 | grep -v tags | sed 's/^\s*-\s*//'
+}
+
+
+# for file in `ls ~/neuron/*md`; do
+for file in `find -L $neuron_dir -type f -name "*md"`; do
+  echo processing $file
+  target=`recupereCheminCible $file`
+  if [ -z "$target" ]
+  then
+    echo "pas de destination valide trouvée"
+  else
+    target=$neuron_dir/$target
+    # echo "vérication de la destination "$target
+    mkdir -p $target 
+    # echo "$file => $target" | lolcat
+    mv $file $target
+  fi
+done

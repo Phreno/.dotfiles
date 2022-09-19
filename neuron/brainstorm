@@ -1,5 +1,0 @@
-for file in `ls ~/neuron/*md`; do
-  target=~/neuron/`cat $file | head | egrep tags -A 1 | grep -v tags | sed 's/^\s*-\s*//'`
-  mkdir -p $target
-  mv $file $target
-done

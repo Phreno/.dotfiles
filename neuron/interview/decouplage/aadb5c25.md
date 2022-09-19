@@ -1,3 +1,12 @@
+---
+date: 2022-09-19T13:51
+tags:
+  - interview/decouplage
+---
+
+# Couplage Decouplage
+
+
 # Trois formes de découplage
 
 Reference

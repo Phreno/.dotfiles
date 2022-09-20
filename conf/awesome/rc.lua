@@ -230,7 +230,8 @@ globalkeys = gears.table.join(
     { description = "ouvre le repo dotfiles", group = "browser" }),
 
   awful.key({ modkey }, "w", function()
-    awful.util.spawn("firefox -new-tab file:///home/phreno/.dotfiles/neuron/.neuron/output/impulse.html")
+    -- awful.util.spawn("firefox -new-tab file:///home/phreno/.dotfiles/neuron/.neuron/output/impulse.html")
+    awful.util.spawn("firefox -new-tab localhost:4321/impulse.html")
 
   end,
     { description = "ouvre le wiki", group = "browser" })

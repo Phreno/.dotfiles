@@ -4,7 +4,6 @@ Session.vim
 .undodir
 
 conf/systemd/user/multi-user.target.wants
-
-neuron/.neuron/output
+**/neuron.service
 
 **/secret

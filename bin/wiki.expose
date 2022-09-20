@@ -23,6 +23,3 @@ supprimeAncienneDoc
 genereOutputSansSecret
 deplaceOutputDansDoc
 restaureLesSecrets
-
-
-#cp -r $neuron_dir/.neuron/output $dotfiles/docs

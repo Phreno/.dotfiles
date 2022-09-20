@@ -1,0 +1,28 @@
+#!/bin/bash
+
+genereOutputSansSecret(){
+  echo regenere le site
+  echo "secret/**" > $DOTFILES_NEURON/.neuronignore
+  neuron -d $DOTFILES_NEURON gen
+}
+
+supprimeAncienneDoc(){
+  echo "suppresion de l'ancienne doc"
+  rm -rf $DOTFILES_DOCS
+}
+
+deplaceOutputDansDoc(){
+  cp -r $DOTFILES_NEURON_OUTPUT $DOTFILES_DOCS
+}
+
+restaureLesSecrets(){
+  rm $DOTFILES_NEURON/.neuronignore
+}
+
+supprimeAncienneDoc
+genereOutputSansSecret
+deplaceOutputDansDoc
+restaureLesSecrets
+
+
+#cp -r $neuron_dir/.neuron/output $dotfiles/docs

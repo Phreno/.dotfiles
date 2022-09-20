@@ -1,9 +1,9 @@
 {
   "name": "dotfiles",
   "scripts": {
-    "release:auto-rev": "npm run release:prepare-rev; npm run release:finish",
-    "release:auto-min": "npm run release:prepare-min; npm run release:finish",
-    "release:auto-maj": "npm run release:prepare-maj; npm run release:finish",
+    "release:auto-rev": "npm run release:prepare-rev; wiki.expose; npm run release:finish",
+    "release:auto-min": "npm run release:prepare-min; wiki.expose; npm run release:finish",
+    "release:auto-maj": "npm run release:prepare-maj; wiki.expose; npm run release:finish",
     "release:finish": "git flow release finish; git push --tags",
     "release:prepare-rev": "git flow release start `npm run version:next-rev | tail -n1`; npm run version:increment-rev",
     "release:prepare-min": "git flow release start `npm run version:next-min | tail -n1`; npm run version:increment-min",

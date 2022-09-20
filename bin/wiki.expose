@@ -3,7 +3,7 @@
 genereOutputSansSecret(){
   echo regenere le site
   echo "secret/**" > $DOTFILES_NEURON/.neuronignore
-  neuron -d $DOTFILES_NEURON gen
+  neuron -d $DOTFILES_NEURON gen --pretty-urls
 }
 
 supprimeAncienneDoc(){
@@ -23,6 +23,3 @@ supprimeAncienneDoc
 genereOutputSansSecret
 deplaceOutputDansDoc
 restaureLesSecrets
-
-
-#cp -r $neuron_dir/.neuron/output $dotfiles/docs

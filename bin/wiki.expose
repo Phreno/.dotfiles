@@ -1,0 +1,5 @@
+#!/bin/bash
+neuron_dir=${1:-$DOTFILES_NEURON}
+dotfiles=${2:-$DOTFILES}
+
+cp -r $neuron_dir/.neuron/output $dotfiles/docs

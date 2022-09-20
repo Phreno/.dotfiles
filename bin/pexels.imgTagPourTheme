@@ -2,6 +2,12 @@
 
 theme=${1:?"Usage: pexels.urlPourTheme <theme> (original|large2x|large|medium|small|portrait|landscape|tiny|size)"}
 size=${2:-medium}
-jqQuery=".photos[${RANDOM: -1}].src.$size"
-output=`curl -sH "Authorization: $PEXEL_API" "https://api.pexels.com/v1/search?query=$theme&per_page=10"`
-echo "<img src=`echo $output | jq $jqQuery`/>"
+count=${3:-1}
+
+output=`curl -sH "Authorization: $PEXEL_API" "https://api.pexels.com/v1/search?query=$theme&per_page=100"`
+
+for ((i = 0; i < $count; i++)); do
+  jqQuery=".photos[${RANDOM: -2}].src.$size"
+  echo "<img src=`echo $output | jq $jqQuery`/>"
+done
+

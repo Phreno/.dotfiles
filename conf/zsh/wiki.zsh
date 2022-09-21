@@ -67,4 +67,4 @@ alias nne='n new -e'
 #   -e,--edit                Open the matching zettel in $EDITOR #
 ##################################################################
 alias nsa='n search -a'
-alias nse='n search -e; nb'
+alias nse='n search -e'

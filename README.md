@@ -4,13 +4,24 @@
 
 ## Présentation
 
-Ce repo contient ma configuration personnelle. 
+Ce repo contient mes notes et ma configuration personnelle, elle a vocation à évoluer.
+
+Libre a vous de vous en servir.
+
+> /!\ Certains scripts contiennent quelques `rm -rf`, vous etes responsable des conséquences de leurs utilisation.
 
 ## Contenu
 
 Il contient:
 - [Configuration](https://phreno.github.io/.dotfiles/890a303b)
-- [Notes](https://phreno.github.io/.dotfiles/59717ef5)
+  - awsome
+    - tyrannical
+    - revelation
+    - alacritty
+    - picom
+  - lunarvim
+  - disposition de clavier
+- [Notes persos](https://phreno.github.io/.dotfiles/impulse.html)
 - Fonts
 - Scripts
   - Maintenance

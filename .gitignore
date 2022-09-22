@@ -10,3 +10,4 @@ neuron/.neuron/output
 **/secret
 
 conf/zsh/incub.zsh
+bin/chrysalis

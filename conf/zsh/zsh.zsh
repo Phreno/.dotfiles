@@ -10,6 +10,8 @@
 
 alias vim='lvim'
 alias v='lvim'
+alias cat='batcat'
+alias b='batcat'
 
 
 NVIM=$HOME/bin/nvim-linux64/bin/nvim

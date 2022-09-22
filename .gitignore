@@ -8,3 +8,5 @@ conf/systemd/user/multi-user.target.wants
 neuron/.neuron/output
 
 **/secret
+
+conf/zsh/incub.zsh

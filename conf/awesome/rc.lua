@@ -202,7 +202,7 @@ globalkeys = gears.table.join(
   awful.key({ modkey }, "m", function()
     awful.util.spawn("firefox -new-tab mail.google.com")
   end,
-    { description = "ouvre youtube", group = "browser" }),
+    { description = "ouvre gmail", group = "browser" }),
 
   awful.key({ modkey }, "x", function()
     awful.util.spawn("firefox -new-tab https://app.dashlane.com/#/login")
@@ -250,14 +250,14 @@ clientkeys = gears.table.join(
     { description = "close", group = "client" }),
 
   awful.key({ modkey, }, "o", function(c) c:move_to_screen() end,
-    { description = "move to screen", group = "client" })
+    { description = "move to screen", group = "client" }),
 
--- awful.key({ modkey, }, "m",
---   function(c)
---     c.maximized = not c.maximized
---     c:raise()
---   end,
---   { description = "(un)maximize", group = "client-max" })
+  awful.key({ modkey, "Control" }, "f",
+    function(c)
+      c.maximized = not c.maximized
+      c:raise()
+    end,
+    { description = "(un)maximize", group = "client-max" })
 )
 
 -- Bind all key numbers to tags.

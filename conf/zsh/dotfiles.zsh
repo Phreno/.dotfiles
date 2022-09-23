@@ -32,8 +32,7 @@ alias vc='v $DOTFILES/install.conf.yaml'
 alias v.lc='v $DOTFILES_CONF/lazycli.yaml'
 alias c.='cd $DOTFILES'
 
-alias al='c "cat $DOTFILES_ZSH/* | egrep ^alias | sort"'
-alias dot='env | egrep ^DOTFILES | column -t -s ='
-alias dot.c='c "env | egrep ^DOTFILES | column -t -s ="'
-alias dot.f='dot | F'
+alias fold='find -type d | F'
+alias al='alias | F'
+alias dot='env | egrep ^DOTFILES | column -t -s = | F'
 

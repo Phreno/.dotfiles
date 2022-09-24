@@ -192,10 +192,10 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-  {
-    "ggandor/lightspeed.nvim",
-    event = "BufRead",
-  },
+  -- {
+  --   "ggandor/lightspeed.nvim",
+  --   event = "BufRead",
+  -- },
   -- {
   --   "github/copilot.vim"
   -- },

@@ -417,7 +417,6 @@ tyrannical.tags = {
   {
     init      = true,
     exclusive = true,
-    screen    = 1,
     layout    = awful.layout.suit.tile, -- Use the tile layout
     class     = {
       "Firefox", "brave", "coreshot"

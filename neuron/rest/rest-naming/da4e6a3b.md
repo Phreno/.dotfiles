@@ -6,10 +6,18 @@ tags:
 
 # Rest: Resource naming
 
+<img src="./static/rest/rest-resource-naming.png"/>
+
+$~$
+
 [Reference](https://restfulapi.net/resource-naming/)
 
 
-## What is a Resource?
+## 1 What is a Resource?
+
+<img src="https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"/>
+
+$~$
 
 **Singleton** and **Collection**
 
@@ -18,7 +26,11 @@ Example
 - Collection: `/customers`
 
 
-## Collection and Sub-collection
+## 2 Collection and Sub-collection
+
+<img src="https://images.pexels.com/photos/12647200/pexels-photo-12647200.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"/>
+
+$~$
 
 A resource may contain sub-collection resources also.
 
@@ -27,11 +39,20 @@ Example
 - `/customers/{customerId}/accounts/{accountId}`
 
 
-## URI
+## 3 URI
+
+<img src="https://images.pexels.com/photos/1157151/pexels-photo-1157151.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"/>
+
+$~$
 
 REST APIs use Uniform Resource Identifiers (URIs) to address resources. 
 
-## Best Practices
+## 4 Best Practices
+
+<img src="https://images.pexels.com/photos/7925859/pexels-photo-7925859.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"/>
+
+$~$
+
 
 Use nouns to represent resources
 
@@ -59,13 +80,24 @@ store
 
 controller
 
-- http://api.example.com/cart-management/users/{id}/cart/checkout http://api.example.com/song-management/users/{id}/playlist/play
+- http://api.example.com/cart-management/users/{id}/cart/checkout 
+- http://api.example.com/song-management/users/{id}/playlist/play
 
-## Consistency is the key
+## 5 Consistency is the key
+
+<img src="https://images.pexels.com/photos/7978767/pexels-photo-7978767.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"/>
+
+$~$
+
 
 Use consistent resource naming conventions and URI formatting for minimum ambiguity and maximum readability and maintainability. You may implement the below design hints to achieve consistency:
 
-## Use forward slash (/) to indicate hierarchical relationships
+## 6 Use forward slash (/) to indicate hierarchical relationships
+
+<img src="https://images.pexels.com/photos/7202788/pexels-photo-7202788.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"/>
+
+$~$
+
 
 The forward-slash (/) character is used in the path portion of the URI to indicate a hierarchical relationship between resources. e.g.
 
@@ -75,7 +107,12 @@ The forward-slash (/) character is used in the path portion of the URI to indica
 - http://api.example.com/device-management/managed-devices/{id}/scripts
 - http://api.example.com/device-management/managed-devices/{id}/scripts/{id}
 
-## Use query component to filter URI collection
+## 7 Use query component to filter URI collection
+
+<img src="https://images.pexels.com/photos/5480759/pexels-photo-5480759.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"/>
+
+$~$
+
 
 Often, you will encounter requirements where you will need a collection of resources sorted, filtered, or limited based on some specific resource attribute.
 

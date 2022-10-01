@@ -11,3 +11,4 @@ neuron/.neuron/output
 
 conf/zsh/incub.zsh
 bin/chrysalis
+bin/nvim-linux64

@@ -6,6 +6,8 @@ tags:
 
 # Rest: Guiding Principles
 
+<img src="./static/rest/principles.png"/>
+
 ## 1 Uniform interface
 
 <img src="https://images.pexels.com/photos/7294550/pexels-photo-7294550.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"/>

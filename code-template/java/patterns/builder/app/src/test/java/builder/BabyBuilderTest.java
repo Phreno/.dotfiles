@@ -3,6 +3,7 @@
  */
 package builder;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -39,5 +40,69 @@ class BabyBuilderTest {
         // when
         // then
         assertNull(builder.get());
+    }
+
+    @Test
+    void buildCompany_doitInitialiserLaVariableA_EMPTY() {
+        // given
+        // when
+        builder.build();
+        builder.buildCompany();
+        // then
+        assertEquals("", builder.get().getCompany());
+    }
+
+    void buildPicture_doitInitialiserLaVariableA_EMPTY() {
+        // given
+        // when
+        builder.build();
+        builder.buildCompany();
+        // then
+        assertEquals("", builder.get().getCompany());
+    }
+
+    void buildAge_doitInitialiserLaVariableA_2() {
+        // given
+        // when
+        builder.build();
+        builder.buildAge();
+        // then
+        assertEquals("2", builder.get().getAge());
+    }
+
+    void buildName_doitInitialiserLaVariableA_BiBi() {
+        // given
+        // when
+        builder.build();
+        builder.buildName();
+        // then
+        assertEquals("BiBi", builder.get().getName());
+    }
+
+    void buildGender_doitInitialiserLaVariableA_h() {
+        // given
+        // when
+        builder.build();
+        builder.buildGender();
+        // then
+        assertEquals("h", builder.get().getGender());
+    }
+
+    void buildEmail_doitInitialiserLaVariableA_EMPTY() {
+        // given
+        // when
+        builder.build();
+        builder.buildEmail();
+        // then
+        assertEquals("", builder.get().getEmail());
+    }
+
+    void buildBalance_doitInitialiserLaVariableA_EMPTY() {
+        // given
+        // when
+        builder.build();
+        builder.buildBalance();
+        // then
+        assertEquals("", builder.get().getBalance());
     }
 }

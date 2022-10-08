@@ -1,7 +1,7 @@
 package builder;
 
 public abstract class UserBuilder {
-    private User user;
+    protected User user;
 
     public void build() {
         user = new User();

@@ -1,6 +1,8 @@
-package builder;
+package builder.builder;
 
-public abstract class UserBuilder {
+import builder.model.User;
+
+public abstract class AbstractUserBuilder {
     protected User user;
 
     public void build() {

@@ -4,62 +4,65 @@
 package builder;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 import java.lang.reflect.Method;
 
 import org.junit.jupiter.api.Test;
 
+import builder.builder.AbstractUserBuilder;
+import builder.model.User;
+
 class UserBuilderTest {
 
     @Test
     void doit_AvoirUneMethodePourRecuperer_User() throws NoSuchMethodException, SecurityException {
-        Method declaredMethod = UserBuilder.class.getDeclaredMethod("get");
-        assertEquals(declaredMethod.getReturnType().toString(), "class builder.User");
+        Method declaredMethod = AbstractUserBuilder.class.getDeclaredMethod("get");
+        assertInstanceOf(User.class.getClass(), declaredMethod.getReturnType());
     }
 
     @Test
     void doit_AvoirUneMethodePourRecupererUnUtilisateur() {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("get"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("get"));
     }
 
     @Test
     void doit_AvoirUneMethodePourCreerUn_User() throws SecurityException, NoSuchMethodException {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("build"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("build"));
     }
 
     @Test
     void doit_AvoirUnBuilderPour_balance() throws SecurityException, NoSuchMethodException {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("buildBalance"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("buildBalance"));
     }
 
     @Test
     void doiAvoirUnBuilderPour_picture() {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("buildPicture"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("buildPicture"));
     }
 
     @Test
     void doiAvoirUnBuilderPour_age() {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("buildAge"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("buildAge"));
     }
 
     @Test
     void doiAvoirUnBuilderPour_name() {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("buildName"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("buildName"));
     }
 
     @Test
     void doiAvoirUnBuilderPour_gender() {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("buildGender"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("buildGender"));
     }
 
     @Test
     void doiAvoirUnBuilderPour_company() {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("buildCompany"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("buildCompany"));
     }
 
     @Test
     void doiAvoirUnBuilderPour_email() {
-        assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("buildEmail"));
+        assertDoesNotThrow(() -> AbstractUserBuilder.class.getDeclaredMethod("buildEmail"));
     }
 }

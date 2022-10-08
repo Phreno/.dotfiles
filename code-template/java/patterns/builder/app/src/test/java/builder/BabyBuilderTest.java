@@ -11,6 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import builder.builder.AbstractUserBuilder;
+import builder.builder.BabyBuilder;
+
 class BabyBuilderTest {
 
     BabyBuilder builder;
@@ -22,7 +25,7 @@ class BabyBuilderTest {
 
     @Test
     void doit_InstancierUn_UserBuilder() {
-        assertTrue(builder instanceof UserBuilder);
+        assertTrue(builder instanceof AbstractUserBuilder);
     }
 
     @Test

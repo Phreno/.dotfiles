@@ -1,4 +1,4 @@
-package builder;
+package builder.model;
 
 public class User {
 

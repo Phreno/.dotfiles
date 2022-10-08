@@ -1,6 +1,6 @@
-package builder;
+package builder.builder;
 
-public class BabyBuilder extends UserBuilder {
+public class BabyBuilder extends AbstractUserBuilder {
 
     private static final String EMPTY = "";
 

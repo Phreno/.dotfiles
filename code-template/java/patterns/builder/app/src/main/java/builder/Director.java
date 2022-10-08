@@ -1,10 +1,13 @@
 package builder;
 
+import builder.builder.AbstractUserBuilder;
+import builder.model.User;
+
 public class Director {
 
-    private UserBuilder builder;
+    private AbstractUserBuilder builder;
 
-    public Director(UserBuilder builder) {
+    public Director(AbstractUserBuilder builder) {
         this.builder = builder;
     }
 

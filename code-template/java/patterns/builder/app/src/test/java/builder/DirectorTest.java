@@ -16,6 +16,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import builder.builder.AbstractUserBuilder;
+import builder.builder.BabyBuilder;
+import builder.model.User;
+
 class DirectorTest {
 
     @Mock
@@ -70,6 +74,6 @@ class DirectorTest {
 
     @Test
     void doit_PrendreUnBuilderDansLeConstructeur() {
-        assertDoesNotThrow(() -> Director.class.getConstructor(UserBuilder.class));
+        assertDoesNotThrow(() -> Director.class.getConstructor(AbstractUserBuilder.class));
     }
 }

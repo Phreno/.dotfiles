@@ -1,6 +1,11 @@
 package builder;
 
-public class BoyBuilder {
+public abstract class UserBuilder {
+    public void build() {
+    }
+
+    public void get() {
+    }
 
     public void buildCompany() {
     }

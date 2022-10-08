@@ -1,10 +1,13 @@
 package builder;
 
 public abstract class UserBuilder {
+    private User user;
+
     public void build() {
     }
 
-    public void get() {
+    public User get() {
+        return null;
     }
 
     public void buildCompany() {

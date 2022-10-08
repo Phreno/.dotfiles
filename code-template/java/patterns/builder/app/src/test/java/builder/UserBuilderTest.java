@@ -4,13 +4,22 @@
 package builder;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.lang.reflect.Method;
 
 import org.junit.jupiter.api.Test;
 
 class UserBuilderTest {
 
     @Test
-    void doit_AvoirUneMethodePourRecuperer_User() {
+    void doit_AvoirUneMethodePourRecuperer_User() throws NoSuchMethodException, SecurityException {
+        Method declaredMethod = UserBuilder.class.getDeclaredMethod("get");
+        assertEquals(declaredMethod.getReturnType().toString(), "class builder.User");
+    }
+
+    @Test
+    void doit_AvoirUneMethodePourRecupererUnUtilisateur() {
         assertDoesNotThrow(() -> UserBuilder.class.getDeclaredMethod("get"));
     }
 

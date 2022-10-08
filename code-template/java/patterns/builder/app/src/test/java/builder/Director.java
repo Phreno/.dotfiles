@@ -9,7 +9,15 @@ public class Director {
     }
 
     public User build() {
-        return new User();
+        builder.build();
+        builder.buildAge();
+        builder.buildBalance();
+        builder.buildCompany();
+        builder.buildEmail();
+        builder.buildGender();
+        builder.buildName();
+        builder.buildPicture();
+        return builder.get();
     }
 
 }

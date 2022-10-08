@@ -6,18 +6,42 @@ package builder;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.mockito.Mockito.verify;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 class DirectorTest {
 
+    @Mock
+    private BabyBuilder builder;
+    private Director director;
+
+    @BeforeEach
+    void setup() {
+        MockitoAnnotations.openMocks(this);
+        director = new Director(builder);
+    }
+
     @Test
-    @Disabled
     void build_doit_FaireAppelAuUserBuilderPourConstruire_User() {
+        // given
+        // when
+        director.build();
+        // then
+        verify(builder).build();
+        verify(builder).buildAge();
+        verify(builder).buildBalance();
+        verify(builder).buildCompany();
+        verify(builder).buildEmail();
+        verify(builder).buildGender();
+        verify(builder).buildName();
+        verify(builder).buildPicture();
     }
 
     @Test
@@ -34,8 +58,6 @@ class DirectorTest {
     @Test
     void doit_ActualiserBuilderPendantInstanciation()
             throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-        BabyBuilder builder = new BabyBuilder();
-        Director director = new Director(builder);
         Field declaredField = Director.class.getDeclaredField("builder");
         declaredField.setAccessible(true);
         assertEquals(builder, declaredField.get(director));

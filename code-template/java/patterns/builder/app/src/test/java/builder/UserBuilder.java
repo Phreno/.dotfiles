@@ -4,10 +4,12 @@ public abstract class UserBuilder {
     private User user;
 
     public void build() {
+        user = new User();
+
     }
 
     public User get() {
-        return null;
+        return user;
     }
 
     public void buildCompany() {

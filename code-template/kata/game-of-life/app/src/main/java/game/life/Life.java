@@ -1,6 +1,6 @@
 package game.life;
 
-public class Life implements Cloneable {
+public class Life {
 
     private static final boolean DEFAULT_LIFE_STATUS = false;
     private boolean isAlive = DEFAULT_LIFE_STATUS;
@@ -19,12 +19,5 @@ public class Life implements Cloneable {
 
     public void kill() {
         this.isAlive = false;
-    }
-
-    @Override
-    public Life clone() {
-        Life clone = new Life();
-        clone.setAlive(this.isAlive);
-        return clone;
     }
 }

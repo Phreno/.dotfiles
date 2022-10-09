@@ -4,18 +4,12 @@
 package game.life;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
 class LifeTest {
-    @Test
-    void doit_ImplementerCloneable() {
-        assertDoesNotThrow(() -> Life.class.getDeclaredMethod("clone"));
-    }
 
     @Test
     void doit_AvoirUnAttribut_isAlive() {
@@ -60,26 +54,5 @@ class LifeTest {
         life.kill();
         // then
         assertFalse(life.isAlive());
-    }
-
-    @Test
-    void clone_neDoitPas_RetournerMemeInstance() {
-        // given
-        Life foo = new Life();
-        // when
-        Life bar = foo.clone();
-        // then
-        assertNotEquals(foo, bar);
-    }
-
-    @Test
-    void clone_doit_RepoduireLesMemesAttributs() {
-        // given
-        Life foo = new Life();
-        foo.wakeUp();
-        // when
-        Life bar = foo.clone();
-        // then
-        assertEquals(foo.isAlive(), bar.isAlive());
     }
 }

@@ -5,8 +5,11 @@ package game.life;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -41,4 +44,42 @@ class GameTest {
     void doit_AvoirUneListeDeCellules() {
         assertDoesNotThrow(() -> Game.class.getDeclaredMethod("getCells"));
     }
+
+    @Test
+    void getCells_doitRetournerUneListeDe_Cells() throws NoSuchMethodException, SecurityException {
+        assertEquals(List.class.getClass(), Game.class.getDeclaredMethod("getCells").getReturnType().getClass());
+    }
+
+    @Test
+    void getCells_neDoitPasEtreNull() {
+        assertNotNull(Game.getCells());
+    }
+
+    @Test
+    void getCells_DoitToujoursRetournerLaMemeListe() {
+        List foo = Game.getCells();
+        List bar = Game.getCells();
+        assertEquals(foo, bar);
+    }
+
+    @Test
+    void getCells_DoitRetournerAuMoinsUne_Cell() {
+        assertTrue(Game.getCells().size() >= 1);
+    }
+
+    @Test
+    void doit_UneFonctionPourInitialiser_lives() {
+        assertDoesNotThrow(() -> Game.class.getDeclaredMethod("initCells"));
+    }
+
+    @Test
+    void initCells_doit_RetournerUneListeDe_Cells() throws NoSuchMethodException, SecurityException {
+        assertEquals(List.class.getClass(), Game.class.getDeclaredMethod("initCells").getReturnType().getClass());
+    }
+
+    @Test
+    void getCells_DoitAvoirUneLongueur_25() {
+        assertEquals(25, Game.getCells().size());
+    }
+
 }

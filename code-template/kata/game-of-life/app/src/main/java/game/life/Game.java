@@ -6,6 +6,9 @@ import java.util.stream.IntStream;
 
 public class Game {
 
+    private static final int LINE_RANGE_START = 0;
+    private static final int LINE_RANGE_LENGTH = 25;
+
     private Game() {
     }
 
@@ -25,7 +28,7 @@ public class Game {
     public static List<Life> initCells() {
         List<Life> lives = new ArrayList<>();
         IntStream
-                .range(0, 25)
+                .range(LINE_RANGE_START, LINE_RANGE_LENGTH)
                 .forEach(i -> lives.add(new Life()));
         return lives;
     }

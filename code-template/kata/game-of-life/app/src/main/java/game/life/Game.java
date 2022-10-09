@@ -2,6 +2,7 @@ package game.life;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Game {
 
@@ -23,9 +24,9 @@ public class Game {
 
     public static List<Life> initCells() {
         List<Life> lives = new ArrayList<>();
-        for (int i = 0; i < 25; i++) {
-            lives.add(new Life());
-        }
+        IntStream
+                .range(0, 25)
+                .forEach(i -> lives.add(new Life()));
         return lives;
     }
 }

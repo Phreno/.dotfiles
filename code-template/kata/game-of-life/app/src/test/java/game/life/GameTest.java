@@ -78,8 +78,39 @@ class GameTest {
     }
 
     @Test
+    void initCells_doit_pouvoirPrendreUnStringEnParametre() {
+        assertDoesNotThrow(() -> Game.class.getDeclaredMethod("initCells", String.class));
+    }
+
+    @Test
+    void initCells_doit_throwSi_rawData_estNull() {
+        assertThrows(GameException.class, () -> Game.initCells(null));
+
+    }
+
+    @Test
+    void initCells_doit_throwSiLaTailleDe_rawData_nestPasUnCarre() {
+        assertThrows(GameException.class, () -> Game.initCells("  "));
+    }
+
+    @Test
+    void initCells_doit_InstancierUneCellulePourChaqueCharactereDe_rawData() throws GameException {
+        // given
+        // when
+        Game.initCells(" ");
+        // then
+        assertEquals(1, Game.getCells().size());
+    }
+
+    @Test
     void getCells_DoitAvoirUneLongueur_25() {
         assertEquals(25, Game.getCells().size());
     }
 
+    @Test
+    void initCells_NeDoitPasConserverLesInitialisationsPrecedentes() throws GameException {
+        Game.initCells(" ");
+        Game.initCells("    ");
+        assertEquals(4, Game.getCells().size());
+    }
 }

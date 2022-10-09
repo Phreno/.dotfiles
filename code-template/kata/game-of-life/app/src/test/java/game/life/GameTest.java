@@ -6,6 +6,7 @@ package game.life;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -23,5 +24,21 @@ class GameTest {
     @Test
     void getInstance_DoitRetournerUneInstance_Game() throws NoSuchMethodException, SecurityException {
         assertEquals(Game.class.getClass(), Game.class.getDeclaredMethod("getInstance").getReturnType().getClass());
+    }
+
+    @Test
+    void getInstance_DoitRenvoyerToujoursLaMemeInstance() {
+        // given
+        Game foo = Game.getInstance();
+        Game bar = Game.getInstance();
+        // when
+        boolean eq = foo.equals(bar);
+        // then
+        assertTrue(eq);
+    }
+
+    @Test
+    void doit_AvoirUneListeDeCellules() {
+        assertDoesNotThrow(() -> Game.class.getDeclaredMethod("getCells"));
     }
 }

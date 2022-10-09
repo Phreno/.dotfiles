@@ -3,12 +3,19 @@
  */
 package game.life;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    @Test
+    void app_DoitAvoirUneInstanceDe_Game() {
+        assertDoesNotThrow(() -> App.class.getDeclaredField("game"));
+    }
+
+    @Test
+    void game_DoitEtreDeType_Game() throws NoSuchFieldException, SecurityException {
+        assertEquals(Game.class.getClass(), App.class.getDeclaredField("game").getType().getClass());
     }
 }

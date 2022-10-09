@@ -57,8 +57,8 @@ class GameTest {
 
     @Test
     void getCells_DoitToujoursRetournerLaMemeListe() {
-        List foo = Game.getCells();
-        List bar = Game.getCells();
+        final List<Life> foo = Game.getCells();
+        final List<Life> bar = Game.getCells();
         assertEquals(foo, bar);
     }
 

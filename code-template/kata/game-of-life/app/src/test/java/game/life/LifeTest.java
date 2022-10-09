@@ -13,7 +13,7 @@ class LifeTest {
 
     @Test
     void doit_AvoirUnAttribut_isAlive() {
-        assertDoesNotThrow(() -> Life.class.getDeclaredField("isAlive"));
+        assertDoesNotThrow(() -> Life.class.getDeclaredField("state"));
     }
 
     @Test
@@ -54,5 +54,25 @@ class LifeTest {
         life.kill();
         // then
         assertFalse(life.isAlive());
+    }
+
+    @Test
+    void doit_avoirUnConstructeurAvecUnChar() {
+        assertDoesNotThrow(() -> Life.class.getConstructor(Character.class));
+    }
+
+    @Test
+    void doit_RetournerUneCelluleVivanteAvec_star() {
+        // given
+        Life life;
+        // when
+        life = new Life('*');
+        // then
+        assertTrue(life.isAlive());
+    }
+
+    @Test
+    void doit_AvoirUneFonctionPourAfficher() {
+        assertDoesNotThrow(() -> Life.class.getDeclaredMethod("print"));
     }
 }

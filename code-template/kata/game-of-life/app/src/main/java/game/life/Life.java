@@ -1,23 +1,36 @@
 package game.life;
 
 public class Life {
+    private static final char DEAD = '.';
+    private static final char ALIVE = '*';
 
-    private static final boolean DEFAULT_LIFE_STATUS = false;
-    private boolean isAlive = DEFAULT_LIFE_STATUS;
+    private Character state = DEAD;
+
+    public Life() {
+    }
+
+    public Life(Character printable) {
+        if (printable.equals(ALIVE))
+            wakeUp();
+    }
 
     public void setAlive(boolean isAlive) {
-        this.isAlive = isAlive;
+        this.state = isAlive ? ALIVE : DEAD;
     }
 
     public boolean isAlive() {
-        return isAlive;
+        return state.equals(ALIVE);
     }
 
     public void wakeUp() {
-        this.isAlive = true;
+        this.state = ALIVE;
     }
 
     public void kill() {
-        this.isAlive = false;
+        this.state = DEAD;
+    }
+
+    public void print() {
+        System.out.print(state);
     }
 }

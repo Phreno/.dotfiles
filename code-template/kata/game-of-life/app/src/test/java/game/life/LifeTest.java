@@ -4,6 +4,7 @@
 package game.life;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -73,6 +74,14 @@ class LifeTest {
 
     @Test
     void doit_AvoirUneFonctionPourAfficher() {
-        assertDoesNotThrow(() -> Life.class.getDeclaredMethod("print"));
+        assertDoesNotThrow(() -> Life.class.getDeclaredMethod("toString"));
+    }
+
+    @Test
+    void toString_DoitRetournerLEtat() {
+        Life life = new Life();
+        assertEquals(".", life.toString());
+        life.wakeUp();
+        assertEquals("*", life.toString());
     }
 }

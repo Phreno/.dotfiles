@@ -30,7 +30,7 @@ public class Life {
         this.state = DEAD;
     }
 
-    public void print() {
-        System.out.print(state);
+    public String toString() {
+        return state.toString();
     }
 }

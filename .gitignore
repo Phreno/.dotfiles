@@ -15,3 +15,5 @@ bin/nvim-linux64
 code-template/java/patterns/abstract-factory/.vscode
 code-template/java/patterns/builder/app/bin/test/builder
 code-template/java/patterns/builder/.vscode
+code-template/java/patterns/builder/app/bin/main/builder/model
+code-template/kata/game-of-life/app/bin

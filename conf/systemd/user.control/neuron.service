@@ -1,6 +1,6 @@
 [Unit]
 Description=Neuron
 [Service]
-ExecStart=/usr/local/bin/neuron -d /home/phreno/neuron gen -ws localhost:4321
+ExecStart=/usr/local/bin/neuron -d /home/eeau6000/neuron gen -ws localhost:4321
 [Install]
 WantedBy=multi-user.target

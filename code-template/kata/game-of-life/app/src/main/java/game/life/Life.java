@@ -1,7 +1,7 @@
 package game.life;
 
 public class Life {
-    private static final char DEAD = '.';
+    static final char DEAD = '.';
     private static final char ALIVE = '*';
 
     private Character state = DEAD;

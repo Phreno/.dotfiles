@@ -5,6 +5,7 @@ package game.life;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -69,35 +70,36 @@ class GameTest {
 
     @Test
     void doit_UneFonctionPourInitialiser_lives() {
-        assertDoesNotThrow(() -> Game.class.getDeclaredMethod("initCells"));
+        assertDoesNotThrow(() -> GameBusiness.class.getDeclaredMethod("initCells"));
     }
 
     @Test
     void initCells_doit_RetournerUneListeDe_Cells() throws NoSuchMethodException, SecurityException {
-        assertEquals(List.class.getClass(), Game.class.getDeclaredMethod("initCells").getReturnType().getClass());
+        assertEquals(List.class.getClass(),
+                GameBusiness.class.getDeclaredMethod("initCells").getReturnType().getClass());
     }
 
     @Test
     void initCells_doit_pouvoirPrendreUnStringEnParametre() {
-        assertDoesNotThrow(() -> Game.class.getDeclaredMethod("initCells", String.class));
+        assertDoesNotThrow(() -> GameBusiness.class.getDeclaredMethod("initCells", String.class));
     }
 
     @Test
     void initCells_doit_throwSi_rawData_estNull() {
-        assertThrows(GameException.class, () -> Game.initCells(null));
+        assertThrows(GameException.class, () -> GameBusiness.initCells(null));
 
     }
 
     @Test
     void initCells_doit_throwSiLaTailleDe_rawData_nestPasUnCarre() {
-        assertThrows(GameException.class, () -> Game.initCells("  "));
+        assertThrows(GameException.class, () -> GameBusiness.initCells("  "));
     }
 
     @Test
     void initCells_doit_InstancierUneCellulePourChaqueCharactereDe_rawData() throws GameException {
         // given
         // when
-        Game.initCells(" ");
+        GameBusiness.initCells(" ");
         // then
         assertEquals(1, Game.getCells().size());
     }
@@ -109,8 +111,29 @@ class GameTest {
 
     @Test
     void initCells_NeDoitPasConserverLesInitialisationsPrecedentes() throws GameException {
-        Game.initCells(" ");
-        Game.initCells("    ");
+        GameBusiness.initCells(" ");
+        GameBusiness.initCells("    ");
         assertEquals(4, Game.getCells().size());
     }
+
+    @Test
+    void initCells_doit_AvoirUneCelluleVivante_Quand_UneStar() throws GameException {
+        GameBusiness.initCells("*");
+        assertTrue(Game.getCells().get(0).isAlive());
+    }
+
+    @Test
+    void initCells_doit_GererLaCreationDePlusieurs_Life() throws GameException {
+        GameBusiness.initCells("f*ck");
+        assertFalse(Game.getCells().get(0).isAlive());
+        assertTrue(Game.getCells().get(1).isAlive());
+        assertFalse(Game.getCells().get(2).isAlive());
+        assertFalse(Game.getCells().get(3).isAlive());
+    }
+
+    @Test
+    void doit_AvoirUneFonction_toString() {
+        assertDoesNotThrow(() -> GameBusiness.class.getDeclaredMethod("bluePrint"));
+    }
+
 }

@@ -13,7 +13,7 @@ alias v='lvim'
 alias cat='batcat'
 alias b='batcat'
 
-
+VIM=$HOME/.local/bin/nvim
 NVIM=$HOME/bin/nvim-linux64/bin/nvim
 DOT_BIN=$HOME/bin
 VENDOR_BIN=$DOT_BIN/vendor

@@ -26,12 +26,12 @@ impl OcrIterator {
 
     fn peel_rows(&mut self) -> Vec<String> {
         let mut peels = vec![];
-        let peel = |row| peels.extend(self.peel(row));
-        self.ocr.rows.iter().for_each(peel);
+        let peel = |row: &str| peels.extend(self.peel(row));
+        self.ocr.rows.iter().map(|s| &**s).for_each(peel);
         peels
     }
 
-    fn peel(&self, row: &String) -> Option<String> {
+    fn peel(&self, row: &str) -> Option<String> {
         Some(row[get_range(self.position)].to_string())
     }
 

@@ -20,15 +20,19 @@ impl Ocr {
         }
     }
 
-    fn get_number_at_cursor(&mut self) -> String {
+    fn get_number_at_position(&mut self) -> String {
+        map_to_number(self.get_splitted_digit_at_position())
+    }
+
+    fn get_splitted_digit_at_position(&mut self) -> Vec<String> {
         let mut splitted_digit = vec![];
-        let extract_digit_at_position = |split: &String| {
-            let range = range_helper::get_range_from_position(self.position);
-            let slice_at_position = split[range].to_string();
-            splitted_digit.extend(Some(slice_at_position));
-        };
-        self.rows.iter().for_each(extract_digit_at_position);
-        mapper::map_splitted_to_number(splitted_digit)
+        let slice_digit_at_position = |row| splitted_digit.extend(self.get_slice_from_row(row));
+        self.rows.iter().for_each(slice_digit_at_position);
+        splitted_digit
+    }
+
+    fn get_slice_from_row(&self, row: &String) -> Option<String> {
+        Some(row[get_range(self.position)].to_string())
     }
 
     pub fn parse(&mut self) -> String {
@@ -51,6 +55,14 @@ impl Ocr {
     }
 }
 
+fn get_range(position: usize) -> std::ops::Range<usize> {
+    range_helper::get_range_from_position(position)
+}
+
+fn map_to_number(splitted_digit: Vec<String>) -> String {
+    mapper::map_splitted_to_number(splitted_digit)
+}
+
 impl Iterator for Ocr {
     type Item = String;
     fn next(&mut self) -> Option<Self::Item> {
@@ -58,7 +70,7 @@ impl Iterator for Ocr {
             self.reset_position();
             return None;
         }
-        let next = Some(self.get_number_at_cursor());
+        let next = Some(self.get_number_at_position());
         self.increment_position();
         next
     }

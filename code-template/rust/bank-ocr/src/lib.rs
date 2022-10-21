@@ -8,6 +8,23 @@ pub fn parse(data: &str) -> String {
 mod tests {
     use super::parse;
 
+    /***************
+     * SCENARIO: 2 *
+     ***************/
+
+    //  account number:  3  4  5  8  8  2  8  6  5
+    //  position names:  d9 d8 d7 d6 d5 d4 d3 d2 d1
+    //
+    //  checksum calculation:
+    //  (d1+2*d2+3*d3+...+9*d9) mod 11 = 0
+
+    #[test]
+    fn doit_etre_valide_lorsque_3_4_5_8_8_2_8_6_5() {}
+
+    /***************
+     * SCENARIO: 1 *
+     ***************/
+
     #[test]
     fn parse_doit_pouvoir_gerer_le_use_case_123456789() {
         assert_eq!("123456789", parse(USE_CASE_123456789));

@@ -63,21 +63,6 @@ mod tests {
         assert_eq!("000000000", parse(USE_CASE_000000000));
     }
 
-    #[test]
-    fn parse_doit_pouvoir_etre_jouer_plusieurs_fois_de_suite() {
-        assert_eq!("89", parse(TEST_89));
-        assert_eq!("89", parse(TEST_89));
-    }
-
-    #[test]
-    fn parse_doit_retourner_89_apres_avoir_passer_89() {
-        assert_eq!("89", parse(TEST_89));
-    }
-
-    const TEST_89: &str = " _  _ 
-|_||_|
-|_| _|";
-
     const USE_CASE_000000000: &str = " _  _  _  _  _  _  _  _  _ 
 | || || || || || || || || |
 |_||_||_||_||_||_||_||_||_|";

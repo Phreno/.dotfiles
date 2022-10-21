@@ -19,14 +19,14 @@ impl Ocr {
     }
 
     pub fn parse(&self) -> String {
-        let iterator = iterator::OcrIterator {
-            ocr: self.to_owned(),
-            position: START_POS,
-        };
         let mut parsed = "".to_string();
         let concat = |number: String| parsed.push_str(number.as_str());
-        iterator.for_each(concat);
+        self.iter().for_each(concat);
         parsed
+    }
+
+    fn iter(&self) -> iterator::OcrIterator {
+        iterator::OcrIterator::new(self.clone())
     }
 }
 
@@ -123,6 +123,19 @@ mod tests {
                 .get(2)
                 .expect("impossible de lire la troisieme ligne")
         );
+    }
+
+    #[test]
+    fn parse_doit_pouvoir_etre_jouer_plusieurs_fois_de_suite() {
+        let ocr = Ocr::new(TEST_89);
+        assert_eq!("89", ocr.parse());
+        assert_eq!("89", ocr.parse());
+    }
+
+    #[test]
+    fn parse_doit_retourner_89_apres_avoir_passer_89() {
+        let ocr = Ocr::new(TEST_89);
+        assert_eq!("89", ocr.parse());
     }
 
     const TEST_89: &str = " _  _ 

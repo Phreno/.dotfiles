@@ -13,6 +13,13 @@ fn map_to_number(splitted_digit: Vec<String>) -> String {
 }
 
 impl OcrIterator {
+    pub fn new(ocr: Ocr) -> Self {
+        Self {
+            ocr,
+            position: START_POS,
+        }
+    }
+
     fn get_number_at_position(&mut self) -> String {
         map_to_number(self.peel_rows())
     }

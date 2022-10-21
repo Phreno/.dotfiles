@@ -1,142 +1,78 @@
-use std::{ ops::Range};
+pub mod mapper;
+mod range_helper;
+mod splitter;
 
-pub mod digits;
+const DIGIT_WIDTH: usize = 3;
+const START_POS: usize = 0;
+const REFERENCE_ROW: usize = 0;
 
-
+#[derive(Clone)]
 pub struct Ocr {
     rows: Vec<String>,
     position: usize,
 }
 
 impl Ocr {
-    fn new(raw_digits: &str) -> Self {
-        let mut rows = vec![];
-        raw_digits
-            .to_string()
-            .split("\n")
-            .for_each(|s| rows.extend(Some(s.to_string())));
+    pub fn new(raw_digits: &str) -> Self {
         Self {
-            rows,
-            position: 0,
+            rows: splitter::split_raw_digits(raw_digits),
+            position: START_POS,
         }
     }
 
-    fn get_digit_at_cursor(&mut self) -> String {
+    fn get_number_at_cursor(&mut self) -> String {
         let mut splitted_digit = vec![];
-        self.rows.iter().for_each(|split| {
+        let extract_digit_at_position = |split: &String| {
             splitted_digit.extend(Some(
-                split[Range {
-                    start: self.position,
-                    end: self.position + 3,
-                }]
-                .to_string(),
+                split[range_helper::get_range_from_position(self.position)].to_string(),
             ));
-        });
-
-        digits::OCR_DIGITS
-            .get(splitted_digit.join("\n").as_str())
-            .expect("Le digit doit exister")
-            .to_string()
+        };
+        self.rows.iter().for_each(extract_digit_at_position);
+        mapper::map_splitted_to_number(splitted_digit)
     }
 
-    fn parse(&mut self) -> String {
+    pub fn parse(&mut self) -> String {
         let mut parsed = "".to_string();
-        self.for_each(|x| parsed.push_str(x.as_str()));
+        let concat_number = |number: String| parsed.push_str(number.as_str());
+        self.for_each(concat_number);
         parsed
+    }
+
+    fn has_next(&mut self) -> bool {
+        self.position >= self.rows[REFERENCE_ROW].len()
+    }
+
+    fn increment_position(&mut self) {
+        self.position += DIGIT_WIDTH;
+    }
+
+    fn reset_position(&mut self) {
+        self.position = START_POS;
     }
 }
 
 impl Iterator for Ocr {
     type Item = String;
     fn next(&mut self) -> Option<Self::Item> {
-        if self.position >= self.rows[0].len() {
-            self.position = 0;
+        if self.has_next() {
+            self.reset_position();
             return None;
         }
-        let next = Some(self.get_digit_at_cursor());
-        self.position += 3;
+        let next = Some(self.get_number_at_cursor());
+        self.increment_position();
         next
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use super::{digits, Ocr};
+    use crate::ocr::mapper::digits;
 
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_123456789(){
-    let mut ocr = Ocr::new(digits::USE_CASE_123456789);
-        assert_eq!("123456789", ocr.parse());
-    }
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_999999999(){
-    let mut ocr = Ocr::new(digits::USE_CASE_999999999);
-        assert_eq!("999999999", ocr.parse());
-    }
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_888888888(){
-    let mut ocr = Ocr::new(digits::USE_CASE_888888888);
-        assert_eq!("888888888", ocr.parse());
-    }
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_777777777(){
-    let mut ocr = Ocr::new(digits::USE_CASE_777777777);
-        assert_eq!("777777777", ocr.parse());
-    }
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_666666666(){
-    let mut ocr = Ocr::new(digits::USE_CASE_666666666);
-        assert_eq!("666666666", ocr.parse());
-    }
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_555555555(){
-    let mut ocr = Ocr::new(digits::USE_CASE_555555555);
-        assert_eq!("555555555", ocr.parse());
-    }
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_444444444(){
-    let mut ocr = Ocr::new(digits::USE_CASE_444444444);
-        assert_eq!("444444444", ocr.parse());
-    }
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_333333333(){
-    let mut ocr = Ocr::new(digits::USE_CASE_333333333);
-        assert_eq!("333333333", ocr.parse());
-    }
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_222222222(){
-    let mut ocr = Ocr::new(digits::USE_CASE_222222222);
-        assert_eq!("222222222", ocr.parse());
-    }
-
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_111111111(){
-    let mut ocr = Ocr::new(digits::USE_CASE_111111111);
-        assert_eq!("111111111", ocr.parse());
-    }
-    
-    #[test]
-    fn parse_doit_pouvoir_gerer_le_use_case_000000000(){
-        let mut ocr = Ocr::new(digits::USE_CASE_000000000);
-        assert_eq!("000000000", ocr.parse());
-    }
-
-    #[test]
-    fn parse_doit_pouvoir_etre_jouer_plusieurs_fois_de_suite(){
-        let mut ocr = Ocr::new(digits::TEST_89);
-        assert_eq!("89", ocr.parse());
-        assert_eq!("89", ocr.parse());
-    }
-
-    #[test]
-    fn parse_doit_retourner_89_apres_avoir_passer_89() {
-        let mut ocr = Ocr::new(digits::TEST_89);
-        assert_eq!("89", ocr.parse());
-    }
+    use super::Ocr;
 
     #[test]
     fn ocr_next_doit_retourner_none_apres_3_iter_sur_digit_89() {
-        let mut ocr = Ocr::new(digits::TEST_89);
+        let mut ocr = Ocr::new(TEST_89);
         assert_eq!("8", ocr.next().expect("doit etre egal a 8"));
         assert_eq!("9", ocr.next().expect("doit etre egal a 9"));
         assert_eq!(None, ocr.next());
@@ -144,7 +80,7 @@ mod tests {
 
     #[test]
     fn ocr_next_doit_retourner_9_lorsque_2_iter_sur_digit_89() {
-        let mut ocr = Ocr::new(digits::TEST_89);
+        let mut ocr = Ocr::new(TEST_89);
         ocr.next();
         assert_eq!(
             "9",
@@ -155,7 +91,7 @@ mod tests {
 
     #[test]
     fn ocr_next_doit_retourner_8_lorsque_iter_sur_digit_89() {
-        let mut ocr = Ocr::new(digits::TEST_89);
+        let mut ocr = Ocr::new(TEST_89);
         assert_eq!(
             "8",
             ocr.next()
@@ -213,4 +149,8 @@ mod tests {
                 .expect("impossible de lire la troisieme ligne")
         );
     }
+
+    const TEST_89: &str = " _  _ 
+|_||_|
+|_| _|";
 }

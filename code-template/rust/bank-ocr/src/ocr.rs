@@ -23,9 +23,9 @@ impl Ocr {
     fn get_number_at_cursor(&mut self) -> String {
         let mut splitted_digit = vec![];
         let extract_digit_at_position = |split: &String| {
-            splitted_digit.extend(Some(
-                split[range_helper::get_range_from_position(self.position)].to_string(),
-            ));
+            let range = range_helper::get_range_from_position(self.position);
+            let slice_at_position = split[range].to_string();
+            splitted_digit.extend(Some(slice_at_position));
         };
         self.rows.iter().for_each(extract_digit_at_position);
         mapper::map_splitted_to_number(splitted_digit)

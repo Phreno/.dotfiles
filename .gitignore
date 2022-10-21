@@ -20,3 +20,4 @@ code-template/kata/game-of-life/app/bin
 code-template/rust/guess-me/target
 code-template/rust/fizzbuzz/target
 code-template/rust/bank-ocr/target
+bin/VSCode-linux-x64

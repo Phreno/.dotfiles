@@ -1,7 +1,7 @@
+mod iterator;
 pub mod mapper;
-mod range_helper;
+mod range;
 mod splitter;
-
 const DIGIT_WIDTH: usize = 3;
 const START_POS: usize = 0;
 const REFERENCE_ROW: usize = 0;
@@ -9,124 +9,87 @@ const REFERENCE_ROW: usize = 0;
 #[derive(Clone)]
 pub struct Ocr {
     rows: Vec<String>,
-    position: usize,
 }
 
 impl Ocr {
     pub fn new(raw_digits: &str) -> Self {
         Self {
             rows: splitter::split_raw_digits(raw_digits),
+        }
+    }
+
+    pub fn parse(&self) -> String {
+        let iterator = iterator::OcrIterator {
+            ocr: self.to_owned(),
             position: START_POS,
-        }
-    }
-
-    fn get_number_at_position(&mut self) -> String {
-        map_to_number(self.peel_rows())
-    }
-
-    fn peel_rows(&mut self) -> Vec<String> {
-        let mut peels = vec![];
-        let peel = |row| peels.extend(self.peel(row));
-        self.rows.iter().for_each(peel);
-        peels
-    }
-
-    fn peel(&self, row: &String) -> Option<String> {
-        Some(row[get_range(self.position)].to_string())
-    }
-
-    pub fn parse(&mut self) -> String {
+        };
         let mut parsed = "".to_string();
-        let concat_number = |number: String| parsed.push_str(number.as_str());
-        self.for_each(concat_number);
+        let concat = |number: String| parsed.push_str(number.as_str());
+        iterator.for_each(concat);
         parsed
-    }
-
-    fn has_next(&mut self) -> bool {
-        self.position >= self.rows[REFERENCE_ROW].len()
-    }
-
-    fn increment_position(&mut self) {
-        self.position += DIGIT_WIDTH;
-    }
-
-    fn reset_position(&mut self) {
-        self.position = START_POS;
-    }
-}
-
-fn get_range(position: usize) -> std::ops::Range<usize> {
-    range_helper::get_range_from_position(position)
-}
-
-fn map_to_number(splitted_digit: Vec<String>) -> String {
-    mapper::map_splitted_to_number(splitted_digit)
-}
-
-impl Iterator for Ocr {
-    type Item = String;
-    fn next(&mut self) -> Option<Self::Item> {
-        if self.has_next() {
-            self.reset_position();
-            return None;
-        }
-        let next = Some(self.get_number_at_position());
-        self.increment_position();
-        next
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::ocr::mapper::digits;
+    use crate::ocr::{iterator::OcrIterator, mapper::digits};
 
     use super::Ocr;
 
     #[test]
     fn ocr_next_doit_retourner_none_apres_3_iter_sur_digit_89() {
-        let mut ocr = Ocr::new(TEST_89);
-        assert_eq!("8", ocr.next().expect("doit etre egal a 8"));
-        assert_eq!("9", ocr.next().expect("doit etre egal a 9"));
-        assert_eq!(None, ocr.next());
+        let ocr = Ocr::new(TEST_89);
+        let mut iterator = OcrIterator { ocr, position: 0 };
+        assert_eq!("8", iterator.next().expect("doit etre egal a 8"));
+        assert_eq!("9", iterator.next().expect("doit etre egal a 9"));
+        assert_eq!(None, iterator.next());
     }
 
     #[test]
     fn ocr_next_doit_retourner_9_lorsque_2_iter_sur_digit_89() {
-        let mut ocr = Ocr::new(TEST_89);
-        ocr.next();
+        let ocr = Ocr::new(TEST_89);
+        let mut iterator = OcrIterator { ocr, position: 0 };
+        iterator.next();
         assert_eq!(
             "9",
-            ocr.next()
+            iterator
+                .next()
                 .expect("impossible de récupérer le digit suivant")
         );
     }
 
     #[test]
     fn ocr_next_doit_retourner_8_lorsque_iter_sur_digit_89() {
-        let mut ocr = Ocr::new(TEST_89);
+        let ocr = Ocr::new(TEST_89);
+        let mut iterator = OcrIterator { ocr, position: 0 };
         assert_eq!(
             "8",
-            ocr.next()
+            iterator
+                .next()
                 .expect("impossible de récupérer le digit suivant")
         );
     }
 
     #[test]
     fn ocr_doit_retourner_1_lorsque_iter_sur_digit_1() {
-        let mut ocr = Ocr::new(digits::DIGIT_1);
+        let ocr = Ocr::new(digits::DIGIT_1);
+        let mut iterator = OcrIterator { ocr, position: 0 };
         assert_eq!(
             "1",
-            ocr.next()
+            iterator
+                .next()
                 .expect("impossible de récupérer le digit suivant")
         );
     }
 
     #[test]
     fn ocr_doit_retourner_0_lorsque_iter_sur_digit_0() {
-        let mut ocr = Ocr::new(digits::DIGIT_0);
+        let ocr = Ocr::new(digits::DIGIT_0);
+        let mut iterator = OcrIterator { ocr, position: 0 };
         assert_eq!(
             "0",
-            ocr.next()
+            iterator
+                .next()
                 .expect("impossible de récupérer le digit suivant")
         );
     }

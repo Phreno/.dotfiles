@@ -1,8 +1,7 @@
 mod ocr;
 
 pub fn parse(data: &str) -> String {
-    let mut ocr = ocr::Ocr::new(data);
-    ocr.parse()
+    ocr::Ocr::new(data).parse()
 }
 
 #[cfg(test)]

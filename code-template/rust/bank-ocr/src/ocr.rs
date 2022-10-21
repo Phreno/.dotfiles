@@ -21,17 +21,17 @@ impl Ocr {
     }
 
     fn get_number_at_position(&mut self) -> String {
-        map_to_number(self.get_splitted_digit_at_position())
+        map_to_number(self.peel_rows())
     }
 
-    fn get_splitted_digit_at_position(&mut self) -> Vec<String> {
-        let mut splitted_digit = vec![];
-        let slice_digit_at_position = |row| splitted_digit.extend(self.get_slice_from_row(row));
-        self.rows.iter().for_each(slice_digit_at_position);
-        splitted_digit
+    fn peel_rows(&mut self) -> Vec<String> {
+        let mut peels = vec![];
+        let peel = |row| peels.extend(self.peel(row));
+        self.rows.iter().for_each(peel);
+        peels
     }
 
-    fn get_slice_from_row(&self, row: &String) -> Option<String> {
+    fn peel(&self, row: &String) -> Option<String> {
         Some(row[get_range(self.position)].to_string())
     }
 

@@ -1,7 +1,9 @@
+use self::splitter::split_raw_digits;
+
 mod iterator;
-pub mod mapper;
-mod range;
+mod mapper;
 mod splitter;
+
 const DIGIT_WIDTH: usize = 3;
 const START_POS: usize = 0;
 const REFERENCE_ROW: usize = 0;
@@ -14,7 +16,7 @@ pub struct Ocr {
 impl Ocr {
     pub fn new(raw_digits: &str) -> Self {
         Self {
-            rows: splitter::split_raw_digits(raw_digits),
+            rows: split_raw_digits(raw_digits),
         }
     }
 
@@ -32,7 +34,8 @@ impl Ocr {
 
 #[cfg(test)]
 mod tests {
-    use crate::ocr::{iterator::OcrIterator, mapper::digits};
+
+    use crate::business::ocr::{iterator::OcrIterator, mapper::digits::*};
 
     use super::Ocr;
 
@@ -72,7 +75,7 @@ mod tests {
 
     #[test]
     fn ocr_doit_retourner_1_lorsque_iter_sur_digit_1() {
-        let ocr = Ocr::new(digits::DIGIT_1);
+        let ocr = Ocr::new(DIGIT_1);
         let mut iterator = OcrIterator { ocr, position: 0 };
         assert_eq!(
             "1",
@@ -84,7 +87,7 @@ mod tests {
 
     #[test]
     fn ocr_doit_retourner_0_lorsque_iter_sur_digit_0() {
-        let ocr = Ocr::new(digits::DIGIT_0);
+        let ocr = Ocr::new(DIGIT_0);
         let mut iterator = OcrIterator { ocr, position: 0 };
         assert_eq!(
             "0",
@@ -96,7 +99,7 @@ mod tests {
 
     #[test]
     fn new_ocr_doit_pouvoir_distinguer_la_premiere_ligne() {
-        let ocr = Ocr::new(digits::DIGIT_0);
+        let ocr = Ocr::new(DIGIT_0);
         assert_eq!(
             " _ ",
             ocr.rows
@@ -106,7 +109,7 @@ mod tests {
     }
     #[test]
     fn new_ocr_doit_pouvoir_distinguer_la_deuxieme_ligne() {
-        let ocr = Ocr::new(digits::DIGIT_0);
+        let ocr = Ocr::new(DIGIT_0);
         assert_eq!(
             "| |",
             ocr.rows
@@ -116,7 +119,7 @@ mod tests {
     }
     #[test]
     fn new_ocr_doit_pouvoir_distinguer_la_troisieme_ligne() {
-        let ocr = Ocr::new(digits::DIGIT_0);
+        let ocr = Ocr::new(DIGIT_0);
         assert_eq!(
             "|_|",
             ocr.rows

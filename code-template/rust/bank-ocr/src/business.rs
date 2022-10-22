@@ -1,7 +1,9 @@
+use self::ocr::Ocr;
+
 mod ocr;
 
 pub fn parse(data: &str) -> String {
-    ocr::Ocr::new(data).parse()
+    Ocr::new(data).parse()
 }
 
 #[cfg(test)]

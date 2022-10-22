@@ -1,4 +1,5 @@
 use super::*;
+mod range;
 pub struct OcrIterator {
     pub ocr: Ocr,
     pub position: usize,

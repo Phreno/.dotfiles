@@ -194,44 +194,48 @@ globalkeys = gears.table.join(
   -- Navigateur --
   ----------------
 
+  awful.key({ modkey }, "c", function()
+    awful.util.spawn("brave -new-tab https://chat.openai.com/chat")
+  end,
+    { description = "ouvre chatGPT", group = "browser" }),
   awful.key({ modkey }, "y", function()
-    awful.util.spawn("firefox -new-tab www.youtube.com")
+    awful.util.spawn("brave -new-tab www.youtube.com")
   end,
     { description = "ouvre youtube", group = "browser" }),
 
   awful.key({ modkey }, "m", function()
-    awful.util.spawn("firefox -new-tab mail.google.com")
+    awful.util.spawn("brave -new-tab mail.google.com")
   end,
     { description = "ouvre gmail", group = "browser" }),
 
   awful.key({ modkey }, "x", function()
-    awful.util.spawn("firefox -new-tab https://app.dashlane.com/#/login")
+    awful.util.spawn("brave -new-tab https://app.dashlane.com/#/login")
   end,
     { description = "ouvre dashlane", group = "browser" }),
 
   awful.key({ modkey }, "g", function()
-    awful.util.spawn("firefox -new-tab www.google.com")
+    awful.util.spawn("brave -new-tab www.google.com")
   end,
     { description = "ouvre google", group = "browser" }),
 
   awful.key({ modkey }, "d", function()
-    awful.util.spawn("firefox -new-tab www.discord.com")
+    awful.util.spawn("brave -new-tab www.discord.com")
   end,
     { description = "ouvre discord", group = "browser" }),
 
   awful.key({ modkey }, "h", function()
-    awful.util.spawn("firefox -new-tab https://github.com/Phreno")
+    awful.util.spawn("brave -new-tab https://github.com/Phreno")
   end,
     { description = "ouvre github", group = "browser" }),
 
   awful.key({ modkey }, ".", function()
-    awful.util.spawn("firefox -new-tab https://github.com/Phreno/.dotfiles")
+    awful.util.spawn("brave -new-tab https://github.com/Phreno/.dotfiles")
   end,
     { description = "ouvre le repo dotfiles", group = "browser" }),
 
   awful.key({ modkey }, "w", function()
-    -- awful.util.spawn("firefox -new-tab file:///home/phreno/.dotfiles/neuron/.neuron/output/impulse.html")
-    awful.util.spawn("firefox -new-tab localhost:4321/impulse.html")
+    -- awful.util.spawn("brave -new-tab file:///home/phreno/.dotfiles/neuron/.neuron/output/impulse.html")
+    awful.util.spawn("brave -new-tab localhost:4321/impulse.html")
 
   end,
     { description = "ouvre le wiki", group = "browser" })

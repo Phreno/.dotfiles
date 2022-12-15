@@ -8,6 +8,11 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+vim.cmd [[
+  let g:neovide_scale_factor = 0.8
+  let g:neovide_transparency = 0.8
+]]
+
 lvim.transparent_window = true
 -- general
 lvim.log.level = "warn"

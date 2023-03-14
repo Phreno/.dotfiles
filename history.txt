@@ -1,0 +1,22 @@
+$env.NU_LIB_DIRS
+$env.NU_PLUGIN_DIRS
+bash
+cd ~/vendor/nana/
+clear
+cp ~/vendor/nana/src-tauri/target/release/nana ~/.local/bin/
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+git clone git@github.com:nushell/nana.git
+history
+http get https://docs.gitlab.com/ee/api/api_resources.html | <\n>query web --as-html -q tr |<\n>find code |<\n>parse --regex "rouge\">(.*)</code" | <\n>get capture0 | <\n>str replace "<.*>" " " | <\n>each { split row " " } | <\n>flatten | <\n>sort | <\n>skip 1<\n># gitlab api rest enpoints
+http get https://docs.gitlab.com/ee/api/search.html | <\n>query web --as-html -q code | <\n>find curl | <\n>each { sed 's/<[^>]*>//g' } | <\n>split row " " | <\n>find http |<\n>str replace --all "&amp;" "&" | <\n>str replace --all '"' '' |<\n># gitlab api search endpoints
+hx ~/.config/alacritty/alacritty.yml
+hx ~/.config/nushell/config.nu
+hx ~/.config/nushell/history.txt
+nana
+npm
+npm install -g yarn
+query web --as-html --help 
+query web --help
+yarn tauri build
+yarn tauri dev
+hx ~/.config/nushell/history.txt
